@@ -93,11 +93,6 @@ nav.hide{transform:translateY(-100%)}
 .nav-mid a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--red);transition:width .3s}
 .nav-mid a:hover::after{width:100%}
 .nav-right{display:flex;align-items:center;gap:.8rem}
-.nav-cart{position:relative;cursor:pointer;padding:.3rem;color:var(--gray);transition:color .3s}
-.nav-cart:hover{color:var(--white)}
-.nav-cart svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8}
-.cart-badge{position:absolute;top:-4px;right:-8px;min-width:15px;height:15px;border-radius:50%;background:var(--red);color:#fff;font-size:.5rem;font-weight:800;display:flex;align-items:center;justify-content:center;transform:scale(0);transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
-.cart-badge.show{transform:scale(1)}
 .nav-book{padding:.45rem 1.1rem;background:var(--red);color:#fff;text-decoration:none;font-size:.55rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;transition:all .3s;position:relative;overflow:hidden}
 .nav-book::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);transform:translateX(-100%);transition:transform .5s}
 .nav-book:hover::before{transform:translateX(100%)}
@@ -310,73 +305,6 @@ html.light .video-shell{border-color:rgba(0,0,0,.08)}
 .book-ok h3{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:.6rem}
 .book-ok p{font-size:.82rem;color:var(--gray-light);line-height:1.6}
 
-/* ── E-SHOP ── */
-.shop{background:var(--black)}
-.shop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:3.5rem;background:rgba(255,255,255,.025)}
-.prod{background:var(--dark);overflow:hidden;transition:all .4s;position:relative}
-.prod:hover{z-index:2}
-.prod-img{height:200px;background:var(--dark-2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.prod-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.4,0,.2,1)}
-.prod:hover .prod-img img{transform:scale(1.06)}
-.prod-badge{position:absolute;top:.6rem;left:.6rem;padding:.2rem .55rem;background:var(--red);font-size:.5rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:var(--radius)}
-.prod-info{padding:1.2rem}
-.prod-cat{font-size:.5rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--red);margin-bottom:.35rem}
-.prod-name{font-size:.85rem;font-weight:700;margin-bottom:.3rem}
-.prod-desc{font-size:.68rem;color:var(--gray);line-height:1.5;margin-bottom:.7rem}
-.prod-foot{display:flex;justify-content:space-between;align-items:center}
-.prod-price{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:800;color:var(--red)}
-.add-btn{padding:.4rem .7rem;background:transparent;border:1px solid rgba(255,255,255,.1);color:var(--white);font-size:.5rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .3s;border-radius:var(--radius)}
-.add-btn:hover{border-color:var(--red);color:var(--red);background:rgba(196,30,42,.04)}
-.add-btn.ok{background:var(--red);color:#fff;border-color:var(--red)}
-
-/* ── CART DRAWER ── */
-.cart-bg{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.65);opacity:0;visibility:hidden;transition:all .3s}.cart-bg.open{opacity:1;visibility:visible}
-.cart-drawer{position:fixed;top:0;right:0;bottom:0;z-index:2001;width:400px;max-width:90vw;background:var(--dark);border-left:1px solid rgba(255,255,255,.04);transform:translateX(100%);transition:transform .4s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column}
-.cart-drawer.open{transform:translateX(0)}
-.cart-head{padding:1.2rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.04);display:flex;justify-content:space-between;align-items:center}
-.cart-head h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:800}
-.cart-x{background:none;border:none;color:var(--gray);cursor:pointer;font-size:1.3rem;transition:color .2s;line-height:1}.cart-x:hover{color:var(--white)}
-.cart-body{flex:1;overflow-y:auto;padding:1.2rem 1.5rem}
-.cart-empty{text-align:center;padding:3rem 0;color:var(--gray);font-size:.8rem}
-.ci{display:flex;gap:.8rem;padding:.8rem 0;border-bottom:1px solid rgba(255,255,255,.03);align-items:center}
-.ci-icon{width:44px;height:44px;flex-shrink:0;background:var(--dark-2);border-radius:6px;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.ci-info{flex:1}
-.ci-name{font-size:.78rem;font-weight:600;margin-bottom:.15rem}
-.ci-price{font-size:.72rem;color:var(--red);font-weight:700}
-.ci-rm{background:none;border:none;color:var(--gray);cursor:pointer;font-size:.6rem;margin-top:.15rem;transition:color .2s}.ci-rm:hover{color:var(--red)}
-.ci-qty{display:flex;align-items:center;gap:.3rem}
-.qb{width:24px;height:24px;border:1px solid rgba(255,255,255,.08);background:none;color:var(--white);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.7rem;transition:all .2s;border-radius:var(--radius)}.qb:hover{border-color:var(--red);color:var(--red)}
-.qn{font-size:.75rem;font-weight:700;min-width:16px;text-align:center}
-.cart-foot{padding:1.2rem 1.5rem;border-top:1px solid rgba(255,255,255,.04)}
-.ship-bar{margin-bottom:1rem}
-.ship-bar-track{height:3px;background:var(--dark-3);border-radius:2px;overflow:hidden;margin-bottom:.4rem}
-.ship-bar-fill{height:100%;background:var(--red);transition:width .5s cubic-bezier(.4,0,.2,1);border-radius:2px}
-.ship-bar-fill.free{background:var(--green)}
-.ship-bar-text{font-size:.6rem;color:var(--gray);text-align:center}
-.ship-bar-text.free{color:var(--green)}
-.cart-row{display:flex;justify-content:space-between;font-size:.78rem;margin-bottom:.3rem;color:var(--gray-light)}
-.cart-total-row{display:flex;justify-content:space-between;font-size:1rem;font-weight:800;padding-top:.8rem;margin-top:.5rem;border-top:1px solid rgba(255,255,255,.04)}
-.cart-total-row span:last-child{font-family:'Playfair Display',serif;color:var(--red)}
-.checkout-btn{display:block;width:100%;margin-top:1.2rem;padding:.9rem;background:var(--red);color:#fff;border:none;font-size:.6rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;transition:all .3s;border-radius:var(--radius)}
-.checkout-btn:hover{background:var(--red-light)}
-
-/* ── CHECKOUT MODAL ── */
-.co-modal{position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;padding:2rem}
-.co-modal.open{display:flex}
-.co-box{background:var(--dark);border:1px solid rgba(255,255,255,.04);width:100%;max-width:500px;max-height:90vh;overflow-y:auto;padding:2.5rem}
-.co-box h2{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:800;margin-bottom:.4rem}
-.co-sub{font-size:.78rem;color:var(--gray);margin-bottom:1.5rem}
-.co-row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
-.co-summary{padding:1rem;background:var(--dark-2);margin:1.2rem 0;border-radius:var(--radius)}
-.co-si{display:flex;justify-content:space-between;font-size:.72rem;margin-bottom:.3rem;color:var(--gray-light)}
-.co-st{display:flex;justify-content:space-between;font-size:.9rem;font-weight:800;padding-top:.6rem;margin-top:.5rem;border-top:1px solid rgba(255,255,255,.04)}
-.co-st span:last-child{color:var(--red);font-family:'Playfair Display',serif}
-.co-acts{display:flex;gap:.8rem;margin-top:1.5rem}
-.co-back{padding:.75rem 1.2rem;background:none;border:1px solid rgba(255,255,255,.1);color:var(--white);font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .3s;border-radius:var(--radius)}.co-back:hover{border-color:var(--red);color:var(--red)}
-.co-pay{flex:1;padding:.75rem;background:var(--red);color:#fff;border:none;font-size:.58rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;transition:all .3s;border-radius:var(--radius)}.co-pay:hover{background:var(--red-light)}
-.co-ok{display:none;text-align:center;padding:2rem 0}
-.co-ok.show{display:block}
-
 /* ── TRANSFORMATIONS ── */
 .transforms{background:var(--dark)}
 .tf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:3.5rem;background:rgba(255,255,255,.025)}
@@ -517,14 +445,12 @@ html.light .hero-kanji{color:rgba(196,30,42,.06)}
 html.light .preloader{background:var(--black)}
 html.light .marquee{background:var(--dark);border-color:rgba(0,0,0,.06)}
 html.light .phil-card{background:var(--dark)}
-html.light .phil-grid,.light .srv-grid,.light .shop-grid,.light .res-grid,.light .tf-grid{background:rgba(0,0,0,.04)}
+html.light .phil-grid,.light .srv-grid,.light .res-grid,.light .tf-grid{background:rgba(0,0,0,.04)}
 html.light .quote::before{color:rgba(196,30,42,.05)}
 html.light .btn-ghost{color:var(--white);border-color:rgba(0,0,0,.15)}
 html.light .btn-ghost:hover{border-color:var(--red);color:var(--red)}
 html.light .book-panel,.light .bt,.light .fg input,.light .sl{background:var(--dark-2);border-color:rgba(0,0,0,.08)}
 html.light .fg input{color:var(--white);background:var(--dark-3)}
-html.light .cart-drawer{background:var(--dark);border-left-color:rgba(0,0,0,.06)}
-html.light .cart-head,.light .cart-foot{border-color:rgba(0,0,0,.06)}
 html.light .ci{border-color:rgba(0,0,0,.06)}
 html.light .co-box{background:var(--dark);border-color:rgba(0,0,0,.06)}
 html.light .prod{background:var(--dark)}
@@ -567,7 +493,7 @@ html.light .lang-dd{border-color:rgba(0,0,0,.1)}
 @media(max-width:1024px){
 .hero{grid-template-columns:1fr}.hero-right{position:absolute;inset:0}.hero-right::after{background:linear-gradient(90deg,rgba(8,8,8,.93),rgba(8,8,8,.5) 100%)!important}.hero-left{position:relative;z-index:2;padding:8rem 2.5rem 4rem}
 html.light .hero-right::after{background:linear-gradient(90deg,rgba(245,240,235,.93),rgba(245,240,235,.5) 100%)!important}
-.srv-grid,.shop-grid,.phil-grid,.res-grid{grid-template-columns:repeat(2,1fr)}
+.srv-grid,.phil-grid,.res-grid{grid-template-columns:repeat(2,1fr)}
 .tf-grid{grid-template-columns:repeat(2,1fr)}
 .book-grid{grid-template-columns:1fr}
 .gallery{grid-template-columns:repeat(3,1fr);height:160px}.gallery img:nth-child(n+4){display:none}
@@ -580,7 +506,7 @@ section{padding:4rem 1.2rem}.video-section{padding:0 1.2rem 3.5rem}
 .hero-left{padding:6rem 1.2rem 3rem}
 .hero-stats{flex-wrap:wrap;gap:1.2rem}
 .about-grid,.cnt-grid{grid-template-columns:1fr;gap:2.5rem}
-.srv-grid,.shop-grid,.phil-grid,.res-grid,.tf-grid{grid-template-columns:1fr}
+.srv-grid,.phil-grid,.res-grid,.tf-grid{grid-template-columns:1fr}
 .bt-grid{grid-template-columns:1fr}
 .slots-g{grid-template-columns:repeat(2,1fr)}
 .gallery{grid-template-columns:1fr 1fr;height:130px}.gallery img:nth-child(n+3){display:none}
@@ -603,50 +529,18 @@ section{padding:4rem 1.2rem}.video-section{padding:0 1.2rem 3.5rem}
 <!-- Nav -->
 <nav id="nav">
 <a href="#" class="nav-logo"><span class="mark">DEVRESSE</span><span class="kai">改</span></a>
-<ul class="nav-mid"><li><a href="#phil" data-i18n="nav_phil">Method</a></li><li><a href="#about" data-i18n="nav_about">About</a></li><li><a href="#services" data-i18n="nav_services">Services</a></li><li><a href="#booking" data-i18n="nav_book_link">Book</a></li><li><a href="#shop" data-i18n="nav_shop">Shop</a></li><li><a href="#testi" data-i18n="nav_reviews">Reviews</a></li><li><a href="#faq">FAQ</a></li></ul>
+<ul class="nav-mid"><li><a href="#phil" data-i18n="nav_phil">Method</a></li><li><a href="#about" data-i18n="nav_about">About</a></li><li><a href="#services" data-i18n="nav_services">Services</a></li><li><a href="#booking" data-i18n="nav_book_link">Book</a></li><li><a href="#testi" data-i18n="nav_reviews">Reviews</a></li><li><a href="#faq">FAQ</a></li></ul>
 <div class="nav-right">
 <div class="lang-toggle" onclick="this.querySelector('.lang-dd').classList.toggle('open')"><span id="curLang">EN</span><svg viewBox="0 0 24 24" style="width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2.5"><path d="M6 9l6 6 6-6"/></svg><div class="lang-dd" id="langDd"><button class="active" onclick="setLang('en',event)">English</button><button onclick="setLang('fr',event)">Français</button><button onclick="setLang('nl',event)">Nederlands</button></div></div>
 <div class="mode-toggle" onclick="toggleMode()" title="Toggle light/dark"><svg viewBox="0 0 24 24" id="modeIco"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></div>
-<div class="nav-cart" onclick="openCart()"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg><span class="cart-badge" id="cartBadge"></span></div>
 <a href="#booking" class="nav-book" data-i18n="nav_book">Book Now</a>
 </div>
 <div class="hamburger" id="ham" onclick="toggleMob()"><span></span><span></span><span></span></div>
 </nav>
-<div class="mob-menu" id="mob"><a href="#phil" onclick="toggleMob()" data-i18n="nav_phil">Method</a><a href="#about" onclick="toggleMob()" data-i18n="nav_about">About</a><a href="#services" onclick="toggleMob()" data-i18n="nav_services">Services</a><a href="#booking" onclick="toggleMob()" data-i18n="nav_book_link">Book</a><a href="#shop" onclick="toggleMob()" data-i18n="nav_shop">Shop</a><a href="#testi" onclick="toggleMob()" data-i18n="nav_reviews">Reviews</a><a href="#contact" onclick="toggleMob()" data-i18n="nav_contact">Contact</a></div>
+<div class="mob-menu" id="mob"><a href="#phil" onclick="toggleMob()" data-i18n="nav_phil">Method</a><a href="#about" onclick="toggleMob()" data-i18n="nav_about">About</a><a href="#services" onclick="toggleMob()" data-i18n="nav_services">Services</a><a href="#booking" onclick="toggleMob()" data-i18n="nav_book_link">Book</a><a href="#testi" onclick="toggleMob()" data-i18n="nav_reviews">Reviews</a><a href="#contact" onclick="toggleMob()" data-i18n="nav_contact">Contact</a></div>
 
 <!-- Floating CTA -->
 <a href="#booking" class="float-cta" id="floatCta" data-i18n="float_cta">Book a Session <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-
-<!-- Cart Drawer -->
-<div class="cart-bg" id="cartBg" onclick="closeCart()"></div>
-<div class="cart-drawer" id="cartDr">
-<div class="cart-head"><h3>Your Cart</h3><button class="cart-x" onclick="closeCart()">×</button></div>
-<div class="cart-body" id="cartBody"></div>
-<div class="cart-foot" id="cartFoot" style="display:none">
-<div class="ship-bar"><div class="ship-bar-track"><div class="ship-bar-fill" id="shipFill"></div></div><div class="ship-bar-text" id="shipText">€75 more for free shipping</div></div>
-<div class="cart-row"><span>Subtotal</span><span id="cSub">€0</span></div>
-<div class="cart-row"><span>Shipping</span><span id="cShip">€4.95</span></div>
-<div class="cart-total-row"><span>Total</span><span id="cTotal">€0</span></div>
-<button class="checkout-btn" onclick="openCo()">Proceed to Checkout</button>
-</div>
-</div>
-
-<!-- Checkout -->
-<div class="co-modal" id="coModal">
-<div class="co-box">
-<div id="coForm">
-<h2>Checkout</h2><p class="co-sub">Ship within 24-48h in Brussels.</p>
-<div class="co-row"><div class="fg"><label>First Name</label><input placeholder="Thomas"></div><div class="fg"><label>Last Name</label><input placeholder="Devresse"></div></div>
-<div class="fg"><label>Email</label><input type="email" placeholder="you@email.com"></div>
-<div class="fg"><label>Phone</label><input type="tel" placeholder="+32 ..."></div>
-<div class="fg"><label>Address</label><input placeholder="Street, Number"></div>
-<div class="co-row"><div class="fg"><label>Postal</label><input placeholder="1000"></div><div class="fg"><label>City</label><input placeholder="Brussels"></div></div>
-<div class="co-summary" id="coSum"></div>
-<div class="co-acts"><button class="co-back" onclick="closeCo()">Back</button><button class="co-pay" onclick="payOrder()">Place Order</button></div>
-</div>
-<div class="co-ok" id="coOk"><div class="book-ok" style="display:block"><div class="ico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><h3>Order Confirmed!</h3><p>Confirmation email sent. Delivery within 24-48h in Brussels.</p><br><button class="btn btn-red" onclick="closeCo();resetCart()">Continue</button></div></div>
-</div>
-</div>
 
 <!-- Toast -->
 <div class="toast" id="toast"><div class="toast-ico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div><div class="toast-t" id="toastT"></div><div class="toast-s" id="toastS"></div></div></div>
@@ -769,15 +663,6 @@ section{padding:4rem 1.2rem}.video-section{padding:0 1.2rem 3.5rem}
 </div>
 <div class="book-ok" id="bookOk"><div class="ico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><h3>Booking Confirmed!</h3><p id="bookOkText"></p></div>
 </div>
-</div></section>
-
-<!-- ═══ E-SHOP ═══ -->
-<section class="shop" id="shop"><div class="container">
-<div class="tag" data-i18n="shop_tag">E-Shop</div>
-<h2 class="title r" data-i18n-html="shop_title">Devresse <span style="color:var(--red)">Nutrition</span></h2>
-<p class="subtitle r r-delay-1" data-i18n="shop_sub">The supplements I use and recommend. Premium quality, no fillers.</p>
-<div class="shop-grid" id="shopG"></div>
-<p class="r" style="text-align:center;margin-top:2rem;font-size:.68rem;color:var(--gray)">Free delivery in Brussels on orders over €75</p>
 </div></section>
 
 <!-- ═══ TRANSFORMATIONS ═══ -->
@@ -928,7 +813,7 @@ const REEL_YOUTUBE_ID = 'BTwTdZJq63I';
 // ═══ i18n TRANSLATIONS ═══
 const i18n={
 en:{
-nav_phil:'Method',nav_about:'About',nav_services:'Services',nav_book_link:'Book',nav_shop:'Shop',nav_reviews:'Reviews',nav_contact:'Contact',nav_book:'Book Now',
+nav_phil:'Method',nav_about:'About',nav_services:'Services',nav_book_link:'Book',nav_reviews:'Reviews',nav_contact:'Contact',nav_book:'Book Now',
 hero_tag:'Premium Coaching — Brussels',
 hero_h1:'Small Steps.<br><span class="red">Big</span><br>Transformations.',
 hero_sub:'Rooted in the Japanese philosophy of Kaizen — continuous improvement. I build lasting results through consistency, precision, and small daily improvements. Evidence-based coaching. No gimmicks.',
@@ -955,7 +840,6 @@ srv_2_h:'Nutrition Coaching',srv_2_p:'Sustainable nutrition guidance. Real food,
 srv_3_h:'Body Transformations',srv_3_p:'Holistic approach for motivated and disciplined people.',
 srv_4_h:'Online Coaching',srv_4_p:'Premium remote coaching, full support from anywhere.',
 book_tag:'Book a Session',book_title:'Reserve Your <span style="color:var(--red)">Spot</span>',book_sub:'Pick a type, date, and time. First consultation always free.',
-shop_tag:'E-Shop',shop_title:'Devresse <span style="color:var(--red)">Nutrition</span>',shop_sub:'The supplements I use and recommend. Premium quality, no fillers.',
 tf_tag:'Client Results',tf_title:'Real <span style="color:var(--red)">Transformations</span>',
 testi_tag:'Client Stories',testi_title:'What They Say',
 res_tag:'Free Resources',res_title:'Training <span style="color:var(--red)">Resources</span>',
@@ -969,7 +853,7 @@ foot_desc:'Personal training in Brussels. Small daily improvements take you far.
 float_cta:'Book a Session'
 },
 fr:{
-nav_phil:'Méthode',nav_about:'À propos',nav_services:'Services',nav_book_link:'Réserver',nav_shop:'Boutique',nav_reviews:'Avis',nav_contact:'Contact',nav_book:'Réserver',
+nav_phil:'Méthode',nav_about:'À propos',nav_services:'Services',nav_book_link:'Réserver',nav_reviews:'Avis',nav_contact:'Contact',nav_book:'Réserver',
 hero_tag:'Coaching Premium — Bruxelles',
 hero_h1:'Petits pas.<br><span class="red">Grand</span><br>Transformations.',
 hero_sub:'Enraciné dans la philosophie japonaise du Kaizen — l\'amélioration continue. Je construis des résultats durables par la constance, la précision et de petites améliorations quotidiennes. Coaching basé sur les preuves. Pas de gadgets.',
@@ -996,7 +880,6 @@ srv_2_h:'Coaching Nutritionnel',srv_2_p:'Nutrition durable. Vraie nourriture, ha
 srv_3_h:'Transformations Corporelles',srv_3_p:'Approche holistique pour personnes motivées et disciplinées.',
 srv_4_h:'Coaching en Ligne',srv_4_p:'Coaching premium à distance, support complet.',
 book_tag:'Réserver une Séance',book_title:'Réservez Votre <span style="color:var(--red)">Place</span>',book_sub:'Choisissez un type, une date et une heure. Première consultation toujours gratuite.',
-shop_tag:'Boutique',shop_title:'Devresse <span style="color:var(--red)">Nutrition</span>',shop_sub:'Les suppléments que j\'utilise et recommande. Qualité premium, sans remplissage.',
 tf_tag:'Résultats Clients',tf_title:'Vraies <span style="color:var(--red)">Transformations</span>',
 testi_tag:'Témoignages',testi_title:'Ce qu\'ils disent',
 res_tag:'Ressources Gratuites',res_title:'Ressources <span style="color:var(--red)">Training</span>',
@@ -1010,7 +893,7 @@ foot_desc:'Coaching personnel à Bruxelles. De petites améliorations quotidienn
 float_cta:'Réserver une Séance'
 },
 nl:{
-nav_phil:'Methode',nav_about:'Over mij',nav_services:'Diensten',nav_book_link:'Boek',nav_shop:'Winkel',nav_reviews:'Reviews',nav_contact:'Contact',nav_book:'Boek Nu',
+nav_phil:'Methode',nav_about:'Over mij',nav_services:'Diensten',nav_book_link:'Boek',nav_reviews:'Reviews',nav_contact:'Contact',nav_book:'Boek Nu',
 hero_tag:'Premium Coaching — Brussel',
 hero_h1:'Kleine stappen.<br><span class="red">Groot</span><br>Transformaties.',
 hero_sub:'Geworteld in de Japanse filosofie van Kaizen — continue verbetering. Ik bouw blijvende resultaten door consistentie, precisie en kleine dagelijkse verbeteringen. Evidence-based coaching. Geen gimmicks.',
@@ -1037,7 +920,6 @@ srv_2_h:'Voedingscoaching',srv_2_p:'Duurzame voedingsbegeleiding. Echt eten, bli
 srv_3_h:'Body Transformaties',srv_3_p:'Holistische aanpak voor gemotiveerde en gedisciplineerde mensen.',
 srv_4_h:'Online Coaching',srv_4_p:'Premium coaching op afstand, volledige ondersteuning.',
 book_tag:'Boek een Sessie',book_title:'Reserveer Uw <span style="color:var(--red)">Plek</span>',book_sub:'Kies een type, datum en tijd. Eerste consultatie altijd gratis.',
-shop_tag:'Webshop',shop_title:'Devresse <span style="color:var(--red)">Voeding</span>',shop_sub:'De supplementen die ik gebruik en aanbeveel. Premium kwaliteit, geen vullers.',
 tf_tag:'Klantresultaten',tf_title:'Echte <span style="color:var(--red)">Transformaties</span>',
 testi_tag:'Klantverhalen',testi_title:'Wat Ze Zeggen',
 res_tag:'Gratis Bronnen',res_title:'Training <span style="color:var(--red)">Bronnen</span>',
@@ -1120,23 +1002,10 @@ if(savedLang&&savedLang!=='en')setLang(savedLang);
 
 document.addEventListener('click',e=>{if(!e.target.closest('.lang-toggle'))document.querySelector('.lang-dd')?.classList.remove('open')});
 
-// ═══ DATA ═══
-const products=[
-{id:1,name:'Whey Protein Isolate',cat:'Protein',desc:'Premium grass-fed whey. 27g protein.',price:44.90,badge:'Bestseller',img:'images/product-whey-protein.jpg'},
-{id:2,name:'Creatine Monohydrate',cat:'Performance',desc:'Pure micronized creatine. 5g per serving.',price:29.90,badge:'',img:'images/product-creatine.jpg'},
-{id:3,name:'Omega-3 Fish Oil',cat:'Health',desc:'High-potency EPA/DHA. Recovery & joints.',price:24.90,badge:'',img:'images/product-omega3.jpg'},
-{id:4,name:'Clean Pre-Workout',cat:'Energy',desc:'Natural caffeine + beta-alanine. No crash.',price:34.90,badge:'New',img:'images/product-preworkout.jpg'},
-{id:5,name:'Collagen Peptides',cat:'Recovery',desc:'Joint support, skin health, recovery.',price:32.90,badge:'',img:'images/product-collagen.jpg'},
-{id:6,name:'Magnesium Glycinate',cat:'Recovery',desc:'Better sleep, better recovery.',price:19.90,badge:'',img:'images/product-magnesium.jpg'},
-{id:7,name:'BCAA 2:1:1',cat:'Amino Acids',desc:'Intra-workout. Less fatigue, more gains.',price:27.90,badge:'',img:'images/product-bcaa.jpg'},
-{id:8,name:'Daily Multivitamin',cat:'Vitality',desc:'Complete formula for active people.',price:22.90,badge:'Essential',img:'images/product-multivitamin.jpg'}
-];
-let cart=[];
-
 // ═══ INIT ═══
 function init(){
 try{
-renderShop();renderCal();updateCart();initCounters();initCarousel();initTrainerReel();
+renderCal();initCounters();initCarousel();initTrainerReel();
 }catch(e){console.error(e)}
 }
 
@@ -1206,73 +1075,6 @@ const up=()=>{document.removeEventListener('mousemove',move);document.removeEven
 document.addEventListener('mousemove',move);document.addEventListener('mouseup',up);
 document.addEventListener('touchmove',move,{passive:false});document.addEventListener('touchend',up);
 }
-
-// ═══ SHOP ═══
-function renderShop(){
-document.getElementById('shopG').innerHTML=products.map(p=>`
-<div class="prod r"><div class="prod-img"><img src="${p.img}" alt="${p.name}" loading="lazy">${p.badge?`<div class="prod-badge">${p.badge}</div>`:''}</div>
-<div class="prod-info"><div class="prod-cat">${p.cat}</div><div class="prod-name">${p.name}</div><div class="prod-desc">${p.desc}</div>
-<div class="prod-foot"><div class="prod-price">€${p.price.toFixed(2)}</div><button class="add-btn" id="ab${p.id}" onclick="addCart(${p.id})">Add</button></div></div></div>
-`).join('');
-setTimeout(()=>document.querySelectorAll('.prod.r').forEach(el=>obs.observe(el)),100);
-}
-
-// ═══ CART ═══
-function addCart(id){
-const p=products.find(x=>x.id===id);const ex=cart.find(x=>x.id===id);
-if(ex)ex.qty++;else cart.push({...p,qty:1});
-updateCart();
-const b=document.getElementById('ab'+id);b.textContent='Added ✓';b.classList.add('ok');
-setTimeout(()=>{b.textContent='Add';b.classList.remove('ok')},1000);
-toast(p.name,cartTotals().count+' in cart');
-}
-function rmCart(id){cart=cart.filter(x=>x.id!==id);updateCart()}
-function chQty(id,d){const i=cart.find(x=>x.id===id);if(i){i.qty+=d;if(i.qty<=0)rmCart(id);else updateCart()}}
-function cartTotals(){const c=cart.reduce((s,i)=>s+i.qty,0);const sub=cart.reduce((s,i)=>s+i.price*i.qty,0);const sh=sub>=75?0:4.95;return{count:c,sub,sh,total:sub+sh}}
-function updateCart(){
-const b=document.getElementById('cartBadge');const{count}=cartTotals();
-b.textContent=count;b.classList.toggle('show',count>0);
-renderCartItems();
-}
-function renderCartItems(){
-const el=document.getElementById('cartBody'),ft=document.getElementById('cartFoot');
-if(!cart.length){el.innerHTML='<div class="cart-empty"><div style="font-size:2.5rem;color:rgba(196,30,42,.15);margin-bottom:.8rem">🛒</div>Your cart is empty</div>';ft.style.display='none';return}
-ft.style.display='block';
-el.innerHTML=cart.map(i=>`<div class="ci"><div class="ci-icon"><img src="${i.img}" alt="${i.name}" style="width:100%;height:100%;object-fit:cover;border-radius:2px"></div><div class="ci-info"><div class="ci-name">${i.name}</div><div class="ci-price">€${(i.price*i.qty).toFixed(2)}</div><button class="ci-rm" onclick="rmCart(${i.id})">Remove</button></div><div class="ci-qty"><button class="qb" onclick="chQty(${i.id},-1)">−</button><span class="qn">${i.qty}</span><button class="qb" onclick="chQty(${i.id},1)">+</button></div></div>`).join('');
-const t=cartTotals();
-document.getElementById('cSub').textContent='€'+t.sub.toFixed(2);
-document.getElementById('cShip').textContent=t.sh===0?'Free':'€'+t.sh.toFixed(2);
-document.getElementById('cTotal').textContent='€'+t.total.toFixed(2);
-const pct=Math.min(100,t.sub/75*100);
-const fill=document.getElementById('shipFill');fill.style.width=pct+'%';
-fill.classList.toggle('free',t.sub>=75);
-const txt=document.getElementById('shipText');
-if(t.sub>=75){txt.textContent='✓ Free shipping!';txt.classList.add('free')}
-else{txt.textContent=`€${(75-t.sub).toFixed(2)} more for free shipping`;txt.classList.remove('free')}
-}
-function openCart(){document.getElementById('cartBg').classList.add('open');document.getElementById('cartDr').classList.add('open');renderCartItems()}
-function closeCart(){document.getElementById('cartBg').classList.remove('open');document.getElementById('cartDr').classList.remove('open')}
-function openCo(){
-closeCart();document.getElementById('coForm').style.display='block';document.getElementById('coOk').classList.remove('show');
-const t=cartTotals();
-document.getElementById('coSum').innerHTML=cart.map(i=>`<div class="co-si"><span>${i.name} × ${i.qty}</span><span>€${(i.price*i.qty).toFixed(2)}</span></div>`).join('')+`<div class="co-si"><span>Shipping</span><span>${t.sh===0?'Free':'€'+t.sh.toFixed(2)}</span></div><div class="co-st"><span>Total</span><span>€${t.total.toFixed(2)}</span></div>`;
-document.getElementById('coModal').classList.add('open');
-}
-function closeCo(){document.getElementById('coModal').classList.remove('open')}
-async function payOrder(){
-const btn=document.querySelector('.co-pay');btn.disabled=true;btn.textContent='Redirecting to payment...';
-try{
-const origin=window.location.origin;
-const emailInput=document.querySelector('#coForm input[type="email"]');
-const customerEmail=emailInput?emailInput.value:'';
-const items=cart.map(i=>({name:i.name,description:i.desc,price:i.price,quantity:i.qty,requiresShipping:true,image:origin+'/'+i.img}));
-const r=await fetch('/api/checkout/session',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({items,customerEmail})});
-const d=await r.json();
-if(d.url){window.location.href=d.url}
-else{btn.textContent='Place Order';btn.disabled=false;toast('Error',d.error||'Payment failed')}
-}catch(e){btn.textContent='Place Order';btn.disabled=false;toast('Error','Could not connect to payment')}
-}
-function resetCart(){cart=[];updateCart()}
 
 // ═══ TOAST ═══
 function toast(t,s){document.getElementById('toastT').textContent=t;document.getElementById('toastS').textContent=s;const el=document.getElementById('toast');el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2200)}
@@ -1386,20 +1188,9 @@ else{btn.disabled=false;btn.innerHTML='Send Message <svg viewBox="0 0 24 24" fil
 }catch(e){btn.disabled=false;btn.innerHTML='Send Message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';toast('Error','Network error')}
 }
 
-// ═══ CHECKOUT RETURN HANDLING ═══
+// ═══ CHECKOUT RETURN HANDLING (booking payments only; product checkout disabled) ═══
 (function handleReturn(){
 const p=new URLSearchParams(window.location.search);
-if(p.get('checkout')==='success'){
-cart=[];updateCart();
-setTimeout(()=>{toast('Order Confirmed!','Payment successful. Check your email.');
-document.getElementById('coModal')?.classList.remove('open');
-},2500);
-history.replaceState({},'',window.location.pathname);
-}
-if(p.get('checkout')==='cancelled'){
-setTimeout(()=>toast('Order Cancelled','Payment was cancelled.'),2500);
-history.replaceState({},'',window.location.pathname);
-}
 if(p.get('booking')==='success'){
 setTimeout(()=>{
 document.getElementById('bookFormPanel')&&(document.getElementById('bookFormPanel').style.display='none');
