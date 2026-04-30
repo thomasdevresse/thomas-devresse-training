@@ -224,8 +224,11 @@ section{padding:6.5rem 2.5rem}
 /* ── VIDEO (paste REEL_YOUTUBE_ID in script after unlisted upload) ── */
 .video-section{background:var(--black);padding:0 2.5rem 5rem;position:relative}
 .video-shell{max-width:1140px;margin:0 auto;background:var(--dark);border:1px solid rgba(255,255,255,.04);overflow:hidden;border-radius:var(--radius)}
+/* YouTube Shorts (9:16) — centered column so the embed matches vertical video */
+.video-shell.video-shell--short{max-width:min(420px,100%)}
 #videoReelMount{background:#000}
 .yt-facade{aspect-ratio:16/9;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;position:relative;border:none;margin:0}
+.video-shell--short .yt-facade{aspect-ratio:9/16}
 .yt-facade::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.42)}
 .yt-facade:focus-visible{box-shadow:0 0 0 2px var(--black),0 0 0 4px var(--red)}
 .yt-play{position:relative;z-index:2;width:80px;height:80px;border-radius:50%;background:var(--red);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .35s,box-shadow .35s}
@@ -234,8 +237,12 @@ section{padding:6.5rem 2.5rem}
 .yt-facade--pending::before{background:rgba(0,0,0,.55)}
 .yt-pending-msg{position:relative;z-index:2;font-size:.78rem;color:var(--gray-lighter);text-align:center;max-width:22rem;line-height:1.6;margin:1rem;padding:.5rem .75rem;letter-spacing:.04em;font-weight:500}
 .yt-iframe-wrap{aspect-ratio:16/9;background:#000;position:relative}
+.video-shell--short .yt-iframe-wrap{aspect-ratio:9/16}
 .yt-iframe-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .video-caption{padding:1rem 1.25rem 1.2rem;margin:0;font-size:.62rem;color:var(--gray);letter-spacing:.04em;line-height:1.55;text-align:center}
+.video-yt-link{margin:-.35rem 1rem 1rem;text-align:center;font-size:.62rem;letter-spacing:.04em}
+.video-yt-link a{color:var(--red);text-underline-offset:3px;text-decoration-thickness:1px}
+html.light .video-yt-link a{color:var(--red)}
 html.light .video-shell{border-color:rgba(0,0,0,.08)}
 
 /* ── SERVICES ── */
@@ -717,9 +724,10 @@ section{padding:4rem 1.2rem}.video-section{padding:0 1.2rem 3.5rem}
 <div class="quote"><blockquote class="r" data-i18n="quote_text">"The journey of a thousand miles begins with one step."</blockquote><p class="attr r r-delay-1">— Lao Tzu</p></div>
 
 <!-- ═══ VIDEO (YouTube embed: set REEL_YOUTUBE_ID in page script — see comment there) ═══ -->
-<div class="video-section r" id="trainer-reel"><div class="video-shell">
+<div class="video-section r" id="trainer-reel"><div class="video-shell video-shell--short">
 <div id="videoReelMount"></div>
 <p class="video-caption" data-i18n="video_cap">Jims Meiser, Brussels — coached session (Marcin & Tom). Tap play to stream when a YouTube ID is set.</p>
+<p class="video-yt-link"><a href="https://www.youtube.com/shorts/BTwTdZJq63I" target="_blank" rel="noopener noreferrer" data-i18n="video_yt_link">Open this Short on YouTube</a></p>
 </div></div>
 
 <!-- ═══ SERVICES ═══ -->
@@ -914,7 +922,7 @@ section{padding:4rem 1.2rem}.video-section{padding:0 1.2rem 3.5rem}
 </footer>
 
 <script>
-// Session reel (YouTube Shorts — streams only after play): https://www.youtube.com/shorts/BTwTdZJq63I — paste ID only below (empty = placeholder).
+// Session reel — Short: https://www.youtube.com/shorts/BTwTdZJq63I (ID only; empty = placeholder)
 const REEL_YOUTUBE_ID = 'BTwTdZJq63I';
 
 // ═══ i18n TRANSLATIONS ═══
@@ -938,7 +946,8 @@ phil_3_h:'Re-assessments',phil_3_p:'Your program evolves with you. Weekly review
 about_tag:'About Thomas',about_title:'Your Coach. Your <span style="color:var(--red)">Competitive Edge.</span>',about_sub:'4+ years coaching athletes and everyday people. I help people achieve potential they didn\'t even realize they had. I bring structure, accountability and expertise to every session. You bring the effort — I handle the rest.',
 val_1_h:'Mastery',val_1_p:'Years of practice refining technique, programming, and continuous learning',val_2_h:'Strategy',val_2_p:'Training, nutrition, and lifestyle aligned toward a clear long-term plan',val_3_h:'Accountability',val_3_p:'I hold you to your goals',val_4_h:'Compassion',val_4_p:'Coaching that understands your challenges and supports your growth',
 quote_text:'"The journey of a thousand miles begins with one step."',
-video_cap:'Jims Meiser, Brussels — coached session (Marcin & Tom). Tap play to stream (YouTube, private player).',
+video_cap:'Jims Meiser, Brussels — coached session (Marcin & Tom). Tap play to watch the Short (streams from YouTube).',
+video_yt_link:'Open this Short on YouTube ↗',
 video_placeholder:'Replay coming soon — add your YouTube video ID in the script to go live.',
 srv_tag:'Services',srv_title:'What I Offer',
 srv_1_h:'Personal Training',srv_1_p:'One-on-one coaching in Brussels. Every movement monitored, every session programmed.',
@@ -978,7 +987,8 @@ phil_3_h:'Réévaluations',phil_3_p:'Votre programme évolue avec vous. Bilans h
 about_tag:'À propos de Thomas',about_title:'Votre Coach. Votre <span style="color:var(--red)">Avantage Compétitif.</span>',about_sub:'4+ ans de coaching d\'athlètes et de particuliers. J\'aide les gens à atteindre un potentiel qu\'ils ne soupçonnaient même pas. J\'apporte structure, responsabilité et expertise à chaque séance.',
 val_1_h:'Maîtrise',val_1_p:'Des années de pratique pour affiner technique et programmation',val_2_h:'Stratégie',val_2_p:'Entraînement, nutrition et style de vie alignés vers un plan à long terme',val_3_h:'Responsabilité',val_3_p:'Je vous tiens à vos objectifs',val_4_h:'Compassion',val_4_p:'Un coaching qui comprend vos défis et soutient votre croissance',
 quote_text:'« Le voyage de mille lieues commence par un seul pas. »',
-video_cap:'Jims Meiser, Bruxelles — séance coachée (Marcin & Tom). Lecture en streaming (YouTube, lecteur discret).',
+video_cap:'Jims Meiser, Bruxelles — séance coachée (Marcin & Tom). Touchez lecture pour voir le Short (streaming YouTube).',
+video_yt_link:'Ouvrir ce Short sur YouTube ↗',
 video_placeholder:'Bande bientôt disponible — ajoutez l’identifiant vidéo YouTube dans le script pour l’activer.',
 srv_tag:'Services',srv_title:'Ce que je propose',
 srv_1_h:'Coaching Personnel',srv_1_p:'Coaching individuel à Bruxelles. Chaque mouvement surveillé.',
@@ -1018,7 +1028,8 @@ phil_3_h:'Herbeoordelingen',phil_3_p:'Je programma evolueert met jou. Wekelijkse
 about_tag:'Over Thomas',about_title:'Jouw Coach. Jouw <span style="color:var(--red)">Competitief Voordeel.</span>',about_sub:'4+ jaar coaching van atleten en gewone mensen. Ik help mensen potentieel te bereiken waarvan ze niet wisten dat ze het hadden.',
 val_1_h:'Meesterschap',val_1_p:'Jaren oefening in het verfijnen van techniek en programmering',val_2_h:'Strategie',val_2_p:'Training, voeding en levensstijl afgestemd op een langetermijnplan',val_3_h:'Verantwoordelijkheid',val_3_p:'Ik houd je aan je doelen',val_4_h:'Compassie',val_4_p:'Coaching die je uitdagingen begrijpt en je groei ondersteunt',
 quote_text:'"De reis van duizend mijl begint met één stap."',
-video_cap:'Jims Meiser, Brussel — gecoachte sessie (Marcin & Tom). Afspelen streamt via YouTube (privéspeler).',
+video_cap:'Jims Meiser, Brussel — gecoachte sessie (Marcin & Tom). Tik op afspelen voor de Short (stream via YouTube).',
+video_yt_link:'Deze Short openen op YouTube ↗',
 video_placeholder:'Replay volgt — vul je YouTube-video-ID in het script in om te publiceren.',
 srv_tag:'Diensten',srv_title:'Wat Ik Aanbied',
 srv_1_h:'Personal Training',srv_1_p:'Één-op-één coaching in Brussel. Elke beweging gemonitord.',
@@ -1080,7 +1091,8 @@ if(e)e.preventDefault();
 if(!REEL_YOUTUBE_ID)return;
 const m=document.getElementById('videoReelMount');if(!m)return;
 const id=encodeURIComponent(REEL_YOUTUBE_ID);
-m.innerHTML='<div class="yt-iframe-wrap"><iframe title="Training session reel" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen src="https://www.youtube-nocookie.com/embed/'+id+'?rel=0&amp;modestbranding=1"></iframe></div>';
+const qs='rel=0&modestbranding=1&playsinline=1&autoplay=1';
+m.innerHTML='<div class="yt-iframe-wrap"><iframe title="Training session reel" loading="eager" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen src="https://www.youtube-nocookie.com/embed/'+id+'?'+qs.replace(/&/g,'&amp;')+'"></iframe></div>';
 }
 
 // ═══ DARK/LIGHT MODE ═══
