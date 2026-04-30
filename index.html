@@ -31,7 +31,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"WebSite","@id":"https://devresse.fit/#website","url":"https://devresse.fit/","name":"DEVRESSE Training","description":"Kaizen-Driven Personal Training in Brussels by Thomas Devresse","inLanguage":["en","fr","nl"],"potentialAction":{"@type":"SearchAction","target":"https://devresse.fit/?s={search_term_string}","query-input":"required name=search_term_string"}},
-{"@type":"Person","@id":"https://devresse.fit/#person","name":"Thomas Devresse","jobTitle":"Personal Trainer & Nutrition Coach","url":"https://devresse.fit/","image":"https://devresse.fit/images/hero-thomas-branded.png","sameAs":["https://instagram.com/thomasdevresse"],"address":{"@type":"PostalAddress","addressLocality":"Brussels","addressCountry":"BE"},"knowsAbout":["Personal Training","Nutrition Coaching","Body Recomposition","Strength & Conditioning","Kaizen Methodology"]},
+{"@type":"Person","@id":"https://devresse.fit/#person","name":"Thomas Devresse","jobTitle":"Personal Trainer & Nutrition Coach","url":"https://devresse.fit/","image":"https://devresse.fit/images/hero-thomas-branded.png","sameAs":["https://instagram.com/thomasdevresse"],"address":{"@type":"PostalAddress","addressLocality":"Brussels","addressCountry":"BE"},"knowsAbout":["Personal Training","Nutrition Coaching","Body Recomposition","Strength & Conditioning","Kaizen","Continuous Improvement","Evidence-Based Coaching"]},
 {"@type":"LocalBusiness","@id":"https://devresse.fit/#business","name":"DEVRESSE Training","image":"https://devresse.fit/images/hero-thomas-branded.png","url":"https://devresse.fit/","telephone":"","email":"contact@thomasdevresse.be","address":{"@type":"PostalAddress","streetAddress":"Chaussée de Wavre 1138","addressLocality":"Auderghem","postalCode":"1160","addressRegion":"Brussels-Capital","addressCountry":"BE"},"geo":{"@type":"GeoCoordinates","latitude":50.8503,"longitude":4.3517},"priceRange":"€60-€200","openingHours":"Mo-Sa 07:00-20:00","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"100","bestRating":"5"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Training Services","itemListElement":[
 {"@type":"Offer","itemOffered":{"@type":"Service","name":"Free Consultation","description":"30 min introductory session"},"price":"0","priceCurrency":"EUR"},
 {"@type":"Offer","itemOffered":{"@type":"Service","name":"Personal Training","description":"60 min one-on-one coaching"},"price":"60","priceCurrency":"EUR"},
@@ -40,7 +40,7 @@
 ]}},
 {"@type":"BreadcrumbList","@id":"https://devresse.fit/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://devresse.fit/"}]},
 {"@type":"FAQPage","@id":"https://devresse.fit/#faq","mainEntity":[
-{"@type":"Question","name":"What is the Kaizen method?","acceptedAnswer":{"@type":"Answer","text":"Kaizen means continuous improvement. Applied to fitness: small, consistent improvements every session. We prevent injuries, build lasting habits, and deliver sustainable transformations."}},
+{"@type":"Question","name":"What is Kaizen?","acceptedAnswer":{"@type":"Answer","text":"Kaizen is a Japanese philosophy of continuous improvement: steady, deliberate upgrades in a repeating cycle—not perfection as a destination, but progress through better habits over time. In coaching it means fundamentals first, calibrated progression within your limits, and regular reassessment to keep compounding gains."}},
 {"@type":"Question","name":"I'm a complete beginner — is this for me?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. We start with foundations. Every program is customised to your current level and we progress at a pace that's safe and sustainable."}},
 {"@type":"Question","name":"How quickly will I see results?","acceptedAnswer":{"@type":"Answer","text":"Energy and strength improvements in 2-3 weeks. Visible body composition changes within 6-8 weeks. Our 3-month programs deliver meaningful transformation."}},
 {"@type":"Question","name":"Where do sessions take place?","acceptedAnswer":{"@type":"Answer","text":"Jims Auderghem (Chaussée de Wavre 1138, 1160 Auderghem) and Jims Meiser (Chaussée de Louvain 650, 1030 Schaerbeek). Online coaching also available."}},
@@ -171,9 +171,12 @@ section{padding:6.5rem 2.5rem}
 .r.v{opacity:1;transform:translateY(0)}
 .r-delay-1{transition-delay:.1s}.r-delay-2{transition-delay:.2s}.r-delay-3{transition-delay:.3s}
 .r-delay-4{transition-delay:.4s}.r-delay-5{transition-delay:.5s}
+.r-delay-6{transition-delay:.6s}.r-delay-7{transition-delay:.7s}
 
 /* ── PHILOSOPHY ── */
 .phil{background:var(--black)}
+.phil .phil-copy{max-width:640px;margin-bottom:1.1rem}
+.phil .phil-copy:last-child{margin-bottom:0}
 .phil-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:3.5rem;background:rgba(255,255,255,.03)}
 .phil-card{padding:2.5rem 2rem;background:var(--dark);position:relative;overflow:hidden;cursor:default}
 .phil-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.4,0,.2,1)}
@@ -218,15 +221,22 @@ section{padding:6.5rem 2.5rem}
 .quote blockquote{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2.2vw,1.7rem);font-weight:700;font-style:italic;line-height:1.55;max-width:580px;margin:0 auto;position:relative}
 .quote .attr{margin-top:1.2rem;font-size:.6rem;color:var(--gray);letter-spacing:.18em;text-transform:uppercase}
 
-/* ── VIDEO ── */
-.video-section{background:var(--dark);padding:0;position:relative;height:500px;overflow:hidden;cursor:pointer}
-.video-section img{width:100%;height:100%;object-fit:cover;filter:brightness(.4);transition:filter .5s}
-.video-section:hover img{filter:brightness(.55)}
-.video-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:2}
-.play-btn{width:80px;height:80px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;transition:all .4s;box-shadow:0 0 0 0 rgba(196,30,42,.4)}
-.video-section:hover .play-btn{transform:scale(1.1);box-shadow:0 0 0 20px rgba(196,30,42,0)}
-.play-btn svg{width:24px;height:24px;fill:#fff;margin-left:3px}
-.video-text{margin-top:1.5rem;font-size:.6rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+/* ── VIDEO (paste REEL_YOUTUBE_ID in script after unlisted upload) ── */
+.video-section{background:var(--black);padding:0 2.5rem 5rem;position:relative}
+.video-shell{max-width:1140px;margin:0 auto;background:var(--dark);border:1px solid rgba(255,255,255,.04);overflow:hidden;border-radius:var(--radius)}
+#videoReelMount{background:#000}
+.yt-facade{aspect-ratio:16/9;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;position:relative;border:none;margin:0}
+.yt-facade::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.42)}
+.yt-facade:focus-visible{box-shadow:0 0 0 2px var(--black),0 0 0 4px var(--red)}
+.yt-play{position:relative;z-index:2;width:80px;height:80px;border-radius:50%;background:var(--red);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .35s,box-shadow .35s}
+.yt-play:hover{transform:scale(1.08);box-shadow:0 0 0 12px rgba(196,30,42,.25)}
+.yt-play svg{width:26px;height:26px;fill:#fff;margin-left:4px}
+.yt-facade--pending::before{background:rgba(0,0,0,.55)}
+.yt-pending-msg{position:relative;z-index:2;font-size:.78rem;color:var(--gray-lighter);text-align:center;max-width:22rem;line-height:1.6;margin:1rem;padding:.5rem .75rem;letter-spacing:.04em;font-weight:500}
+.yt-iframe-wrap{aspect-ratio:16/9;background:#000;position:relative}
+.yt-iframe-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-caption{padding:1rem 1.25rem 1.2rem;margin:0;font-size:.62rem;color:var(--gray);letter-spacing:.04em;line-height:1.55;text-align:center}
+html.light .video-shell{border-color:rgba(0,0,0,.08)}
 
 /* ── SERVICES ── */
 .services{background:var(--black)}
@@ -426,8 +436,10 @@ section{padding:6.5rem 2.5rem}
 .faq-q .ic{font-size:1.1rem;color:var(--red);transition:transform .3s}
 .faq-i.open .ic{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1),padding .4s}
-.faq-i.open .faq-a{max-height:300px;padding-bottom:1.1rem}
+.faq-i.open .faq-a{max-height:920px;padding-bottom:1.1rem}
 .faq-a p{font-size:.78rem;color:var(--gray-light);line-height:1.7}
+.faq-a p+p{margin-top:.75rem}
+.faq-a a{color:var(--red);text-underline-offset:3px;text-decoration-thickness:1px}
 
 /* ── NEWSLETTER ── */
 .news{background:var(--red);padding:3.5rem 2.5rem}
@@ -557,7 +569,7 @@ html.light .hero-right::after{background:linear-gradient(90deg,rgba(245,240,235,
 }
 @media(max-width:768px){
 nav{padding:.7rem 1.2rem}.nav-mid,.nav-book{display:none}.hamburger{display:flex}
-section{padding:4rem 1.2rem}
+section{padding:4rem 1.2rem}.video-section{padding:0 1.2rem 3.5rem}
 .hero-left{padding:6rem 1.2rem 3rem}
 .hero-stats{flex-wrap:wrap;gap:1.2rem}
 .about-grid,.cnt-grid{grid-template-columns:1fr;gap:2.5rem}
@@ -569,7 +581,6 @@ section{padding:4rem 1.2rem}
 .news-form{flex-direction:column}
 .foot-top{grid-template-columns:1fr}
 .proof{gap:1.2rem;padding:1.2rem}
-.video-section{height:300px}
 .cnt-img{height:250px}
 .float-cta{bottom:1rem;right:1rem;padding:.6rem 1rem;font-size:.5rem}
 }
@@ -637,7 +648,7 @@ section{padding:4rem 1.2rem}
 <section class="hero">
 <div class="hero-left">
 <div class="hero-tag" data-i18n="hero_tag">Premium Coaching — Brussels</div>
-<h1 data-i18n-html="hero_h1"><span class="orange">Big Steps.</span><br>Transformations.</h1>
+<h1 data-i18n-html="hero_h1">Small Steps.<br><span class="red">Big</span><br>Transformations.</h1>
 <p class="hero-sub" data-i18n="hero_sub">Rooted in the Japanese philosophy of Kaizen — continuous improvement. I build lasting results through consistency, precision, and small daily improvements. Evidence-based coaching. No gimmicks.</p>
 <div class="hero-btns">
 <a href="#booking" class="btn btn-red" data-i18n="hero_btn_book">Book a Session <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -646,7 +657,7 @@ section{padding:4rem 1.2rem}
 <div class="hero-stats">
 <div class="stat"><div class="stat-num"><span class="counter" data-target="4">0</span>+</div><div class="stat-lbl" data-i18n="stat_years">Years Experience</div></div>
 <div class="stat"><div class="stat-num"><span class="counter" data-target="100">0</span>+</div><div class="stat-lbl" data-i18n="stat_clients">Clients Coached</div></div>
-<div class="stat"><div class="stat-num"><span class="counter" data-target="3500">0</span>+</div><div class="stat-lbl" data-i18n="stat_hours">Hours of Coaching</div></div>
+<div class="stat"><div class="stat-num"><span class="counter" data-target="20">0</span>+</div><div class="stat-lbl" data-i18n="stat_certs">Courses & certifications</div></div>
 </div>
 </div>
 <div class="hero-right"><img src="images/hero-thomas-branded.png" alt="Thomas Devresse"></div>
@@ -662,11 +673,14 @@ section{padding:4rem 1.2rem}
 <section class="phil" id="phil"><div class="container">
 <div class="tag" data-i18n="phil_tag">The Kaizen Method</div>
 <h2 class="title r" data-i18n-html="phil_title">How I Get You <span style="color:var(--red)">Results</span></h2>
-<p class="subtitle r r-delay-1" data-i18n="phil_sub">A structured, progressive approach to training. Small consistent improvements every day. Foundations first. Results that last a lifetime.</p>
+<p class="subtitle phil-copy r r-delay-1" data-i18n="phil_kaizen">Kaizen is a Japanese philosophy rooted in one idea: it's not about perfection — it's about progress. The goal is never the destination; it's the process of constantly becoming better. Through continuous cycles of small, deliberate improvements, you assess where you are, act on what can be better, and repeat. It's a mindset of relentless self-improvement, where progress never stops — it compounds.</p>
+<p class="subtitle phil-copy r r-delay-2" data-i18n="phil_anchor">This philosophy is the anchor of everything I do as a coach.</p>
+<p class="subtitle phil-copy r r-delay-3" data-i18n="phil_guidance">We start with a thorough assessment to pinpoint exactly where you are and what's holding you back. From there, I guide you step by step — challenging you progressively while always working within your boundaries. Nothing is rushed. Nothing is skipped.</p>
+<p class="subtitle phil-copy r r-delay-4" data-i18n="phil_reeval">What surprises most clients is what happens after they hit their first goal: they realize they're capable of more. So we re-evaluate, raise the bar, and run the cycle again.</p>
 <div class="phil-grid">
-<div class="phil-card r r-delay-1" data-kanji="基"><div class="phil-jp">基礎</div><h3 data-i18n="phil_1_h">Build Foundations</h3><p data-i18n="phil_1_p">Starting with a thorough physical assessment, we identify and strengthen your weak links. We work on optimizing your movement patterns. Before heavy lifts, perfect form. Before intensity, consistency. Strong roots grow tall trees.</p></div>
-<div class="phil-card r r-delay-2" data-kanji="一"><div class="phil-jp">一歩</div><h3 data-i18n="phil_2_h">Step by Step</h3><p data-i18n="phil_2_p">Personalized exercise selection. Strategic weight management. Progressive overload. Every session is tracked and programmed to push you forward without risking injury.</p></div>
-<div class="phil-card r r-delay-3" data-kanji="反"><div class="phil-jp">反省</div><h3 data-i18n="phil_3_h">Re-assessments</h3><p data-i18n="phil_3_p">Your program evolves with you. Weekly reviews, data-driven adjustments, and honest feedback to keep progress constant.</p></div>
+<div class="phil-card r r-delay-5" data-kanji="基"><div class="phil-jp">基礎</div><h3 data-i18n="phil_1_h">Build Foundations</h3><p data-i18n="phil_1_p">Starting with a thorough physical assessment, we identify and strengthen your weak links. We work on optimizing your movement patterns. Before heavy lifts, perfect form. Before intensity, consistency. Strong roots grow tall trees.</p></div>
+<div class="phil-card r r-delay-6" data-kanji="一"><div class="phil-jp">一歩</div><h3 data-i18n="phil_2_h">Step by Step</h3><p data-i18n="phil_2_p">Personalized exercise selection. Strategic weight management. Progressive overload. Every session is tracked and programmed to push you forward without risking injury.</p></div>
+<div class="phil-card r r-delay-7" data-kanji="反"><div class="phil-jp">反省</div><h3 data-i18n="phil_3_h">Re-assessments</h3><p data-i18n="phil_3_p">Your program evolves with you. Weekly reviews, data-driven adjustments, and honest feedback to keep progress constant.</p></div>
 </div>
 </div></section>
 
@@ -702,14 +716,11 @@ section{padding:4rem 1.2rem}
 <!-- Quote -->
 <div class="quote"><blockquote class="r" data-i18n="quote_text">"The journey of a thousand miles begins with one step."</blockquote><p class="attr r r-delay-1">— Lao Tzu</p></div>
 
-<!-- ═══ VIDEO ═══ -->
-<div class="video-section" onclick="this.querySelector('.play-btn').style.display='none';this.querySelector('.video-text').textContent='Video coming soon'">
-<img src="images/1054.jpg" alt="Training session">
-<div class="video-overlay">
-<div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-<p class="video-text">Watch the Method</p>
-</div>
-</div>
+<!-- ═══ VIDEO (YouTube embed: set REEL_YOUTUBE_ID in page script — see comment there) ═══ -->
+<div class="video-section r" id="trainer-reel"><div class="video-shell">
+<div id="videoReelMount"></div>
+<p class="video-caption" data-i18n="video_cap">Jims Meiser, Brussels — coached session (Marcin & Tom). Tap play to stream when a YouTube ID is set.</p>
+</div></div>
 
 <!-- ═══ SERVICES ═══ -->
 <section class="services" id="services"><div class="container">
@@ -802,7 +813,7 @@ section{padding:4rem 1.2rem}
 <div class="proof-i"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span><strong>Sport Performance</strong> Specialist</span></div>
 <div class="proof-i"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span><strong>100+</strong> clients</span></div>
 <div class="proof-i"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span><strong>5.0</strong> rating</span></div>
-<div class="proof-i"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><path d="M16 11a4 4 0 11-8 0 4 4 0 018 0z"/></svg><span><strong>3500+</strong> hours coaching</span></div>
+<div class="proof-i"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><path d="M16 11a4 4 0 11-8 0 4 4 0 018 0z"/></svg><span data-i18n-html="proof_certs"><strong>20+</strong> courses & certifications</span></div>
 </div>
 
 <!-- ═══ TESTIMONIALS CAROUSEL ═══ -->
@@ -835,7 +846,7 @@ section{padding:4rem 1.2rem}
 <div class="tag" style="justify-content:center;display:flex" data-i18n="faq_tag">FAQ</div>
 <h2 class="title r" style="text-align:center" data-i18n="faq_title">Common Questions</h2>
 <div class="faq-list">
-<div class="faq-i"><div class="faq-q" onclick="togFaq(this)"><h4>What is the Kaizen method?</h4><span class="ic">+</span></div><div class="faq-a"><p>Kaizen means continuous improvement. Applied to fitness: small, consistent improvements every session. We prevent injuries, build lasting habits, and deliver sustainable transformations.</p></div></div>
+<div class="faq-i"><div class="faq-q" onclick="togFaq(this)"><h4 data-i18n="faq_q_kaizen">What is Kaizen?</h4><span class="ic">+</span></div><div class="faq-a" data-i18n-html="faq_a_kaizen"><p>Kaizen (改善) is Japanese for “change for the better.” At its core it is not about chasing a flawless finish line—it is about progress through small, repeatable cycles: see where you are, improve something concrete, revisit, repeat. Done honestly, momentum compounds instead of yo-yoing.</p><p>In fitness that shows up as movement quality inching forward week to week, sustainable load jumps, tighter recovery habits—nothing heroic overnight, everything measurable across months.</p><p>My coaching treats Kaizen as the spine of every plan: deep assessment, paced challenge inside your limits, then reassessment when goals move. Read the fuller story in <a href="#phil">the Kaizen Method section</a>.</p></div></div>
 <div class="faq-i"><div class="faq-q" onclick="togFaq(this)"><h4>I'm a complete beginner — is this for me?</h4><span class="ic">+</span></div><div class="faq-a"><p>Absolutely. We start with foundations. Every program is customised to your current level and we progress at a pace that's safe and sustainable.</p></div></div>
 <div class="faq-i"><div class="faq-q" onclick="togFaq(this)"><h4>How quickly will I see results?</h4><span class="ic">+</span></div><div class="faq-a"><p>Energy and strength improvements in 2-3 weeks. Visible body composition changes within 6-8 weeks. Our 3-month programs deliver meaningful transformation.</p></div></div>
 <div class="faq-i"><div class="faq-q" onclick="togFaq(this)"><h4>Where do sessions take place?</h4><span class="ic">+</span></div><div class="faq-a"><p><strong>Jims Auderghem:</strong> Chaussée de Wavre 1138, 1160 Auderghem<br><strong>Jims Meiser:</strong> Chaussée de Louvain 650, 1030 Schaerbeek<br>Online coaching also available for those outside Brussels.</p></div></div>
@@ -903,22 +914,32 @@ section{padding:4rem 1.2rem}
 </footer>
 
 <script>
+// Session reel (YouTube Shorts — streams only after play): https://www.youtube.com/shorts/BTwTdZJq63I — paste ID only below (empty = placeholder).
+const REEL_YOUTUBE_ID = 'BTwTdZJq63I';
+
 // ═══ i18n TRANSLATIONS ═══
 const i18n={
 en:{
 nav_phil:'Method',nav_about:'About',nav_services:'Services',nav_book_link:'Book',nav_shop:'Shop',nav_reviews:'Reviews',nav_contact:'Contact',nav_book:'Book Now',
 hero_tag:'Premium Coaching — Brussels',
-hero_h1:'<span class="orange">Big Steps.</span><br>Transformations.',
+hero_h1:'Small Steps.<br><span class="red">Big</span><br>Transformations.',
 hero_sub:'Rooted in the Japanese philosophy of Kaizen — continuous improvement. I build lasting results through consistency, precision, and small daily improvements. Evidence-based coaching. No gimmicks.',
 hero_btn_book:'Book a Session',hero_btn_method:'Discover the Method',
-stat_years:'Years Experience',stat_clients:'Clients Coached',stat_hours:'Hours of Coaching',
-phil_tag:'The Kaizen Method',phil_title:'How I Get You <span style="color:var(--red)">Results</span>',phil_sub:'A structured, progressive approach to training. Small consistent improvements every day. Foundations first. Results that last a lifetime.',
+stat_years:'Years Experience',stat_clients:'Clients Coached',stat_certs:'Courses & certifications',
+proof_certs:'<strong>20+</strong> courses & certifications',
+phil_tag:'The Kaizen Method',phil_title:'How I Get You <span style="color:var(--red)">Results</span>',
+phil_kaizen:'Kaizen is a Japanese philosophy rooted in one idea: it\'s not about perfection — it\'s about progress. The goal is never the destination; it\'s the process of constantly becoming better. Through continuous cycles of small, deliberate improvements, you assess where you are, act on what can be better, and repeat. It\'s a mindset of relentless self-improvement, where progress never stops — it compounds.',
+phil_anchor:'This philosophy is the anchor of everything I do as a coach.',
+phil_guidance:'We start with a thorough assessment to pinpoint exactly where you are and what\'s holding you back. From there, I guide you step by step — challenging you progressively while always working within your boundaries. Nothing is rushed. Nothing is skipped.',
+phil_reeval:'What surprises most clients is what happens after they hit their first goal: they realize they\'re capable of more. So we re-evaluate, raise the bar, and run the cycle again.',
 phil_1_h:'Build Foundations',phil_1_p:'Starting with a thorough physical assessment, we identify and strengthen your weak links. We work on optimizing your movement patterns. Before heavy lifts, perfect form. Before intensity, consistency. Strong roots grow tall trees.',
 phil_2_h:'Step by Step',phil_2_p:'Personalized exercise selection. Strategic weight management. Progressive overload. Every session is tracked and programmed to push you forward without risking injury.',
 phil_3_h:'Re-assessments',phil_3_p:'Your program evolves with you. Weekly reviews, data-driven adjustments, and honest feedback to keep progress constant.',
 about_tag:'About Thomas',about_title:'Your Coach. Your <span style="color:var(--red)">Competitive Edge.</span>',about_sub:'4+ years coaching athletes and everyday people. I help people achieve potential they didn\'t even realize they had. I bring structure, accountability and expertise to every session. You bring the effort — I handle the rest.',
 val_1_h:'Mastery',val_1_p:'Years of practice refining technique, programming, and continuous learning',val_2_h:'Strategy',val_2_p:'Training, nutrition, and lifestyle aligned toward a clear long-term plan',val_3_h:'Accountability',val_3_p:'I hold you to your goals',val_4_h:'Compassion',val_4_p:'Coaching that understands your challenges and supports your growth',
 quote_text:'"The journey of a thousand miles begins with one step."',
+video_cap:'Jims Meiser, Brussels — coached session (Marcin & Tom). Tap play to stream (YouTube, private player).',
+video_placeholder:'Replay coming soon — add your YouTube video ID in the script to go live.',
 srv_tag:'Services',srv_title:'What I Offer',
 srv_1_h:'Personal Training',srv_1_p:'One-on-one coaching in Brussels. Every movement monitored, every session programmed.',
 srv_2_h:'Nutrition Coaching',srv_2_p:'Sustainable nutrition guidance. Real food, lasting habits.',
@@ -930,6 +951,8 @@ tf_tag:'Client Results',tf_title:'Real <span style="color:var(--red)">Transforma
 testi_tag:'Client Stories',testi_title:'What They Say',
 res_tag:'Free Resources',res_title:'Training <span style="color:var(--red)">Resources</span>',
 faq_tag:'FAQ',faq_title:'Common Questions',
+faq_q_kaizen:'What is Kaizen?',
+faq_a_kaizen:'<p>Kaizen (改善) is Japanese for “change for the better.” At its core it is not about chasing a flawless finish line—it is about progress through small, repeatable cycles: see where you are, improve something concrete, revisit, repeat. Done honestly, momentum compounds instead of yo-yoing.</p><p>In fitness that shows up as movement quality inching forward week to week, sustainable load jumps, tighter recovery habits—nothing heroic overnight, everything measurable across months.</p><p>My coaching treats Kaizen as the spine of every plan: deep assessment, paced challenge inside your limits, then reassessment when goals move. Read the fuller story in <a href="#phil">the Kaizen Method section</a>.</p>',
 news_h:'Stay Updated',news_p:'Get training tips, insights, and updates directly to your inbox. No spam.',
 cnt_tag:'Get Started',cnt_title:'Based in Brussels',cnt_h:'Begin Your Kaizen Journey',
 cta_title:'1% Better. Every <span style="color:var(--red)">Day.</span>',cta_sub:'Stop chasing quick fixes. Start building something that lasts.',cta_btn:'Start Today',
@@ -939,17 +962,24 @@ float_cta:'Book a Session'
 fr:{
 nav_phil:'Méthode',nav_about:'À propos',nav_services:'Services',nav_book_link:'Réserver',nav_shop:'Boutique',nav_reviews:'Avis',nav_contact:'Contact',nav_book:'Réserver',
 hero_tag:'Coaching Premium — Bruxelles',
-hero_h1:'<span class="orange">Grands Pas.</span><br>Transformations.',
+hero_h1:'Petits pas.<br><span class="red">Grand</span><br>Transformations.',
 hero_sub:'Enraciné dans la philosophie japonaise du Kaizen — l\'amélioration continue. Je construis des résultats durables par la constance, la précision et de petites améliorations quotidiennes. Coaching basé sur les preuves. Pas de gadgets.',
 hero_btn_book:'Réserver une séance',hero_btn_method:'Découvrir la Méthode',
-stat_years:'Années d\'expérience',stat_clients:'Clients coachés',stat_hours:'Heures de coaching',
-phil_tag:'La Méthode Kaizen',phil_title:'Comment j\'obtiens vos <span style="color:var(--red)">Résultats</span>',phil_sub:'Une approche structurée et progressive. De petites améliorations constantes chaque jour. Les fondations d\'abord. Des résultats qui durent toute une vie.',
+stat_years:'Années d\'expérience',stat_clients:'Clients coachés',stat_certs:'Formations & certifications',
+proof_certs:'<strong>20+</strong> formations & certifications',
+phil_tag:'La Méthode Kaizen',phil_title:'Comment j\'obtiens vos <span style="color:var(--red)">Résultats</span>',
+phil_kaizen:'Le Kaizen est une philosophie japonaise fondée sur une idée simple : il ne s’agit pas de viser la perfection, mais la progression. La cible n’est pas une destination figée ; c’est le processus qui consiste sans cesse à devenir meilleur. Par des cycles répétés de petites améliorations réfléchies, vous prenez vos repères, agissez sur ce qui peut l’être, puis vous recommencez. C’est une posture d’amélioration continue : la progression ne s’arrête jamais, elle se cumule.',
+phil_anchor:'Cette philosophie est l’ancrage de tout ce que je fais en tant que coach.',
+phil_guidance:'Nous commençons par une évaluation approfondie pour situer précisément votre niveau et ce qui vous freine. Ensuite je vous accompagne pas à pas — avec un stimulus progressif tout en respectant vos limites. Rien n’est précipité. On ne coupe aucune étape.',
+phil_reeval:'Ce qui surprend souvent les clients, c’est après le premier palier franchi : ils réalisent qu’ils peuvent aller bien plus loin. Nous réévaluons, relevons la barre et relançons le cycle.',
 phil_1_h:'Construire les Fondations',phil_1_p:'En commençant par une évaluation physique approfondie, nous identifions et renforçons vos points faibles. Nous optimisons vos schémas de mouvement. Avant les charges lourdes, la forme parfaite.',
 phil_2_h:'Pas à Pas',phil_2_p:'Sélection d\'exercices personnalisée. Gestion stratégique du poids. Surcharge progressive. Chaque séance est suivie et programmée pour vous faire progresser sans risque.',
 phil_3_h:'Réévaluations',phil_3_p:'Votre programme évolue avec vous. Bilans hebdomadaires, ajustements basés sur les données et feedback honnête.',
 about_tag:'À propos de Thomas',about_title:'Votre Coach. Votre <span style="color:var(--red)">Avantage Compétitif.</span>',about_sub:'4+ ans de coaching d\'athlètes et de particuliers. J\'aide les gens à atteindre un potentiel qu\'ils ne soupçonnaient même pas. J\'apporte structure, responsabilité et expertise à chaque séance.',
 val_1_h:'Maîtrise',val_1_p:'Des années de pratique pour affiner technique et programmation',val_2_h:'Stratégie',val_2_p:'Entraînement, nutrition et style de vie alignés vers un plan à long terme',val_3_h:'Responsabilité',val_3_p:'Je vous tiens à vos objectifs',val_4_h:'Compassion',val_4_p:'Un coaching qui comprend vos défis et soutient votre croissance',
 quote_text:'« Le voyage de mille lieues commence par un seul pas. »',
+video_cap:'Jims Meiser, Bruxelles — séance coachée (Marcin & Tom). Lecture en streaming (YouTube, lecteur discret).',
+video_placeholder:'Bande bientôt disponible — ajoutez l’identifiant vidéo YouTube dans le script pour l’activer.',
 srv_tag:'Services',srv_title:'Ce que je propose',
 srv_1_h:'Coaching Personnel',srv_1_p:'Coaching individuel à Bruxelles. Chaque mouvement surveillé.',
 srv_2_h:'Coaching Nutritionnel',srv_2_p:'Nutrition durable. Vraie nourriture, habitudes durables.',
@@ -961,6 +991,8 @@ tf_tag:'Résultats Clients',tf_title:'Vraies <span style="color:var(--red)">Tran
 testi_tag:'Témoignages',testi_title:'Ce qu\'ils disent',
 res_tag:'Ressources Gratuites',res_title:'Ressources <span style="color:var(--red)">Training</span>',
 faq_tag:'FAQ',faq_title:'Questions Fréquentes',
+faq_q_kaizen:'Qu’est-ce que le Kaizen ?',
+faq_a_kaizen:'<p>Kaizen (改善) peut se traduire par « changer pour le mieux ». Ce n’est pas traquer une fin parfaite, mais gagner du terrain avec des boucles régulières : observer où vous en êtes, ajuster quelque chose de mesurable, revenir faire le point, puis recommencer. Bien conduit, cet effet boule de neige évite les à-coups.</p><p>Dans la pratique du training cela prend la forme d’une technique qui se nettoie semaine après semaine, de charges bien choisies, de récupération et d’habitudes du quotidien qui se fixent peu à peu—rien de spectaculaire en une semaine, tout se construit dans la durée.</p><p>Mon coaching prend le Kaizen pour structure : analyse poussée, progression calibrée à votre réalité, puis réétude des objectifs quand ils évoluent. Retrouvez le détail dans <a href="#phil">la section Méthode Kaizen</a>.</p>',
 news_h:'Restez Informé',news_p:'Conseils d\'entraînement, insights et mises à jour directement dans votre boîte mail. Pas de spam.',
 cnt_tag:'Commencer',cnt_title:'Basé à Bruxelles',cnt_h:'Commencez Votre Parcours Kaizen',
 cta_title:'1% Meilleur. Chaque <span style="color:var(--red)">Jour.</span>',cta_sub:'Arrêtez de chercher des solutions rapides. Construisez quelque chose qui dure.',cta_btn:'Commencer Aujourd\'hui',
@@ -970,17 +1002,24 @@ float_cta:'Réserver une Séance'
 nl:{
 nav_phil:'Methode',nav_about:'Over mij',nav_services:'Diensten',nav_book_link:'Boek',nav_shop:'Winkel',nav_reviews:'Reviews',nav_contact:'Contact',nav_book:'Boek Nu',
 hero_tag:'Premium Coaching — Brussel',
-hero_h1:'<span class="orange">Grote Stappen.</span><br>Transformaties.',
+hero_h1:'Kleine stappen.<br><span class="red">Groot</span><br>Transformaties.',
 hero_sub:'Geworteld in de Japanse filosofie van Kaizen — continue verbetering. Ik bouw blijvende resultaten door consistentie, precisie en kleine dagelijkse verbeteringen. Evidence-based coaching. Geen gimmicks.',
 hero_btn_book:'Boek een Sessie',hero_btn_method:'Ontdek de Methode',
-stat_years:'Jaren Ervaring',stat_clients:'Klanten Gecoacht',stat_hours:'Uren Coaching',
-phil_tag:'De Kaizen Methode',phil_title:'Hoe Ik Jouw <span style="color:var(--red)">Resultaten</span> Behaal',phil_sub:'Een gestructureerde, progressieve aanpak. Kleine consistente verbeteringen elke dag. Eerst de fundamenten. Resultaten die een leven lang meegaan.',
+stat_years:'Jaren Ervaring',stat_clients:'Klanten Gecoacht',stat_certs:'Cursussen & certificeringen',
+proof_certs:'<strong>20+</strong> cursussen & certificeringen',
+phil_tag:'De Kaizen Methode',phil_title:'Hoe Ik Jouw <span style="color:var(--red)">Resultaten</span> Behaal',
+phil_kaizen:'Kaizen is een Japanse filosofie met één kernidee: het gaat niet om perfectie — het gaat om vooruitgang. Het doel is geen vast eindpunt maar het proces van steeds beter worden. Door voortdurende cycli van kleine, bewuste verbeteringen bekijk je waar je staat, pas je toe wat slimmer kan, en begin je opnieuw. Het is een houding van aanhoudende zelfverbetering: vooruitgang stopt niet — die stapelt zich op.',
+phil_anchor:'Deze filosofie is het fundament van alles wat ik als coach doe.',
+phil_guidance:'We beginnen met een grondige assessment om scherp te krijgen waar je staat en wat je belemmert. Van daaruit leid ik je stap voor stap — ik daag je progressief uit, altijd binnen jouw grenzen. Niets wordt gehaast. Niets wordt overgeslagen.',
+phil_reeval:'Wat cliënten vaak verrast, is wat er gebeurt na hun eerste mijlpaal: ze merken dat er meer mogelijk is. Dan evalueren we opnieuw, verhogen de lat en doorlopen we de cyclus nog eens.',
 phil_1_h:'Fundamenten Bouwen',phil_1_p:'Beginnend met een grondige fysieke beoordeling identificeren we je zwakke punten. We optimaliseren je bewegingspatronen. Voor zware lifts, perfecte vorm.',
 phil_2_h:'Stap voor Stap',phil_2_p:'Gepersonaliseerde oefenselectie. Strategisch gewichtsbeheer. Progressieve overbelasting. Elke sessie wordt gevolgd en geprogrammeerd.',
 phil_3_h:'Herbeoordelingen',phil_3_p:'Je programma evolueert met jou. Wekelijkse evaluaties, datagestuurde aanpassingen en eerlijke feedback.',
 about_tag:'Over Thomas',about_title:'Jouw Coach. Jouw <span style="color:var(--red)">Competitief Voordeel.</span>',about_sub:'4+ jaar coaching van atleten en gewone mensen. Ik help mensen potentieel te bereiken waarvan ze niet wisten dat ze het hadden.',
 val_1_h:'Meesterschap',val_1_p:'Jaren oefening in het verfijnen van techniek en programmering',val_2_h:'Strategie',val_2_p:'Training, voeding en levensstijl afgestemd op een langetermijnplan',val_3_h:'Verantwoordelijkheid',val_3_p:'Ik houd je aan je doelen',val_4_h:'Compassie',val_4_p:'Coaching die je uitdagingen begrijpt en je groei ondersteunt',
 quote_text:'"De reis van duizend mijl begint met één stap."',
+video_cap:'Jims Meiser, Brussel — gecoachte sessie (Marcin & Tom). Afspelen streamt via YouTube (privéspeler).',
+video_placeholder:'Replay volgt — vul je YouTube-video-ID in het script in om te publiceren.',
 srv_tag:'Diensten',srv_title:'Wat Ik Aanbied',
 srv_1_h:'Personal Training',srv_1_p:'Één-op-één coaching in Brussel. Elke beweging gemonitord.',
 srv_2_h:'Voedingscoaching',srv_2_p:'Duurzame voedingsbegeleiding. Echt eten, blijvende gewoontes.',
@@ -992,6 +1031,8 @@ tf_tag:'Klantresultaten',tf_title:'Echte <span style="color:var(--red)">Transfor
 testi_tag:'Klantverhalen',testi_title:'Wat Ze Zeggen',
 res_tag:'Gratis Bronnen',res_title:'Training <span style="color:var(--red)">Bronnen</span>',
 faq_tag:'FAQ',faq_title:'Veelgestelde Vragen',
+faq_q_kaizen:'Wat is Kaizen?',
+faq_a_kaizen:'<p>Kaizen (改善) betekent in het Japans zo veel als “veranderen ten goede.” Het draait niet om één perfect eindplaatje, maar om vooruitgang in kleine herhaalbare rondes: kijk waar je staat, maak iets tastbaars beter, evalueer, en begin opnieuw. Als je dit eerlijk doet, stapel je vooruitgang in plaats van jojoën.</p><p>In fitness wordt dat techniek die stap voor beetje scherper wordt, slimmere belasting, beter herstel en stabiele gewoontes—niets overdreven in één weekend, wel meetbaar over maanden.</p><p>Alles wat ik aan coaching op de kaart zet, gebruikt deze Kaizen-lijn: diepe intake, op tempo uitdagen binnen jouw grenzen en opnieuw kijken wanneer doelen verschuiven. Lees meer in <a href="#phil">de sectie De Kaizen-methode</a>.</p>',
 news_h:'Blijf Op de Hoogte',news_p:'Trainingstips, inzichten en updates rechtstreeks in je inbox. Geen spam.',
 cnt_tag:'Aan de Slag',cnt_title:'Gevestigd in Brussel',cnt_h:'Begin Jouw Kaizen Reis',
 cta_title:'1% Beter. Elke <span style="color:var(--red)">Dag.</span>',cta_sub:'Stop met snelle oplossingen zoeken. Bouw iets dat blijft.',cta_btn:'Start Vandaag',
@@ -1022,6 +1063,24 @@ const k=el.dataset.i18nHtml;if(t[k])el.innerHTML=t[k];
 });
 document.querySelector('.lang-dd')?.classList.remove('open');
 localStorage.setItem('td_lang',lang);
+}
+
+function initTrainerReel(){
+const m=document.getElementById('videoReelMount');if(!m)return;
+if(REEL_YOUTUBE_ID){
+m.innerHTML='<div class="yt-facade" style="background-image:url(images/1054.jpg)" role="presentation"><button type="button" class="yt-play" onclick="trainerReelPlay(event)" aria-label="Play video"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></button></div>';
+}else{
+m.innerHTML='<div class="yt-facade yt-facade--pending" style="background-image:url(images/1054.jpg)"><p class="yt-pending-msg" data-i18n="video_placeholder">Replay coming soon.</p></div>';
+}
+setLang(curLang);
+}
+
+function trainerReelPlay(e){
+if(e)e.preventDefault();
+if(!REEL_YOUTUBE_ID)return;
+const m=document.getElementById('videoReelMount');if(!m)return;
+const id=encodeURIComponent(REEL_YOUTUBE_ID);
+m.innerHTML='<div class="yt-iframe-wrap"><iframe title="Training session reel" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen src="https://www.youtube-nocookie.com/embed/'+id+'?rel=0&amp;modestbranding=1"></iframe></div>';
 }
 
 // ═══ DARK/LIGHT MODE ═══
@@ -1065,7 +1124,7 @@ let cart=[];
 // ═══ INIT ═══
 function init(){
 try{
-renderShop();renderCal();updateCart();initCounters();initCarousel();
+renderShop();renderCal();updateCart();initCounters();initCarousel();initTrainerReel();
 }catch(e){console.error(e)}
 }
 

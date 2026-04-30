@@ -1,0 +1,6 @@
+api
+node_modules
+.git
+.env*
+.vercel
+videos

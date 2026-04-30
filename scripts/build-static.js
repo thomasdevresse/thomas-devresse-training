@@ -22,4 +22,6 @@ if (fs.existsSync(imagesDir)) {
   });
 }
 
+// Self-hosted video assets are intentionally omitted — reel uses YouTube embed only (keeps deploy size small).
+
 console.log('Static files copied to public/');
