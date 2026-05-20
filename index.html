@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#080808">
 <title>DEVRESSE 改 — Personal Training Coach Brussels | Thomas Devresse</title>
-<meta name="description" content="Elite personal training in Brussels rooted in the Kaizen philosophy. Thomas Devresse offers structured 1-on-1 coaching, nutrition guidance, body recomposition, and premium supplements. Book your free consultation.">
+<meta name="description" content="Elite personal training in Brussels rooted in the Kaizen philosophy. Thomas Devresse offers structured 1-on-1 coaching, nutrition guidance, and body recomposition. Book your free consultation.">
 <meta name="keywords" content="personal trainer Brussels, elite coaching, Thomas Devresse, Kaizen fitness, personal coaching Belgium, nutrition coaching, body recomposition, strength conditioning, fitness Brussels">
 <meta name="author" content="Thomas Devresse">
 <meta name="robots" content="index, follow">
@@ -391,11 +391,25 @@ html.light .video-shell{border-color:rgba(0,0,0,.08)}
 
 /* ── CONTACT ── */
 .contact{background:var(--dark)}
-.cnt-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:3.5rem;align-items:center}
-.cnt-img{position:relative;overflow:hidden;height:420px}
-.cnt-img img{width:100%;height:100%;object-fit:cover}
-.cnt-img::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,var(--dark) 5%,transparent 40%)}
-.cnt-info h3{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:800;margin-bottom:1.2rem}
+.cnt-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:3rem;margin-top:3.5rem;align-items:start}
+.cnt-visual{display:flex;flex-direction:column;gap:.75rem}
+.cnt-img{position:relative;overflow:hidden;aspect-ratio:4/5;max-height:520px;border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);background:var(--dark-2)}
+.cnt-img img{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block}
+.cnt-img::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,var(--dark) 0%,transparent 32%),linear-gradient(90deg,var(--dark) 0%,transparent 18%)}
+.cnt-frame{position:absolute;inset:1rem;border:1px solid rgba(196,30,42,.22);pointer-events:none;border-radius:var(--radius)}
+.cnt-img-cap{font-size:.58rem;color:var(--gray);letter-spacing:.12em;text-transform:uppercase;text-align:center}
+.cnt-info h3{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:800;margin-bottom:1.4rem}
+.cnt-locations{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-bottom:1.2rem}
+.cnt-loc-card{padding:1rem 1.05rem;background:var(--dark-2);border:1px solid rgba(255,255,255,.04);border-radius:var(--radius)}
+.cnt-loc-card h5{font-size:.52rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:.45rem}
+.cnt-loc-card p{font-size:.72rem;color:var(--gray-light);line-height:1.55}
+.cnt-loc-card a{color:var(--red);text-decoration:none;font-size:.68rem;margin-top:.35rem;display:inline-block}
+.cnt-loc-card a:hover{color:var(--red-light)}
+.cnt-channels{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-bottom:0}
+.cnt-channels .li{margin-bottom:0}
+.cnt-form{border-top:1px solid rgba(255,255,255,.06);margin-top:1.35rem;padding-top:1.35rem}
+html.light .cnt-img{border-color:rgba(0,0,0,.08)}
+html.light .cnt-loc-card{background:var(--dark-2);border-color:rgba(0,0,0,.06)}
 .li{display:flex;align-items:flex-start;gap:.7rem;margin-bottom:.9rem}
 .li-ico{width:32px;height:32px;flex-shrink:0;background:var(--dark-2);display:flex;align-items:center;justify-content:center;border-radius:var(--radius)}
 .li-ico svg{width:13px;height:13px;stroke:var(--red);fill:none;stroke-width:2}
@@ -451,11 +465,6 @@ html.light .btn-ghost{color:var(--white);border-color:rgba(0,0,0,.15)}
 html.light .btn-ghost:hover{border-color:var(--red);color:var(--red)}
 html.light .book-panel,.light .bt,.light .fg input,.light .sl{background:var(--dark-2);border-color:rgba(0,0,0,.08)}
 html.light .fg input{color:var(--white);background:var(--dark-3)}
-html.light .ci{border-color:rgba(0,0,0,.06)}
-html.light .co-box{background:var(--dark);border-color:rgba(0,0,0,.06)}
-html.light .prod{background:var(--dark)}
-html.light .prod-img{background:var(--dark-2)}
-html.light .add-btn{border-color:rgba(0,0,0,.12);color:var(--white)}
 html.light .val{border-color:rgba(0,0,0,.06);background:rgba(0,0,0,.02)}
 html.light .val:hover{border-color:rgba(196,30,42,.2);background:rgba(196,30,42,.03)}
 html.light .tf-card{background:var(--dark-2)}
@@ -470,10 +479,7 @@ html.light footer{background:var(--dark);border-color:rgba(0,0,0,.06)}
 html.light .foot-social a{border-color:rgba(0,0,0,.1)}
 html.light .foot-bottom{border-color:rgba(0,0,0,.06)}
 html.light .toast{background:var(--dark);border-color:rgba(0,0,0,.08)}
-html.light .qb{border-color:rgba(0,0,0,.1);color:var(--white)}
-html.light .ship-bar-track{background:var(--dark-3)}
 html.light .book-info{background:var(--dark-3)}
-html.light .co-summary{background:var(--dark-2)}
 html.light .gallery img{filter:grayscale(.2) brightness(.95)}
 html.light .about-expand{border-color:rgba(0,0,0,.06);background:rgba(0,0,0,.02)}
 
@@ -514,7 +520,8 @@ section{padding:4rem 1.2rem}.video-section{padding:0 1.2rem 3.5rem}
 .news-form{flex-direction:column}
 .foot-top{grid-template-columns:1fr}
 .proof{gap:1.2rem;padding:1.2rem}
-.cnt-img{height:250px}
+.cnt-img{max-height:360px;aspect-ratio:4/5}
+.cnt-locations,.cnt-channels{grid-template-columns:1fr}
 .float-cta{bottom:1rem;right:1rem;padding:.6rem 1rem;font-size:.5rem}
 }
 </style>
@@ -617,10 +624,10 @@ section{padding:4rem 1.2rem}.video-section{padding:0 1.2rem 3.5rem}
 <!-- Quote -->
 <div class="quote"><blockquote class="r" data-i18n="quote_text">"The journey of a thousand miles begins with one step."</blockquote><p class="attr r r-delay-1">— Lao Tzu</p></div>
 
-<!-- ═══ VIDEO (YouTube embed: set REEL_YOUTUBE_ID in page script — see comment there) ═══ -->
+<!-- ═══ VIDEO (YouTube Short — streams from YouTube only, no self-hosted file) ═══ -->
 <div class="video-section r" id="trainer-reel"><div class="video-shell video-shell--short">
-<div id="videoReelMount"></div>
-<p class="video-caption" data-i18n="video_cap">Jims Meiser, Brussels — coached session (Marcin & Tom). Tap play to stream when a YouTube ID is set.</p>
+<div class="yt-iframe-wrap"><iframe title="Training session reel — Jims Meiser Brussels" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen src="https://www.youtube-nocookie.com/embed/BTwTdZJq63I?rel=0&amp;modestbranding=1&amp;playsinline=1"></iframe></div>
+<p class="video-caption" data-i18n="video_cap">Jims Meiser, Brussels — coached session (Marcin & Tom). Streamed from YouTube.</p>
 <p class="video-yt-link"><a href="https://www.youtube.com/shorts/BTwTdZJq63I" target="_blank" rel="noopener noreferrer" data-i18n="video_yt_link">Open this Short on YouTube</a></p>
 </div></div>
 
@@ -760,27 +767,33 @@ section{padding:4rem 1.2rem}.video-section{padding:0 1.2rem 3.5rem}
 <div class="tag" data-i18n="cnt_tag">Get Started</div>
 <h2 class="title r" data-i18n="cnt_title">Based in Brussels</h2>
 <div class="cnt-grid">
-<div class="cnt-img r"><img src="images/thomas-coaching.png" alt="Thomas consulting"></div>
+<div class="cnt-visual r">
+<div class="cnt-img"><img src="images/thomas-portrait.png" alt="Thomas Devresse — personal trainer Brussels"><div class="cnt-frame" aria-hidden="true"></div></div>
+<p class="cnt-img-cap" data-i18n="cnt_img_cap">Personal training · Jims Brussels</p>
+</div>
 <div class="cnt-info r r-delay-1">
 <h3 data-i18n="cnt_h">Begin Your Kaizen Journey</h3>
-<div class="li"><div class="li-ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><p><strong>Where to Find Me</strong></p></div></div>
-<div class="li" style="margin-top:1rem"><p><strong>Jims Auderghem</strong><br>Chaussée de Wavre 1138<br>1160 Auderghem<br><a href="https://maps.app.goo.gl/mRrs1vD8poknFiJ29" target="_blank">View on Google Maps ↗</a></p></div>
-<div class="li" style="margin-top:1rem"><p><strong>Jims Meiser</strong><br>Chaussée de Louvain 650<br>1030 Schaerbeek</p></div>
-<div class="li"><div class="li-ico"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><p><strong>Email</strong></p><p><a href="mailto:contact@thomasdevresse.be">contact@thomasdevresse.be</a></p></div></div>
-<div class="li"><div class="li-ico"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div><div><p><strong>Instagram</strong></p><p><a href="https://instagram.com/thomasdevresse" target="_blank">@thomasdevresse ↗</a></p></div></div>
-<div class="cnt-form" id="cntForm" style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.06)">
-<h4 style="font-size:.85rem;font-weight:700;margin-bottom:.8rem;color:var(--white)">Send a Message</h4>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:.6rem"><div class="fg"><input placeholder="Your name" id="cntName"></div><div class="fg"><input type="email" placeholder="Your email" id="cntEmail"></div></div>
-<div class="fg" style="margin-bottom:.6rem"><input placeholder="Subject (optional)" id="cntSubject"></div>
-<div class="fg" style="margin-bottom:.8rem"><textarea placeholder="Your message..." id="cntMsg" style="min-height:80px;width:100%;padding:.55rem .7rem;background:var(--black);border:1px solid rgba(255,255,255,.06);color:var(--white);border-radius:var(--radius);font-family:inherit;font-size:.78rem;resize:vertical"></textarea></div>
-<button class="btn btn-red" id="cntBtn" onclick="sendContact()">Send Message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+<div class="cnt-locations">
+<div class="cnt-loc-card"><h5 data-i18n="cnt_loc_1_h">Jims Auderghem</h5><p>Chaussée de Wavre 1138<br>1160 Auderghem</p><a href="https://maps.app.goo.gl/mRrs1vD8poknFiJ29" target="_blank" rel="noopener noreferrer" data-i18n="cnt_maps">View on Google Maps ↗</a></div>
+<div class="cnt-loc-card"><h5 data-i18n="cnt_loc_2_h">Jims Meiser</h5><p>Chaussée de Louvain 650<br>1030 Schaerbeek</p></div>
+</div>
+<div class="cnt-channels">
+<div class="li"><div class="li-ico"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><p><strong data-i18n="cnt_email_h">Email</strong></p><p><a href="mailto:contact@thomasdevresse.be">contact@thomasdevresse.be</a></p></div></div>
+<div class="li"><div class="li-ico"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div><div><p><strong>Instagram</strong></p><p><a href="https://instagram.com/thomasdevresse" target="_blank" rel="noopener noreferrer">@thomasdevresse ↗</a></p></div></div>
+</div>
+<div class="cnt-form" id="cntForm">
+<h4 style="font-size:.85rem;font-weight:700;margin-bottom:.8rem;color:var(--white)" data-i18n="cnt_form_h">Send a Message</h4>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:.6rem"><div class="fg"><input placeholder="Your name" id="cntName" data-i18n-ph="cnt_ph_name"></div><div class="fg"><input type="email" placeholder="Your email" id="cntEmail" data-i18n-ph="cnt_ph_email"></div></div>
+<div class="fg" style="margin-bottom:.6rem"><input placeholder="Subject (optional)" id="cntSubject" data-i18n-ph="cnt_ph_subject"></div>
+<div class="fg" style="margin-bottom:.8rem"><textarea placeholder="Your message..." id="cntMsg" data-i18n-ph="cnt_ph_msg" style="min-height:80px;width:100%;padding:.55rem .7rem;background:var(--black);border:1px solid rgba(255,255,255,.06);color:var(--white);border-radius:var(--radius);font-family:inherit;font-size:.78rem;resize:vertical"></textarea></div>
+<button class="btn btn-red" id="cntBtn" onclick="sendContact()" data-i18n="cnt_btn_send">Send Message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
 </div>
 <div id="cntOk" style="display:none;margin-top:1.5rem;padding:1.2rem;background:rgba(52,211,153,.06);border:1px solid rgba(52,211,153,.15);border-radius:var(--radius);text-align:center">
 <div style="font-size:1.5rem;margin-bottom:.3rem">✓</div>
-<p style="font-size:.82rem;font-weight:600;color:var(--white)">Message sent!</p>
-<p style="font-size:.72rem;color:var(--gray-light);margin-top:.2rem">Thomas will get back to you shortly.</p>
+<p style="font-size:.82rem;font-weight:600;color:var(--white)" data-i18n="cnt_ok_t">Message sent!</p>
+<p style="font-size:.72rem;color:var(--gray-light);margin-top:.2rem" data-i18n="cnt_ok_s">Thomas will get back to you shortly.</p>
 </div>
-<a href="#booking" class="btn btn-red" style="margin-top:1.2rem">Book Free Consultation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<a href="#booking" class="btn btn-red" style="margin-top:1.2rem" data-i18n="cnt_btn_book">Book Free Consultation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 </div>
 </div>
 </div></section>
@@ -807,9 +820,6 @@ section{padding:4rem 1.2rem}.video-section{padding:0 1.2rem 3.5rem}
 </footer>
 
 <script>
-// Session reel — Short: https://www.youtube.com/shorts/BTwTdZJq63I (ID only; empty = placeholder)
-const REEL_YOUTUBE_ID = 'BTwTdZJq63I';
-
 // ═══ i18n TRANSLATIONS ═══
 const i18n={
 en:{
@@ -831,7 +841,7 @@ phil_3_h:'Re-assessments',phil_3_p:'Your program evolves with you. Weekly review
 about_tag:'About Thomas',about_title:'Your Coach. Your <span style="color:var(--red)">Competitive Edge.</span>',about_sub:'4+ years coaching athletes and everyday people. I help people achieve potential they didn\'t even realize they had. I bring structure, accountability and expertise to every session. You bring the effort — I handle the rest.',
 val_1_h:'Mastery',val_1_p:'Years of practice refining technique, programming, and continuous learning',val_2_h:'Strategy',val_2_p:'Training, nutrition, and lifestyle aligned toward a clear long-term plan',val_3_h:'Accountability',val_3_p:'I hold you to your goals',val_4_h:'Compassion',val_4_p:'Coaching that understands your challenges and supports your growth',
 quote_text:'"The journey of a thousand miles begins with one step."',
-video_cap:'Jims Meiser, Brussels — coached session (Marcin & Tom). Tap play to watch the Short (streams from YouTube).',
+video_cap:'Jims Meiser, Brussels — coached session (Marcin & Tom). Streamed from YouTube.',
 video_yt_link:'Open this Short on YouTube ↗',
 video_placeholder:'Replay coming soon — add your YouTube video ID in the script to go live.',
 srv_tag:'Services',srv_title:'What I Offer',
@@ -847,7 +857,7 @@ faq_tag:'FAQ',faq_title:'Common Questions',
 faq_q_kaizen:'What is Kaizen?',
 faq_a_kaizen:'<p>Kaizen (改善) is Japanese for “change for the better.” At its core it is not about chasing a flawless finish line—it is about progress through small, repeatable cycles: see where you are, improve something concrete, revisit, repeat. Done honestly, momentum compounds instead of yo-yoing.</p><p>In fitness that shows up as movement quality inching forward week to week, sustainable load jumps, tighter recovery habits—nothing heroic overnight, everything measurable across months.</p><p>My coaching treats Kaizen as the spine of every plan: deep assessment, paced challenge inside your limits, then reassessment when goals move. Read the fuller story in <a href="#phil">the Kaizen Method section</a>.</p>',
 news_h:'Stay Updated',news_p:'Get training tips, insights, and updates directly to your inbox. No spam.',
-cnt_tag:'Get Started',cnt_title:'Based in Brussels',cnt_h:'Begin Your Kaizen Journey',
+cnt_tag:'Get Started',cnt_title:'Based in Brussels',cnt_h:'Begin Your Kaizen Journey',cnt_img_cap:'Personal training · Jims Brussels',cnt_loc_1_h:'Jims Auderghem',cnt_loc_2_h:'Jims Meiser',cnt_maps:'View on Google Maps ↗',cnt_email_h:'Email',cnt_form_h:'Send a Message',cnt_ph_name:'Your name',cnt_ph_email:'Your email',cnt_ph_subject:'Subject (optional)',cnt_ph_msg:'Your message...',cnt_btn_send:'Send Message',cnt_ok_t:'Message sent!',cnt_ok_s:'Thomas will get back to you shortly.',cnt_btn_book:'Book Free Consultation',
 cta_title:'1% Better. Every <span style="color:var(--red)">Day.</span>',cta_sub:'Stop chasing quick fixes. Start building something that lasts.',cta_btn:'Start Today',
 foot_desc:'Personal training in Brussels. Small daily improvements take you far.',
 float_cta:'Book a Session'
@@ -871,7 +881,7 @@ phil_3_h:'Réévaluations',phil_3_p:'Votre programme évolue avec vous. Bilans h
 about_tag:'À propos de Thomas',about_title:'Votre Coach. Votre <span style="color:var(--red)">Avantage Compétitif.</span>',about_sub:'4+ ans de coaching d\'athlètes et de particuliers. J\'aide les gens à atteindre un potentiel qu\'ils ne soupçonnaient même pas. J\'apporte structure, responsabilité et expertise à chaque séance.',
 val_1_h:'Maîtrise',val_1_p:'Des années de pratique pour affiner technique et programmation',val_2_h:'Stratégie',val_2_p:'Entraînement, nutrition et style de vie alignés vers un plan à long terme',val_3_h:'Responsabilité',val_3_p:'Je vous tiens à vos objectifs',val_4_h:'Compassion',val_4_p:'Un coaching qui comprend vos défis et soutient votre croissance',
 quote_text:'« Le voyage de mille lieues commence par un seul pas. »',
-video_cap:'Jims Meiser, Bruxelles — séance coachée (Marcin & Tom). Touchez lecture pour voir le Short (streaming YouTube).',
+video_cap:'Jims Meiser, Bruxelles — séance coachée (Marcin & Tom). Diffusé via YouTube.',
 video_yt_link:'Ouvrir ce Short sur YouTube ↗',
 video_placeholder:'Bande bientôt disponible — ajoutez l’identifiant vidéo YouTube dans le script pour l’activer.',
 srv_tag:'Services',srv_title:'Ce que je propose',
@@ -887,7 +897,7 @@ faq_tag:'FAQ',faq_title:'Questions Fréquentes',
 faq_q_kaizen:'Qu’est-ce que le Kaizen ?',
 faq_a_kaizen:'<p>Kaizen (改善) peut se traduire par « changer pour le mieux ». Ce n’est pas traquer une fin parfaite, mais gagner du terrain avec des boucles régulières : observer où vous en êtes, ajuster quelque chose de mesurable, revenir faire le point, puis recommencer. Bien conduit, cet effet boule de neige évite les à-coups.</p><p>Dans la pratique du training cela prend la forme d’une technique qui se nettoie semaine après semaine, de charges bien choisies, de récupération et d’habitudes du quotidien qui se fixent peu à peu—rien de spectaculaire en une semaine, tout se construit dans la durée.</p><p>Mon coaching prend le Kaizen pour structure : analyse poussée, progression calibrée à votre réalité, puis réétude des objectifs quand ils évoluent. Retrouvez le détail dans <a href="#phil">la section Méthode Kaizen</a>.</p>',
 news_h:'Restez Informé',news_p:'Conseils d\'entraînement, insights et mises à jour directement dans votre boîte mail. Pas de spam.',
-cnt_tag:'Commencer',cnt_title:'Basé à Bruxelles',cnt_h:'Commencez Votre Parcours Kaizen',
+cnt_tag:'Commencer',cnt_title:'Basé à Bruxelles',cnt_h:'Commencez Votre Parcours Kaizen',cnt_img_cap:'Coaching personnel · Jims Bruxelles',cnt_loc_1_h:'Jims Auderghem',cnt_loc_2_h:'Jims Meiser',cnt_maps:'Voir sur Google Maps ↗',cnt_email_h:'E-mail',cnt_form_h:'Envoyer un message',cnt_ph_name:'Votre nom',cnt_ph_email:'Votre e-mail',cnt_ph_subject:'Sujet (optionnel)',cnt_ph_msg:'Votre message...',cnt_btn_send:'Envoyer',cnt_ok_t:'Message envoyé !',cnt_ok_s:'Thomas vous répondra rapidement.',cnt_btn_book:'Réserver une consultation gratuite',
 cta_title:'1% Meilleur. Chaque <span style="color:var(--red)">Jour.</span>',cta_sub:'Arrêtez de chercher des solutions rapides. Construisez quelque chose qui dure.',cta_btn:'Commencer Aujourd\'hui',
 foot_desc:'Coaching personnel à Bruxelles. De petites améliorations quotidiennes vous mèneront loin.',
 float_cta:'Réserver une Séance'
@@ -911,7 +921,7 @@ phil_3_h:'Herbeoordelingen',phil_3_p:'Je programma evolueert met jou. Wekelijkse
 about_tag:'Over Thomas',about_title:'Jouw Coach. Jouw <span style="color:var(--red)">Competitief Voordeel.</span>',about_sub:'4+ jaar coaching van atleten en gewone mensen. Ik help mensen potentieel te bereiken waarvan ze niet wisten dat ze het hadden.',
 val_1_h:'Meesterschap',val_1_p:'Jaren oefening in het verfijnen van techniek en programmering',val_2_h:'Strategie',val_2_p:'Training, voeding en levensstijl afgestemd op een langetermijnplan',val_3_h:'Verantwoordelijkheid',val_3_p:'Ik houd je aan je doelen',val_4_h:'Compassie',val_4_p:'Coaching die je uitdagingen begrijpt en je groei ondersteunt',
 quote_text:'"De reis van duizend mijl begint met één stap."',
-video_cap:'Jims Meiser, Brussel — gecoachte sessie (Marcin & Tom). Tik op afspelen voor de Short (stream via YouTube).',
+video_cap:'Jims Meiser, Brussel — gecoachte sessie (Marcin & Tom). Gestreamd via YouTube.',
 video_yt_link:'Deze Short openen op YouTube ↗',
 video_placeholder:'Replay volgt — vul je YouTube-video-ID in het script in om te publiceren.',
 srv_tag:'Diensten',srv_title:'Wat Ik Aanbied',
@@ -927,7 +937,7 @@ faq_tag:'FAQ',faq_title:'Veelgestelde Vragen',
 faq_q_kaizen:'Wat is Kaizen?',
 faq_a_kaizen:'<p>Kaizen (改善) betekent in het Japans zo veel als “veranderen ten goede.” Het draait niet om één perfect eindplaatje, maar om vooruitgang in kleine herhaalbare rondes: kijk waar je staat, maak iets tastbaars beter, evalueer, en begin opnieuw. Als je dit eerlijk doet, stapel je vooruitgang in plaats van jojoën.</p><p>In fitness wordt dat techniek die stap voor beetje scherper wordt, slimmere belasting, beter herstel en stabiele gewoontes—niets overdreven in één weekend, wel meetbaar over maanden.</p><p>Alles wat ik aan coaching op de kaart zet, gebruikt deze Kaizen-lijn: diepe intake, op tempo uitdagen binnen jouw grenzen en opnieuw kijken wanneer doelen verschuiven. Lees meer in <a href="#phil">de sectie De Kaizen-methode</a>.</p>',
 news_h:'Blijf Op de Hoogte',news_p:'Trainingstips, inzichten en updates rechtstreeks in je inbox. Geen spam.',
-cnt_tag:'Aan de Slag',cnt_title:'Gevestigd in Brussel',cnt_h:'Begin Jouw Kaizen Reis',
+cnt_tag:'Aan de Slag',cnt_title:'Gevestigd in Brussel',cnt_h:'Begin Jouw Kaizen Reis',cnt_img_cap:'Personal training · Jims Brussel',cnt_loc_1_h:'Jims Auderghem',cnt_loc_2_h:'Jims Meiser',cnt_maps:'Bekijk op Google Maps ↗',cnt_email_h:'E-mail',cnt_form_h:'Stuur een bericht',cnt_ph_name:'Uw naam',cnt_ph_email:'Uw e-mail',cnt_ph_subject:'Onderwerp (optioneel)',cnt_ph_msg:'Uw bericht...',cnt_btn_send:'Versturen',cnt_ok_t:'Bericht verzonden!',cnt_ok_s:'Thomas neemt snel contact met u op.',cnt_btn_book:'Boek gratis consultatie',
 cta_title:'1% Beter. Elke <span style="color:var(--red)">Dag.</span>',cta_sub:'Stop met snelle oplossingen zoeken. Bouw iets dat blijft.',cta_btn:'Start Vandaag',
 foot_desc:'Personal training in Brussel. Kleine dagelijkse verbeteringen brengen je ver.',
 float_cta:'Boek een Sessie'
@@ -954,27 +964,11 @@ if(svgMatch)el.appendChild(svgMatch);
 document.querySelectorAll('[data-i18n-html]').forEach(el=>{
 const k=el.dataset.i18nHtml;if(t[k])el.innerHTML=t[k];
 });
+document.querySelectorAll('[data-i18n-ph]').forEach(el=>{
+const k=el.dataset.i18nPh;if(t[k])el.placeholder=t[k];
+});
 document.querySelector('.lang-dd')?.classList.remove('open');
 localStorage.setItem('td_lang',lang);
-}
-
-function initTrainerReel(){
-const m=document.getElementById('videoReelMount');if(!m)return;
-if(REEL_YOUTUBE_ID){
-m.innerHTML='<div class="yt-facade" style="background-image:url(images/1054.jpg)" role="presentation"><button type="button" class="yt-play" onclick="trainerReelPlay(event)" aria-label="Play video"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></button></div>';
-}else{
-m.innerHTML='<div class="yt-facade yt-facade--pending" style="background-image:url(images/1054.jpg)"><p class="yt-pending-msg" data-i18n="video_placeholder">Replay coming soon.</p></div>';
-}
-setLang(curLang);
-}
-
-function trainerReelPlay(e){
-if(e)e.preventDefault();
-if(!REEL_YOUTUBE_ID)return;
-const m=document.getElementById('videoReelMount');if(!m)return;
-const id=encodeURIComponent(REEL_YOUTUBE_ID);
-const qs='rel=0&modestbranding=1&playsinline=1&autoplay=1';
-m.innerHTML='<div class="yt-iframe-wrap"><iframe title="Training session reel" loading="eager" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen src="https://www.youtube-nocookie.com/embed/'+id+'?'+qs.replace(/&/g,'&amp;')+'"></iframe></div>';
 }
 
 // ═══ DARK/LIGHT MODE ═══
@@ -1005,7 +999,7 @@ document.addEventListener('click',e=>{if(!e.target.closest('.lang-toggle'))docum
 // ═══ INIT ═══
 function init(){
 try{
-renderCal();initCounters();initCarousel();initTrainerReel();
+renderCal();initCounters();initCarousel();
 }catch(e){console.error(e)}
 }
 
