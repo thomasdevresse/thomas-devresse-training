@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0a0a0a">
+    <title>Pricing & Memberships — Thomas Devresse | Personal Training Brussels</title>
+    <meta name="description" content="Transparent pricing for Thomas Devresse personal training in Brussels — 1-to-1 memberships, flexible sessions, online coaching, and complementary assessment, program design & nutrition services.">
+    <meta name="keywords" content="personal training prices Brussels, PT membership, online coaching price, nutrition plan, program design, Thomas Devresse pricing, Kaizen coaching">
+    <meta name="author" content="Thomas Devresse">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devresse.fit/pricing.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Pricing & Memberships — Thomas Devresse">
+    <meta property="og:description" content="Structured coaching built on the Kaizen philosophy. See memberships, flexible sessions, online coaching, and complementary services.">
+    <meta property="og:url" content="https://devresse.fit/pricing.html">
+    <meta property="og:image" content="https://devresse.fit/images/hero-thomas-branded.png">
+    <meta property="og:site_name" content="DEVRESSE Training">
+    <meta property="og:locale" content="en_BE">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pricing & Memberships — Thomas Devresse">
+    <meta name="twitter:description" content="Structured coaching built on the Kaizen philosophy. Transparent pricing for Brussels personal training.">
+    <meta name="twitter:image" content="https://devresse.fit/images/hero-thomas-branded.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Noto+Serif+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --black: #0a0a0a;
+            --dark: #111;
+            --dark-2: #1a1a1a;
+            --dark-3: #141414;
+            --red: #c41e2a;
+            --red-light: #e8323e;
+            --red-dark: #8b1520;
+            --red-glow: rgba(196, 30, 42, 0.12);
+            --cream: #f5f0eb;
+            --white: #f8f8f8;
+            --gray: #777;
+            --gray-light: #aaa;
+            --border: rgba(255,255,255,0.06);
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── SITE NAV ── */
+        .site-nav {
+            position: sticky; top: 0; z-index: 100;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 1rem 2rem;
+            background: rgba(10,10,10,0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+        .site-nav .brand {
+            display: flex; align-items: center; gap: 0.5rem;
+            text-decoration: none; color: var(--white);
+            font-weight: 800; letter-spacing: 0.05em; font-size: 0.95rem;
+        }
+        .site-nav .brand .kai {
+            font-family: 'Noto Serif JP', serif; color: var(--red); font-size: 0.95rem;
+        }
+        .site-nav .nav-actions { display: flex; align-items: center; gap: 1.25rem; }
+        .site-nav .back-link {
+            color: var(--gray-light); text-decoration: none;
+            font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em;
+            text-transform: uppercase; transition: color 0.2s ease;
+        }
+        .site-nav .back-link:hover { color: var(--white); }
+        .site-nav .nav-book {
+            background: var(--red); color: var(--white);
+            padding: 0.55rem 1.2rem; text-decoration: none;
+            font-size: 0.6rem; font-weight: 800; letter-spacing: 0.12em;
+            text-transform: uppercase; transition: background 0.2s ease;
+        }
+        .site-nav .nav-book:hover { background: var(--red-light); }
+
+        /* ── COVER ── */
+        .cover {
+            min-height: 48vh;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            text-align: center;
+            padding: 5rem 2rem 3.5rem;
+            position: relative; overflow: hidden;
+        }
+        .cover::before {
+            content: '改善';
+            position: absolute;
+            font-family: 'Noto Serif JP', serif;
+            font-size: clamp(12rem, 25vw, 30rem);
+            font-weight: 900;
+            color: rgba(196, 30, 42, 0.035);
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+            pointer-events: none;
+        }
+        .cover-tag {
+            font-size: 0.62rem; font-weight: 700;
+            letter-spacing: 0.3em; text-transform: uppercase;
+            color: var(--red); margin-bottom: 2rem;
+            display: flex; align-items: center; gap: 1rem;
+        }
+        .cover-tag::before, .cover-tag::after {
+            content: ''; width: 40px; height: 1px; background: var(--red);
+        }
+        .cover h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900; line-height: 1.05;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.25rem;
+        }
+        .cover h1 span { color: var(--red); }
+        .cover-sub {
+            font-size: 1rem; color: var(--gray-light);
+            font-weight: 300; max-width: 460px;
+            line-height: 1.8;
+        }
+
+        /* ── PHILOSOPHY BAR ── */
+        .philosophy-bar {
+            background: var(--red);
+            padding: 1.15rem 2rem;
+            text-align: center;
+        }
+        .philosophy-bar p {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(0.85rem, 1.4vw, 1.05rem);
+            font-style: italic; font-weight: 700;
+            letter-spacing: 0.02em; margin: 0;
+        }
+
+        /* ── SECTION LAYOUT ── */
+        .section { max-width: 1060px; margin: 0 auto; padding: 5rem 2rem; }
+        .section-alt {
+            background: var(--dark-3);
+            padding: 5rem 2rem;
+        }
+        .section-alt .inner { max-width: 1060px; margin: 0 auto; }
+
+        /* ── TYPOGRAPHY ── */
+        .tag {
+            font-size: 0.6rem; font-weight: 700;
+            letter-spacing: 0.28em; text-transform: uppercase;
+            color: var(--red-light); margin-bottom: 1rem;
+            display: flex; align-items: center; gap: 0.75rem;
+        }
+        .tag::before { content: ''; width: 24px; height: 2px; background: var(--red-light); }
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 800; line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+        .lead {
+            font-size: 0.95rem; color: var(--gray-light);
+            font-weight: 300; max-width: 600px;
+            line-height: 1.8; margin-bottom: 0;
+        }
+        .divider {
+            width: 48px; height: 2px;
+            background: var(--red-light); margin: 2.5rem 0;
+        }
+
+        /* ── INCLUDES BANNER ── */
+        .includes-banner {
+            background: var(--dark-2);
+            border: 1px solid var(--border);
+            padding: 2rem 2.5rem;
+            margin-bottom: 3rem;
+        }
+        .includes-banner h4 {
+            font-size: 0.6rem; font-weight: 700;
+            letter-spacing: 0.25em; text-transform: uppercase;
+            color: var(--red-light); margin-bottom: 1.25rem;
+        }
+        .includes-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.75rem;
+        }
+        .include-item {
+            display: flex; align-items: flex-start; gap: 0.65rem;
+        }
+        .include-dot {
+            width: 5px; height: 5px; border-radius: 50%;
+            background: var(--red); margin-top: 7px; flex-shrink: 0;
+        }
+        .include-item span {
+            font-size: 0.82rem; color: var(--gray-light); line-height: 1.6;
+        }
+
+        /* ── MEMBERSHIP CARDS (side-by-side) ── */
+        .membership-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border: 1px solid var(--border);
+        }
+        .membership-card {
+            background: var(--dark-2);
+            padding: 2.75rem 2.25rem;
+            display: flex; flex-direction: column;
+            position: relative;
+        }
+        .membership-card:first-child {
+            border-right: 1px solid var(--border);
+        }
+        .membership-card.featured {
+            background: var(--dark);
+            border-top: 2px solid var(--red);
+        }
+        .featured-badge {
+            position: absolute;
+            top: -1px; left: 50%;
+            transform: translateX(-50%);
+            background: var(--red);
+            font-size: 0.55rem; font-weight: 700;
+            letter-spacing: 0.2em; text-transform: uppercase;
+            padding: 0.3rem 1rem;
+        }
+        .card-tier {
+            font-size: 0.58rem; font-weight: 700;
+            letter-spacing: 0.25em; text-transform: uppercase;
+            color: var(--red-light); margin-bottom: 0.4rem;
+        }
+        .card-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem; font-weight: 800;
+            margin-bottom: 0.2rem;
+        }
+        .card-freq {
+            font-size: 0.8rem; color: var(--gray);
+            margin-bottom: 2rem;
+        }
+        .card-price-block { margin-bottom: 2rem; }
+        .price-label {
+            font-size: 0.65rem; color: var(--gray); margin-bottom: 0.2rem;
+            text-transform: uppercase; letter-spacing: 0.1em;
+        }
+        .price-main {
+            font-size: 2.6rem; font-weight: 800;
+            line-height: 1; letter-spacing: -0.03em;
+        }
+        .price-main small { font-size: 1rem; font-weight: 400; color: var(--gray-light); }
+        .price-sub {
+            margin-top: 0.4rem;
+            font-size: 0.78rem; color: var(--gray);
+        }
+        .price-total {
+            margin-top: 0.6rem;
+            display: inline-block;
+            background: var(--red-glow);
+            color: var(--red-light);
+            font-size: 0.75rem; font-weight: 600;
+            padding: 0.3rem 0.75rem;
+            letter-spacing: 0.04em;
+        }
+        .card-features {
+            list-style: none; flex: 1;
+            margin-bottom: 2rem;
+        }
+        .card-features li {
+            font-size: 0.82rem; color: var(--gray-light);
+            line-height: 1.6; padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            display: flex; align-items: flex-start; gap: 0.55rem;
+        }
+        .card-features li::before {
+            content: '—'; color: var(--red); flex-shrink: 0;
+            font-size: 0.75rem; margin-top: 1px;
+        }
+        .card-features li.highlight { color: var(--white); }
+        .card-cta {
+            display: block; text-align: center;
+            padding: 0.85rem; border: 1px solid rgba(255,255,255,0.12);
+            color: var(--white); font-size: 0.72rem;
+            font-weight: 600; letter-spacing: 0.15em;
+            text-transform: uppercase; text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer; background: transparent;
+        }
+        .card-cta:hover { border-color: var(--red); color: var(--red); }
+        .membership-card.featured .card-cta {
+            background: var(--red); border-color: var(--red);
+        }
+        .membership-card.featured .card-cta:hover {
+            background: var(--red-light); border-color: var(--red-light); color: var(--white);
+        }
+
+        /* ── FLEX SESSIONS ── */
+        .flex-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .flex-card {
+            background: var(--dark-2);
+            border: 1px solid var(--border);
+            padding: 2.25rem;
+        }
+        .flex-card-accent { border-top: 2px solid var(--red); }
+        .flex-header {
+            display: flex; justify-content: space-between;
+            align-items: flex-start; margin-bottom: 1.5rem;
+        }
+        .flex-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem; font-weight: 800;
+        }
+        .flex-sub-label {
+            font-size: 0.6rem; font-weight: 700;
+            letter-spacing: 0.2em; text-transform: uppercase;
+            color: var(--red-light); margin-top: 0.2rem;
+        }
+        .flex-badge {
+            background: var(--red); color: var(--white);
+            font-size: 0.6rem; font-weight: 700;
+            letter-spacing: 0.1em; text-transform: uppercase;
+            padding: 0.25rem 0.65rem; flex-shrink: 0;
+        }
+        .flex-price {
+            font-size: 2rem; font-weight: 800;
+            letter-spacing: -0.03em; margin-bottom: 0.25rem;
+        }
+        .flex-price small { font-size: 0.85rem; font-weight: 400; color: var(--gray-light); }
+        .flex-detail {
+            font-size: 0.78rem; color: var(--gray);
+            margin-bottom: 1.25rem; line-height: 1.6;
+        }
+        .flex-features {
+            list-style: none;
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+        }
+        .flex-features li {
+            font-size: 0.8rem; color: var(--gray-light);
+            padding: 0.35rem 0;
+            display: flex; align-items: flex-start; gap: 0.5rem;
+            line-height: 1.5;
+        }
+        .flex-features li::before { content: '—'; color: var(--red); flex-shrink: 0; }
+
+        /* ── ONLINE COACHING ── */
+        .online-card-solo {
+            background: var(--dark-2);
+            border: 1px solid var(--border);
+            border-top: 2px solid var(--red);
+            padding: 3rem;
+            max-width: 560px;
+        }
+        .online-card-tag {
+            font-size: 0.58rem; font-weight: 700;
+            letter-spacing: 0.25em; text-transform: uppercase;
+            color: var(--red-light); margin-bottom: 0.4rem;
+        }
+        .online-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem; font-weight: 800;
+            margin-bottom: 0.3rem;
+        }
+        .online-tagline {
+            font-size: 0.82rem; color: var(--gray);
+            margin-bottom: 1.75rem; line-height: 1.7;
+        }
+        .online-price {
+            font-size: 2.5rem; font-weight: 800;
+            line-height: 1; letter-spacing: -0.03em;
+            margin-bottom: 0.3rem;
+        }
+        .online-price small { font-size: 1rem; font-weight: 300; color: var(--gray-light); }
+        .online-price-note {
+            font-size: 0.75rem; color: var(--gray); margin-bottom: 2rem;
+        }
+        .online-features {
+            list-style: none;
+            border-top: 1px solid var(--border);
+            padding-top: 1.25rem;
+        }
+        .online-features li {
+            font-size: 0.82rem; color: var(--gray-light);
+            padding: 0.45rem 0; line-height: 1.5;
+            display: flex; align-items: flex-start; gap: 0.55rem;
+        }
+        .online-features li::before { content: '—'; color: var(--red); flex-shrink: 0; margin-top: 1px; }
+        .online-features li strong { color: var(--white); }
+
+        /* ── STANDALONE SERVICES ── */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .service-card {
+            background: var(--dark-2);
+            border: 1px solid var(--border);
+            border-top: 2px solid var(--red);
+            padding: 2.5rem;
+            display: flex; flex-direction: column;
+        }
+        .service-tag {
+            font-size: 0.58rem; font-weight: 700;
+            letter-spacing: 0.25em; text-transform: uppercase;
+            color: var(--red-light); margin-bottom: 0.4rem;
+        }
+        .service-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem; font-weight: 800;
+            margin-bottom: 0.4rem;
+        }
+        .service-tagline {
+            font-size: 0.8rem; color: var(--gray);
+            line-height: 1.7; margin-bottom: 1.5rem;
+        }
+        .service-price {
+            font-size: 2.2rem; font-weight: 800;
+            letter-spacing: -0.03em; margin-bottom: 0.2rem;
+        }
+        .service-price small { font-size: 0.85rem; font-weight: 400; color: var(--gray-light); }
+        .service-price-note {
+            font-size: 0.75rem; color: var(--gray);
+            margin-bottom: 1.75rem;
+        }
+        .service-features {
+            list-style: none;
+            border-top: 1px solid var(--border);
+            padding-top: 1rem; flex: 1;
+        }
+        .service-features li {
+            font-size: 0.8rem; color: var(--gray-light);
+            padding: 0.4rem 0; line-height: 1.55;
+            display: flex; align-items: flex-start; gap: 0.55rem;
+        }
+        .service-features li::before { content: '—'; color: var(--red); flex-shrink: 0; }
+        .service-features li strong { color: var(--white); }
+
+        /* ── NOTE ── */
+        .note-block {
+            background: var(--dark-2);
+            border-left: 3px solid var(--red);
+            padding: 1.25rem 1.75rem;
+            margin-top: 2.5rem;
+        }
+        .note-block p {
+            font-size: 0.82rem; color: var(--gray-light);
+            line-height: 1.8; margin: 0;
+        }
+        .note-block strong { color: var(--white); }
+
+        /* ── CTA ── */
+        .cta-section {
+            text-align: center;
+            padding: 6rem 2rem;
+            position: relative; overflow: hidden;
+        }
+        .cta-section::before {
+            content: '改';
+            position: absolute;
+            font-family: 'Noto Serif JP', serif;
+            font-size: clamp(10rem, 20vw, 22rem);
+            font-weight: 900;
+            color: rgba(196, 30, 42, 0.035);
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+        .cta-inner { position: relative; z-index: 1; }
+        .cta-section p {
+            font-size: 0.95rem; color: var(--gray-light);
+            max-width: 420px; margin: 0 auto 2.5rem;
+            font-weight: 300; line-height: 1.8;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: var(--red); color: var(--white);
+            font-size: 0.72rem; font-weight: 700;
+            letter-spacing: 0.2em; text-transform: uppercase;
+            padding: 1rem 2.25rem; text-decoration: none;
+            transition: background 0.2s ease;
+        }
+        .cta-btn:hover { background: var(--red-light); }
+
+        /* ── FOOTER ── */
+        .footer {
+            text-align: center; padding: 3rem 2rem;
+            border-top: 1px solid var(--border);
+        }
+        .footer-kaizen {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.6rem; color: var(--red);
+            margin-bottom: 0.6rem;
+        }
+        .footer-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem; font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+        .footer-meta {
+            font-size: 0.62rem; color: var(--gray);
+            letter-spacing: 0.15em; text-transform: uppercase;
+        }
+        .footer-home-link {
+            display: inline-block; margin-top: 1.25rem;
+            color: var(--red-light); text-decoration: none;
+            font-size: 0.65rem; font-weight: 700;
+            letter-spacing: 0.15em; text-transform: uppercase;
+        }
+        .footer-home-link:hover { color: var(--white); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            .membership-grid { grid-template-columns: 1fr; }
+            .membership-card:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+            .flex-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr !important; }
+            .includes-list { grid-template-columns: 1fr 1fr; }
+            .online-card-solo { max-width: 100%; }
+        }
+        @media (max-width: 480px) {
+            .includes-list { grid-template-columns: 1fr; }
+            .site-nav { padding: 0.85rem 1.25rem; }
+            .site-nav .back-link { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════ SITE NAV ═══════════════════════════════ -->
+<nav class="site-nav">
+    <a class="brand" href="/"><span>DEVRESSE</span><span class="kai">改</span></a>
+    <div class="nav-actions">
+        <a class="back-link" href="/">← Back to site</a>
+        <a class="nav-book" href="/#booking">Book a Session</a>
+    </div>
+</nav>
+
+<!-- ═══════════════════════════════ COVER ═══════════════════════════════ -->
+<div class="cover">
+    <div class="cover-tag">Thomas Devresse — Personal Training</div>
+    <h1>Invest in<br><span>Your Progress</span></h1>
+    <p class="cover-sub">
+        Structured coaching built on the Kaizen philosophy —
+        systematic, measurable, and designed for lasting change.
+    </p>
+</div>
+
+<div class="philosophy-bar">
+    <p>"Every session, every rep, every habit — compounding toward a better version of you."</p>
+</div>
+
+<!-- ═══════════════════════════════ 01 — MEMBERSHIPS ═══════════════════════════════ -->
+<div class="section">
+    <div class="tag">01 — In-Person Coaching</div>
+    <h2>PT 1-to-1 Memberships</h2>
+    <p class="lead">
+        Fixed weekly schedule. Full programming included. Minimum 4-week commitment.
+        Precision coaching, measurable progress, continuous refinement.
+    </p>
+    <div class="divider"></div>
+
+    <div class="includes-banner">
+        <h4>All memberships include</h4>
+        <div class="includes-list">
+            <div class="include-item">
+                <div class="include-dot"></div>
+                <span>Initial discussion & goal setting</span>
+            </div>
+            <div class="include-item">
+                <div class="include-dot"></div>
+                <span>Screening: mobility & motor control</span>
+            </div>
+            <div class="include-item">
+                <div class="include-dot"></div>
+                <span>100% tailored training program</span>
+            </div>
+            <div class="include-item">
+                <div class="include-dot"></div>
+                <span>Ongoing program adjustments</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="membership-grid">
+        <!-- STEADY -->
+        <div class="membership-card">
+            <div class="card-tier">Membership</div>
+            <div class="card-name">Steady</div>
+            <div class="card-freq">1 session per week</div>
+            <div class="card-price-block">
+                <div class="price-label">Per session</div>
+                <div class="price-main">70€ <small>/ session</small></div>
+                <div class="price-sub">Minimum 4-week commitment</div>
+                <div class="price-total">280€ / 4 weeks</div>
+            </div>
+            <ul class="card-features">
+                <li class="highlight">1 fixed session per week</li>
+                <li>Full programming included</li>
+                <li>Progress tracking & adjustments</li>
+                <li>Minimum 4-week engagement</li>
+            </ul>
+            <a class="card-cta" href="/#booking">Book a Consultation</a>
+        </div>
+
+        <!-- DRIVEN (Featured) -->
+        <div class="membership-card featured">
+            <div class="featured-badge">Best Value</div>
+            <div class="card-tier">Membership</div>
+            <div class="card-name">Driven</div>
+            <div class="card-freq">2+ sessions per week</div>
+            <div class="card-price-block">
+                <div class="price-label">Per session</div>
+                <div class="price-main">60€ <small>/ session</small></div>
+                <div class="price-sub">Minimum 4-week commitment</div>
+                <div class="price-total">480€ / 4 weeks</div>
+            </div>
+            <ul class="card-features">
+                <li class="highlight">2+ fixed sessions per week</li>
+                <li>Full programming included</li>
+                <li>Accelerated progress tracking</li>
+                <li>Minimum 4-week engagement</li>
+                <li class="highlight">Best value per session</li>
+            </ul>
+            <a class="card-cta" href="/#booking">Book a Consultation</a>
+        </div>
+    </div>
+
+    <div class="note-block" style="background: var(--dark-2); margin-top: 1.5rem;">
+        <p><strong>Cancellation policy:</strong> Memberships allow normal cancellations for holidays or exceptional events. Cancellations must be made at least 24 hours before the scheduled session.</p>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════ 02 — FLEXIBLE SESSIONS ═══════════════════════════════ -->
+<div class="section-alt">
+    <div class="inner">
+        <div class="tag">02 — No Commitment</div>
+        <h2>Flexible Sessions</h2>
+        <p class="lead">
+            No fixed schedule, no ongoing commitment. Ideal for quick checks, 
+            targeted work on a specific skill — like improving your squat form
+            or running a specific muscle-focused session — or simply trying out coaching.
+        </p>
+        <div class="divider"></div>
+
+        <div class="flex-grid">
+            <!-- Single Session -->
+            <div class="flex-card">
+                <div class="flex-header">
+                    <div>
+                        <div class="flex-name">Single Session</div>
+                        <div class="flex-sub-label">One-off · No commitment</div>
+                    </div>
+                </div>
+                <div class="flex-price">75€ <small>/ session</small></div>
+                <div class="flex-detail">Book one session at a time. You come in with a specific goal — technique fix, targeted muscle work, or a quick check — and we handle it.</div>
+                <ul class="flex-features">
+                    <li>Plan sessions at your own pace</li>
+                    <li>No commitment required</li>
+                    <li>Includes session-specific programming only (no full training plan)</li>
+                    <li>Initial screening recommended (not included)</li>
+                    <li>Can be paired with online coaching</li>
+                </ul>
+            </div>
+
+            <!-- 5-Pack -->
+            <div class="flex-card flex-card-accent">
+                <div class="flex-header">
+                    <div>
+                        <div class="flex-name">5-Session Pack</div>
+                        <div class="flex-sub-label">5 sessions · Valid 12 weeks</div>
+                    </div>
+                    <div class="flex-badge">Save 25€</div>
+                </div>
+                <div class="flex-price">350€ <small>pack</small></div>
+                <div class="flex-detail">70€ per session · valid for ~3 months. For those who know what they need and want flexible, occasional coaching without a fixed schedule.</div>
+                <ul class="flex-features">
+                    <li>Flexible planning of sessions</li>
+                    <li>No fixed weekly schedule</li>
+                    <li>Includes session-specific programming only (no full training plan)</li>
+                    <li>Initial screening recommended (not included)</li>
+                    <li>Can be paired with online coaching</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="note-block">
+            <p><strong>Tip:</strong> Flexible sessions don't include a full training program. Each session is programmed individually based on your goal for that day. If you want a structured weekly plan alongside your sessions, pair them with <strong>Online Coaching</strong> or the <strong>Program Design</strong> service below.</p>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════ 03 — ONLINE COACHING ═══════════════════════════════ -->
+<div class="section">
+    <div class="tag">03 — Remote Coaching</div>
+    <h2>Online Coaching</h2>
+    <p class="lead">
+        The full Kaizen system, delivered remotely. Weekly accountability,
+        personalized programming, and ongoing refinement — wherever you are.
+    </p>
+    <div class="divider"></div>
+
+    <div class="online-card-solo">
+        <div class="online-card-tag">Full Remote Coaching</div>
+        <div class="online-name">Online Coaching</div>
+        <div class="online-tagline">Weekly accountability, form review, and program evolution. The closest thing to in-person coaching — delivered remotely.</div>
+        <div class="online-price">200€ <small>/ month</small></div>
+        <div class="online-price-note">+ 60€ per additional in-person PT session</div>
+        <ul class="online-features">
+            <li><strong>Initial screening:</strong> mobility & motor control assessment</li>
+            <li>Personalized training program</li>
+            <li>Weekly check-in & program update</li>
+            <li>Monthly video call & form review</li>
+            <li>Video library & resources access</li>
+            <li><strong>Requirement:</strong> 5 prior in-person sessions + technical analysis</li>
+        </ul>
+    </div>
+
+    <div class="note-block">
+        <p><strong>Why the 5-session requirement?</strong> Online coaching works only after Thomas has directly assessed your movement, technique, and physical profile in person. This ensures every remote program is built on an accurate foundation — not assumptions.</p>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════ 04 — COMPLEMENTARY SERVICES ═══════════════════════════════ -->
+<div class="section-alt">
+    <div class="inner">
+        <div class="tag">04 — Complementary Services</div>
+        <h2>Assessment, Program Design & Nutrition</h2>
+        <p class="lead">
+            Standalone services to complement your training — or to get started
+            with a professional foundation before committing to coaching.
+        </p>
+        <div class="divider"></div>
+
+        <div class="services-grid" style="grid-template-columns: repeat(3, 1fr);">
+            <!-- Full Assessment -->
+            <div class="service-card">
+                <div class="service-tag">Assessment</div>
+                <div class="service-name">Full Screening</div>
+                <div class="service-tagline">A thorough physical assessment tailored to your profile — the foundation every good training plan is built on.</div>
+                <div class="service-price">75€ <small>one-time</small></div>
+                <div class="service-price-note">Included in all memberships</div>
+                <ul class="service-features">
+                    <li>Mobility assessment</li>
+                    <li>Motor control evaluation</li>
+                    <li>Postural analysis</li>
+                    <li>Movement pattern screening</li>
+                    <li>Strength & imbalance testing</li>
+                    <li>Additional assessments based on individual needs</li>
+                </ul>
+            </div>
+
+            <!-- Program Design -->
+            <div class="service-card">
+                <div class="service-tag">Training</div>
+                <div class="service-name">Program Design</div>
+                <div class="service-tagline">A fully tailored training plan built from a thorough assessment — designed for you to execute independently.</div>
+                <div class="service-price">200€ <small>one-time</small></div>
+                <div class="service-price-note">No ongoing follow-up or sessions included</div>
+                <ul class="service-features">
+                    <li><strong>Initial screening:</strong> mobility & motor control</li>
+                    <li>Full assessment & goal setting</li>
+                    <li>Personalized program design</li>
+                    <li>1 call or in-person meeting to walk through the plan</li>
+                    <li>Access to optimized training sheet</li>
+                </ul>
+            </div>
+
+            <!-- Nutrition Plan -->
+            <div class="service-card">
+                <div class="service-tag">Nutrition</div>
+                <div class="service-name">Nutrition Plan</div>
+                <div class="service-tagline">A complete nutrition setup — assessment, personalized meal plan, and all the tools to manage your nutrition on your own.</div>
+                <div class="service-price">200€ <small>one-time</small></div>
+                <div class="service-price-note">No ongoing follow-up included</div>
+                <ul class="service-features">
+                    <li><strong>Initial consultation & assessment</strong> + questionnaire</li>
+                    <li>Personalized meal plan</li>
+                    <li>Access to optimized nutrition coaching sheet</li>
+                    <li>Full nutrition database included</li>
+                    <li>Complete Nutrition Crash Course — practical knowledge to manage your nutrition independently</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════ 05 — THE FULL SYSTEM ═══════════════════════════════ -->
+<div class="section" style="padding-bottom: 0;">
+    <div class="tag">05 — The Full System</div>
+    <h2>The Kaizen Approach</h2>
+    <p class="lead">
+        Training is only one part of the equation. Real, lasting results come from
+        the compound effect of structured coaching, solid foundations, and smart nutrition.
+        This is the complete system.
+    </p>
+    <div class="divider"></div>
+</div>
+
+<div style="max-width: 1060px; margin: 0 auto; padding: 0 2rem 5rem;">
+    <div style="background: var(--dark-2); border: 1px solid var(--border); border-top: 3px solid var(--red); padding: 3rem; position: relative; overflow: hidden;">
+        <!-- Background kanji -->
+        <div style="position: absolute; top: 50%; right: -1rem; transform: translateY(-50%); font-family: 'Noto Serif JP', serif; font-size: 14rem; font-weight: 900; color: rgba(196,30,42,0.04); pointer-events: none; line-height: 1;">改</div>
+
+        <div style="position: relative; z-index: 1;">
+            <div style="font-size: 0.58rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red-light); margin-bottom: 0.5rem;">Recommended</div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 800; margin-bottom: 0.4rem;">Membership + Full Screening + Nutrition Plan</div>
+            <p style="font-size: 0.85rem; color: var(--gray); line-height: 1.7; max-width: 600px; margin-bottom: 2.5rem;">The holistic path. Start with a thorough physical assessment, build a personalized nutrition foundation, then train consistently with full coaching support. Everything aligned toward one goal.</p>
+
+            <!-- 3 pillars -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2.5rem;">
+                <div style="border-left: 2px solid var(--red); padding-left: 1.25rem;">
+                    <div style="font-size: 0.55rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red-light); margin-bottom: 0.35rem;">Pillar 1</div>
+                    <div style="font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 800; margin-bottom: 0.3rem;">Full Screening</div>
+                    <p style="font-size: 0.78rem; color: var(--gray-light); line-height: 1.6; margin: 0 0 0.6rem 0;">Mobility, motor control, postural analysis & movement screening. We identify your weak links before anything else.</p>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="font-size: 0.85rem; font-weight: 300; color: var(--gray); text-decoration: line-through;">75€</span>
+                        <span style="background: var(--red); color: var(--white); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.5rem;">Free</span>
+                    </div>
+                </div>
+                <div style="border-left: 2px solid var(--red); padding-left: 1.25rem;">
+                    <div style="font-size: 0.55rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red-light); margin-bottom: 0.35rem;">Pillar 2</div>
+                    <div style="font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 800; margin-bottom: 0.3rem;">Nutrition Plan</div>
+                    <p style="font-size: 0.78rem; color: var(--gray-light); line-height: 1.6; margin: 0 0 0.6rem 0;">Personalized meal plan, full nutrition database, and the Crash Course — so you understand and own your nutrition.</p>
+                    <span style="font-size: 1rem; font-weight: 700;">200€</span>
+                </div>
+                <div style="border-left: 2px solid var(--red); padding-left: 1.25rem;">
+                    <div style="font-size: 0.55rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red-light); margin-bottom: 0.35rem;">Pillar 3</div>
+                    <div style="font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 800; margin-bottom: 0.3rem;">Steady or Driven Membership</div>
+                    <p style="font-size: 0.78rem; color: var(--gray-light); line-height: 1.6; margin: 0 0 0.6rem 0;">Consistent, programmed 1-to-1 sessions. Every rep tracked, every session building on the last. The engine of progress.</p>
+                    <span style="font-size: 1rem; font-weight: 700;">from 280€ <small style="font-size: 0.75rem; font-weight: 400; color: var(--gray);">/ 4 weeks</small></span>
+                </div>
+            </div>
+
+            <!-- Pricing summary -->
+            <div style="display: flex; align-items: center; gap: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); flex-wrap: wrap;">
+                <div>
+                    <div style="font-size: 0.6rem; color: var(--gray); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.2rem;">Starting from</div>
+                    <div style="font-size: 2.2rem; font-weight: 800; letter-spacing: -0.03em;">480€</div>
+                    <div style="font-size: 0.75rem; color: var(--gray);">Screening (<span style="text-decoration: line-through;">75€</span> Free) + Nutrition Plan (200€) + Steady 4 weeks (280€)</div>
+                </div>
+                <a href="/#booking" style="display: inline-block; background: var(--red); color: var(--white); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.95rem 2rem; text-decoration: none; transition: background 0.2s ease; margin-left: auto;">Book a Free Consultation</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════ CTA ═══════════════════════════════ -->
+<div class="cta-section">
+    <div class="cta-inner">
+        <div class="tag" style="justify-content: center;">
+            <span style="width:24px; height:2px; background:var(--red-light); display:inline-block;"></span>
+            Start Here
+            <span style="width:24px; height:2px; background:var(--red-light); display:inline-block;"></span>
+        </div>
+        <h2>Not Sure Where<br>to <span style="color: var(--red);">Start?</span></h2>
+        <p>Every client begins with a free consultation. Thomas will assess your goals, history, and training level to recommend the right path.</p>
+        <a class="cta-btn" href="/#booking">Book Your Free Consultation</a>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+<div class="footer">
+    <div class="footer-kaizen">改善</div>
+    <div class="footer-name">Thomas Devresse — Personal Training</div>
+    <div class="footer-meta">Small daily improvements will take you far · Brussels · 2026</div>
+    <a class="footer-home-link" href="/">← Back to main site</a>
+</div>
+
+</body>
+</html>
