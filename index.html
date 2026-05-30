@@ -35,7 +35,7 @@
 {"@type":"LocalBusiness","@id":"https://devresse.fit/#business","name":"DEVRESSE Training","image":"https://devresse.fit/images/hero-thomas-branded.png","url":"https://devresse.fit/","telephone":"","email":"contact@thomasdevresse.be","address":{"@type":"PostalAddress","streetAddress":"Chaussée de Wavre 1138","addressLocality":"Auderghem","postalCode":"1160","addressRegion":"Brussels-Capital","addressCountry":"BE"},"geo":{"@type":"GeoCoordinates","latitude":50.8503,"longitude":4.3517},"priceRange":"€60-€200","openingHours":"Mo-Sa 07:00-20:00","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"100","bestRating":"5"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Training Services","itemListElement":[
 {"@type":"Offer","itemOffered":{"@type":"Service","name":"Free Consultation","description":"30 min introductory session"},"price":"0","priceCurrency":"EUR"},
 {"@type":"Offer","itemOffered":{"@type":"Service","name":"Personal Training","description":"60 min one-on-one coaching"},"price":"60","priceCurrency":"EUR"},
-{"@type":"Offer","itemOffered":{"@type":"Service","name":"Nutrition Coaching","description":"Monthly nutrition guidance with check-ins"},"price":"150","priceCurrency":"EUR"},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Nutrition Coaching","description":"Complete nutrition setup with assessment, personalized meal plan and crash course"},"price":"200","priceCurrency":"EUR"},
 {"@type":"Offer","itemOffered":{"@type":"Service","name":"Online Coaching","description":"Premium remote coaching with full support"},"price":"200","priceCurrency":"EUR"}
 ]}},
 {"@type":"BreadcrumbList","@id":"https://devresse.fit/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://devresse.fit/"}]},
@@ -44,7 +44,7 @@
 {"@type":"Question","name":"I'm a complete beginner — is this for me?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. We start with foundations. Every program is customised to your current level and we progress at a pace that's safe and sustainable."}},
 {"@type":"Question","name":"How quickly will I see results?","acceptedAnswer":{"@type":"Answer","text":"Energy and strength improvements in 2-3 weeks. Visible body composition changes within 6-8 weeks. Our 3-month programs deliver meaningful transformation."}},
 {"@type":"Question","name":"Where do sessions take place?","acceptedAnswer":{"@type":"Answer","text":"Jims Auderghem (Chaussée de Wavre 1138, 1160 Auderghem) and Jims Meiser (Chaussée de Louvain 650, 1030 Schaerbeek). Online coaching also available."}},
-{"@type":"Question","name":"Do you offer nutrition plans?","acceptedAnswer":{"@type":"Answer","text":"Yes — standalone or combined with training. Personalized nutrition coaching with meal options, macro targets, and regular check-ins. €150/month."}}
+{"@type":"Question","name":"Do you offer nutrition plans?","acceptedAnswer":{"@type":"Answer","text":"Yes — a complete nutrition setup including an initial consultation & assessment, a personalized meal plan, full nutrition database, and the Nutrition Crash Course. €200 one-time."}}
 ]}
 ]}
 </script>
@@ -253,6 +253,8 @@ html.light .video-shell{border-color:rgba(0,0,0,.08)}
 .srv-list{margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.035);display:flex;flex-direction:column;gap:.3rem}
 .srv-list span{font-size:.65rem;color:var(--gray-lighter);display:flex;align-items:center;gap:.4rem}
 .srv-list span::before{content:'';width:3px;height:3px;background:var(--red);border-radius:50%;flex-shrink:0}
+.srv-cta{margin-top:2.5rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:1.2rem}
+.srv-cta p{font-size:.8rem;color:var(--gray-light);max-width:520px;line-height:1.7}
 
 /* ── BOOKING ── */
 .booking{background:var(--dark);position:relative;overflow:hidden}
@@ -304,6 +306,29 @@ html.light .video-shell{border-color:rgba(0,0,0,.08)}
 .book-ok .ico svg{width:24px;height:24px;stroke:var(--green);fill:none;stroke-width:2.5}
 .book-ok h3{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:.6rem}
 .book-ok p{font-size:.82rem;color:var(--gray-light);line-height:1.6}
+/* Funnel */
+.funnel-wrap{max-width:600px;margin:3rem auto 0}
+.funnel-panel{padding:2.2rem 2rem 1.8rem}
+.fn-prog{height:4px;background:var(--dark-3);border-radius:99px;overflow:hidden;margin-bottom:.9rem}
+.fn-prog-bar{height:100%;width:20%;background:var(--red);border-radius:99px;transition:width .35s cubic-bezier(.4,0,.2,1)}
+.fn-step-label{font-size:.55rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);margin-bottom:1.4rem}
+.fstep{display:none;animation:fnFade .35s ease}
+.fstep.active{display:block}
+@keyframes fnFade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.fn-q{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;margin-bottom:1.1rem;line-height:1.3}
+.fn-hint{font-size:.7rem;color:var(--gray);margin:-.6rem 0 1rem}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem}
+.chip{padding:.7rem 1.1rem;background:var(--dark-3);border:1px solid rgba(255,255,255,.07);color:var(--gray-light);font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;cursor:pointer;border-radius:99px;transition:all .2s;text-align:left}
+.chip:hover{border-color:rgba(196,30,42,.4);color:var(--white)}
+.chip.sel{background:rgba(196,30,42,.1);border-color:var(--red);color:var(--white);font-weight:600}
+.fn-nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:1.8rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.05)}
+.fn-back{background:transparent;border:none;color:var(--gray-light);font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;padding:.5rem 0;transition:color .2s;visibility:hidden}
+.fn-back:hover{color:var(--white)}
+.fn-back.show{visibility:visible}
+.fn-next{padding:.8rem 2rem;background:var(--red);color:#fff;border:none;font-size:.6rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border-radius:var(--radius);transition:all .3s;opacity:.35;pointer-events:none}
+.fn-next.on{opacity:1;pointer-events:all}
+.fn-next.on:hover{background:var(--red-light)}
+.light .chip{background:var(--dark-3)}
 
 /* ── TRANSFORMATIONS ── */
 .transforms{background:var(--dark)}
@@ -536,7 +561,7 @@ section{padding:4rem 1.2rem}.video-section{padding:0 1.2rem 3.5rem}
 <!-- Nav -->
 <nav id="nav">
 <a href="#" class="nav-logo"><span class="mark">DEVRESSE</span><span class="kai">改</span></a>
-<ul class="nav-mid"><li><a href="#phil" data-i18n="nav_phil">Method</a></li><li><a href="#about" data-i18n="nav_about">About</a></li><li><a href="#services" data-i18n="nav_services">Services</a></li><li><a href="#booking" data-i18n="nav_book_link">Book</a></li><li><a href="#testi" data-i18n="nav_reviews">Reviews</a></li><li><a href="#faq">FAQ</a></li></ul>
+<ul class="nav-mid"><li><a href="#phil" data-i18n="nav_phil">Method</a></li><li><a href="#about" data-i18n="nav_about">About</a></li><li><a href="/pricing.html" data-i18n="nav_pricing">Pricing</a></li><li><a href="#booking" data-i18n="nav_book_link">Book</a></li><li><a href="#testi" data-i18n="nav_reviews">Reviews</a></li><li><a href="#faq">FAQ</a></li></ul>
 <div class="nav-right">
 <div class="lang-toggle" onclick="this.querySelector('.lang-dd').classList.toggle('open')"><span id="curLang">EN</span><svg viewBox="0 0 24 24" style="width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2.5"><path d="M6 9l6 6 6-6"/></svg><div class="lang-dd" id="langDd"><button class="active" onclick="setLang('en',event)">English</button><button onclick="setLang('fr',event)">Français</button><button onclick="setLang('nl',event)">Nederlands</button></div></div>
 <div class="mode-toggle" onclick="toggleMode()" title="Toggle light/dark"><svg viewBox="0 0 24 24" id="modeIco"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></div>
@@ -544,7 +569,7 @@ section{padding:4rem 1.2rem}.video-section{padding:0 1.2rem 3.5rem}
 </div>
 <div class="hamburger" id="ham" onclick="toggleMob()"><span></span><span></span><span></span></div>
 </nav>
-<div class="mob-menu" id="mob"><a href="#phil" onclick="toggleMob()" data-i18n="nav_phil">Method</a><a href="#about" onclick="toggleMob()" data-i18n="nav_about">About</a><a href="#services" onclick="toggleMob()" data-i18n="nav_services">Services</a><a href="#booking" onclick="toggleMob()" data-i18n="nav_book_link">Book</a><a href="#testi" onclick="toggleMob()" data-i18n="nav_reviews">Reviews</a><a href="#contact" onclick="toggleMob()" data-i18n="nav_contact">Contact</a></div>
+<div class="mob-menu" id="mob"><a href="#phil" onclick="toggleMob()" data-i18n="nav_phil">Method</a><a href="#about" onclick="toggleMob()" data-i18n="nav_about">About</a><a href="/pricing.html" data-i18n="nav_pricing">Pricing</a><a href="#booking" onclick="toggleMob()" data-i18n="nav_book_link">Book</a><a href="#testi" onclick="toggleMob()" data-i18n="nav_reviews">Reviews</a><a href="#contact" onclick="toggleMob()" data-i18n="nav_contact">Contact</a></div>
 
 <!-- Floating CTA -->
 <a href="#booking" class="float-cta" id="floatCta" data-i18n="float_cta">Book a Session <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -636,39 +661,93 @@ section{padding:4rem 1.2rem}.video-section{padding:0 1.2rem 3.5rem}
 <div class="tag" data-i18n="srv_tag">Services</div>
 <h2 class="title r" data-i18n="srv_title">What I Offer</h2>
 <div class="srv-grid">
-<div class="srv r"><div class="srv-n">01</div><h3 data-i18n="srv_1_h">Personal Training</h3><p data-i18n="srv_1_p">One-on-one coaching in Brussels. Every movement monitored, every session programmed.</p><div class="srv-list"><span>1x/week: €70/session</span><span>2x/week: €60/session</span><span>Mobility & motor control assessment</span><span>Form correction & technique optimization</span><span>Progress tracking & updates</span></div></div>
-<div class="srv r r-delay-1"><div class="srv-n">02</div><h3 data-i18n="srv_2_h">Nutrition Coaching</h3><p data-i18n="srv_2_p">Sustainable nutrition guidance. Real food, lasting habits.</p><div class="srv-list"><span>€150/month (3-6 month follow-up)</span><span>Meal options & macro targets</span><span>Check-ins every 2 weeks</span><span>Video calls every 4 weeks</span></div></div>
-<div class="srv r r-delay-2"><div class="srv-n">03</div><h3 data-i18n="srv_3_h">Body Transformations</h3><p data-i18n="srv_3_p">Holistic approach for motivated and disciplined people.</p><div class="srv-list"><span>3-6-12 month programs</span><span>Nutrition, lifestyle, and coaching</span><span>Personalized assessment included</span><span>Ask for a personalized quote</span></div></div>
-<div class="srv r r-delay-3"><div class="srv-n">04</div><h3 data-i18n="srv_4_h">Online Coaching</h3><p data-i18n="srv_4_p">Premium remote coaching, full support from anywhere.</p><div class="srv-list"><span>€200/month</span><span>Form & technique video reviews</span><span>Progress tracking & weekly updates</span><span>Video calls every 4 weeks</span></div></div>
+<div class="srv r"><div class="srv-n">01</div><h3 data-i18n="srv_1_h">PT 1-to-1 Membership</h3><p data-i18n="srv_1_p">Fixed weekly schedule with full programming. Steady or Driven. Minimum 4-week commitment.</p><div class="srv-list"><span>Steady — €70/session · 1×/week</span><span>Driven — €60/session · 2+/week</span><span>Minimum 4-week commitment</span><span>Full tailored programming included</span><span>Screening & progress tracking included</span></div></div>
+<div class="srv r r-delay-1"><div class="srv-n">02</div><h3 data-i18n="srv_2_h">Flexible Sessions</h3><p data-i18n="srv_2_p">No fixed schedule, no commitment. Single sessions or a 5-pack — for targeted work or trying out coaching.</p><div class="srv-list"><span>Single session: €75</span><span>5-session pack: €350 (save €25)</span><span>No fixed schedule, no commitment</span><span>Session-specific programming</span><span>Can be paired with online coaching</span></div></div>
+<div class="srv r r-delay-2"><div class="srv-n">03</div><h3 data-i18n="srv_3_h">Online Coaching</h3><p data-i18n="srv_3_p">The full Kaizen system, delivered remotely. Weekly accountability and program evolution.</p><div class="srv-list"><span>€200/month</span><span>+ €60 per additional in-person session</span><span>Weekly check-in & program update</span><span>Monthly video call & form review</span><span>Requires 5 prior in-person sessions</span></div></div>
+<div class="srv r r-delay-3"><div class="srv-n">04</div><h3 data-i18n="srv_4_h">Nutrition Coaching</h3><p data-i18n="srv_4_p">A complete nutrition setup — assessment, personalized meal plan, and the tools to manage it yourself.</p><div class="srv-list"><span>€200 one-time</span><span>Initial consultation & assessment</span><span>Personalized meal plan</span><span>Full nutrition database included</span><span>Nutrition Crash Course included</span></div></div>
 </div>
+<div class="srv-cta r r-delay-1"><p data-i18n="srv_more_p">Memberships, flexible sessions, online coaching & complementary services — full breakdown, transparent pricing.</p><a href="/pricing.html" class="btn btn-red" data-i18n="srv_more_btn">View Full Pricing & Memberships</a></div>
 </div></section>
 
 <!-- ═══ BOOKING ═══ -->
 <section class="booking" id="booking"><div class="container">
-<div class="tag" data-i18n="book_tag">Book a Session</div>
-<h2 class="title r" data-i18n-html="book_title">Reserve Your <span style="color:var(--red)">Spot</span></h2>
-<p class="subtitle r r-delay-1" data-i18n="book_sub">Pick a type, date, and time. First consultation always free.</p>
-<div class="book-grid" id="bookGridWrap">
-<div class="book-panel r r-delay-1" id="calPanel">
-<div class="cal-head"><h4 id="calM"></h4><div class="cal-arrows"><button onclick="chMo(-1)">‹</button><button onclick="chMo(1)">›</button></div></div>
-<div class="cal-grid" id="calG"></div>
-<div class="slots" id="slotPanel"><h5>Available — <span id="selDateLbl"></span></h5><div class="slots-g" id="slotG"></div></div>
+<div class="tag" style="justify-content:center;display:flex" data-i18n="book_tag">Free Discovery Call</div>
+<h2 class="title r" style="text-align:center" data-i18n-html="book_title">Book a Free <span style="color:var(--red)">Call</span></h2>
+<p class="subtitle r r-delay-1" style="text-align:center;margin-left:auto;margin-right:auto" data-i18n="book_sub">Answer a few quick questions and Thomas will reach out to schedule your free, no-pressure call.</p>
+
+<div class="funnel-wrap r r-delay-1">
+<div class="book-panel funnel-panel" id="funnelPanel">
+<div class="fn-prog"><div class="fn-prog-bar" id="fnProgBar"></div></div>
+<div class="fn-step-label" id="fnStepLabel">Step 1 of 5</div>
+
+<!-- Step 1 — Experience -->
+<div class="fstep active" data-step="1">
+<h4 class="fn-q">What's your training experience?</h4>
+<p class="fn-hint">Select all that apply.</p>
+<div class="chips" data-field="level" data-mode="multi">
+<button type="button" class="chip" data-val="Complete beginner">Complete beginner</button>
+<button type="button" class="chip" data-val="Some experience">Some experience</button>
+<button type="button" class="chip" data-val="Experienced">Experienced</button>
+<button type="button" class="chip" data-val="Returning after a break">Returning after a break</button>
 </div>
-<div class="book-panel r r-delay-2" id="bookFormPanel">
-<h4>Session Details</h4>
-<div class="bt-grid">
-<div class="bt" onclick="selType(this,'Free Consultation','30 min','Free')"><div class="tn">Free Consultation</div><div class="td">30 min</div><div class="tp">Free</div></div>
-<div class="bt" onclick="selType(this,'Personal Training','60 min','from €60')"><div class="tn">Personal Training</div><div class="td">60 min</div><div class="tp">from €60</div></div>
-<div class="bt" onclick="selType(this,'Nutrition Coaching','45 min','€150/mo')"><div class="tn">Nutrition Coaching</div><div class="td">45 min</div><div class="tp">€150/mo</div></div>
-<div class="bt" onclick="selType(this,'Online Coaching','30 min','€200/mo')"><div class="tn">Online Coaching</div><div class="td">30 min intro</div><div class="tp">€200/mo</div></div>
 </div>
-<div class="book-info" id="bookInfo"></div>
-<div class="fg"><label>Name</label><input placeholder="Full name" id="bName"></div>
-<div class="fg"><label>Email</label><input type="email" placeholder="you@email.com" id="bEmail"></div>
-<div class="fg"><label>Phone</label><input type="tel" placeholder="+32 ..." id="bPhone"></div>
-<button class="book-btn" id="bookBtn" onclick="confirmBook()">Confirm Booking</button>
+
+<!-- Step 2 — Product interest -->
+<div class="fstep" data-step="2">
+<h4 class="fn-q">Which option are you most interested in?</h4>
+<p class="fn-hint">Select all that apply.</p>
+<div class="chips" data-field="product" data-mode="multi">
+<button type="button" class="chip" data-val="PT 1-to-1 Membership">PT 1-to-1 Membership</button>
+<button type="button" class="chip" data-val="Flexible Sessions">Flexible Sessions</button>
+<button type="button" class="chip" data-val="Online Coaching">Online Coaching</button>
+<button type="button" class="chip" data-val="Nutrition Coaching">Nutrition Coaching</button>
+<button type="button" class="chip" data-val="Not sure yet">Not sure yet</button>
 </div>
-<div class="book-ok" id="bookOk"><div class="ico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><h3>Booking Confirmed!</h3><p id="bookOkText"></p></div>
+</div>
+
+<!-- Step 3 — Goal -->
+<div class="fstep" data-step="3">
+<h4 class="fn-q">What's your main goal?</h4>
+<p class="fn-hint">Select all that apply.</p>
+<div class="chips" data-field="goal" data-mode="multi">
+<button type="button" class="chip" data-val="Fat loss">Fat loss</button>
+<button type="button" class="chip" data-val="Build muscle">Build muscle</button>
+<button type="button" class="chip" data-val="Strength & performance">Strength &amp; performance</button>
+<button type="button" class="chip" data-val="Body recomposition">Body recomposition</button>
+<button type="button" class="chip" data-val="Post-rehab / pain-free">Post-rehab / pain-free</button>
+<button type="button" class="chip" data-val="General health & habits">General health &amp; habits</button>
+</div>
+</div>
+
+<!-- Step 4 — Availability -->
+<div class="fstep" data-step="4">
+<h4 class="fn-q">When are you generally free for a call?</h4>
+<p class="fn-hint">Select all that apply.</p>
+<div class="chips" data-field="availability" data-mode="multi">
+<button type="button" class="chip" data-val="Weekday mornings">Weekday mornings</button>
+<button type="button" class="chip" data-val="Weekday afternoons">Weekday afternoons</button>
+<button type="button" class="chip" data-val="Weekday evenings">Weekday evenings</button>
+<button type="button" class="chip" data-val="Weekends">Weekends</button>
+<button type="button" class="chip" data-val="I'm flexible">I'm flexible</button>
+</div>
+</div>
+
+<!-- Step 5 — Contact details -->
+<div class="fstep" data-step="5">
+<h4 class="fn-q">Where should Thomas reach you?</h4>
+<div class="fg"><label>Name</label><input placeholder="Full name" id="fnName"></div>
+<div class="fg"><label>Email</label><input type="email" placeholder="you@email.com" id="fnEmail"></div>
+<div class="fg"><label>Phone <span style="color:var(--gray);text-transform:none;letter-spacing:0">(optional)</span></label><input type="tel" placeholder="+32 ..." id="fnPhone"></div>
+<div class="fg"><label>Anything else? <span style="color:var(--gray);text-transform:none;letter-spacing:0">(optional)</span></label><textarea id="fnNote" placeholder="A bit more about your situation, schedule, or questions..." style="min-height:70px;width:100%;padding:.65rem .8rem;background:var(--dark-3);border:1px solid rgba(255,255,255,.06);color:var(--white);border-radius:var(--radius);font-family:inherit;font-size:.8rem;resize:vertical;outline:none"></textarea></div>
+</div>
+
+<div class="fn-nav">
+<button type="button" class="fn-back" id="fnBack" onclick="fnPrev()">Back</button>
+<button type="button" class="fn-next" id="fnNext" onclick="fnNext()">Next</button>
+</div>
+</div>
+
+<div class="book-ok" id="bookOk"><div class="ico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><h3>Request received!</h3><p id="bookOkText"></p></div>
 </div>
 </div></section>
 
@@ -730,17 +809,6 @@ section{padding:4rem 1.2rem}.video-section{padding:0 1.2rem 3.5rem}
 <div class="testi-nav" id="testiNav"></div>
 </div></section>
 
-<!-- ═══ RESOURCES ═══ -->
-<section class="resources"><div class="container">
-<div class="tag" data-i18n="res_tag">Free Resources</div>
-<h2 class="title r" data-i18n-html="res_title">Training <span style="color:var(--red)">Resources</span></h2>
-<div class="res-grid">
-<div class="res-card r"><div class="res-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><h4>Beginner's Meal Plan</h4><p>7-day nutrition plan. Simple, flexible, effective.</p><a href="#" class="res-link">Download Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
-<div class="res-card r r-delay-1"><div class="res-ico"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div><h4>The Training Playbook</h4><p>My complete guide to building muscle and sustainable habits.</p><a href="#" class="res-link">Download Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
-<div class="res-card r r-delay-2"><div class="res-ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><h4>12-Week Training Template</h4><p>Progressive template for intermediate lifters.</p><a href="#" class="res-link">Download Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
-</div>
-</div></section>
-
 <!-- ═══ FAQ ═══ -->
 <section class="faq" id="faq"><div class="container">
 <div class="tag" style="justify-content:center;display:flex" data-i18n="faq_tag">FAQ</div>
@@ -750,7 +818,7 @@ section{padding:4rem 1.2rem}.video-section{padding:0 1.2rem 3.5rem}
 <div class="faq-i"><div class="faq-q" onclick="togFaq(this)"><h4>I'm a complete beginner — is this for me?</h4><span class="ic">+</span></div><div class="faq-a"><p>Absolutely. We start with foundations. Every program is customised to your current level and we progress at a pace that's safe and sustainable.</p></div></div>
 <div class="faq-i"><div class="faq-q" onclick="togFaq(this)"><h4>How quickly will I see results?</h4><span class="ic">+</span></div><div class="faq-a"><p>Energy and strength improvements in 2-3 weeks. Visible body composition changes within 6-8 weeks. Our 3-month programs deliver meaningful transformation.</p></div></div>
 <div class="faq-i"><div class="faq-q" onclick="togFaq(this)"><h4>Where do sessions take place?</h4><span class="ic">+</span></div><div class="faq-a"><p><strong>Jims Auderghem:</strong> Chaussée de Wavre 1138, 1160 Auderghem<br><strong>Jims Meiser:</strong> Chaussée de Louvain 650, 1030 Schaerbeek<br>Online coaching also available for those outside Brussels.</p></div></div>
-<div class="faq-i"><div class="faq-q" onclick="togFaq(this)"><h4>Do you offer nutrition plans?</h4><span class="ic">+</span></div><div class="faq-a"><p>Yes — standalone or combined with training. Personalized nutrition coaching with meal options, macro targets, and regular check-ins. €150/month (3-6 month follow-up).</p></div></div>
+<div class="faq-i"><div class="faq-q" onclick="togFaq(this)"><h4>Do you offer nutrition plans?</h4><span class="ic">+</span></div><div class="faq-a"><p>Yes — a complete nutrition setup: initial consultation & assessment, a personalized meal plan, full nutrition database, and the Nutrition Crash Course so you can manage it independently. €200 one-time. See the <a href="/pricing.html" style="color:var(--red-light)">full pricing page</a> for details.</p></div></div>
 </div>
 </div></section>
 
@@ -812,7 +880,7 @@ section{padding:4rem 1.2rem}.video-section{padding:0 1.2rem 3.5rem}
 <div><div class="foot-brand"><span>DEVRESSE</span><span class="kai">改</span></div><p class="foot-desc" data-i18n="foot_desc">Personal training in Brussels. Small daily improvements take you far.</p>
 <div class="foot-social"><a href="https://instagram.com/thomasdevresse" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a><a href="#"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a></div>
 </div>
-<div class="foot-col"><h5>Training</h5><a href="#services">Personal Training</a><a href="#services">Nutrition Coaching</a><a href="#services">Body Transformations</a><a href="#services">Online Coaching</a></div>
+<div class="foot-col"><h5>Training</h5><a href="/pricing.html">PT 1-to-1 Membership</a><a href="/pricing.html">Flexible Sessions</a><a href="/pricing.html">Online Coaching</a><a href="/pricing.html">Nutrition Coaching</a></div>
 <div class="foot-col"><h5>Locations</h5><a href="https://maps.app.goo.gl/mRrs1vD8poknFiJ29" target="_blank">Jims Auderghem</a><a href="#faq">Jims Meiser</a><a href="#booking">Book Now</a></div>
 <div class="foot-col"><h5>More</h5><a href="#faq">FAQ</a><a href="#testi">Reviews</a><a href="#contact">Contact</a><a href="/admin">Admin</a></div>
 </div>
@@ -823,7 +891,7 @@ section{padding:4rem 1.2rem}.video-section{padding:0 1.2rem 3.5rem}
 // ═══ i18n TRANSLATIONS ═══
 const i18n={
 en:{
-nav_phil:'Method',nav_about:'About',nav_services:'Services',nav_book_link:'Book',nav_reviews:'Reviews',nav_contact:'Contact',nav_book:'Book Now',
+nav_phil:'Method',nav_about:'About',nav_services:'Services',nav_pricing:'Pricing',nav_book_link:'Book',nav_reviews:'Reviews',nav_contact:'Contact',nav_book:'Book Now',
 hero_tag:'Premium Coaching — Brussels',
 hero_h1:'Small Steps.<br><span class="red">Big</span><br>Transformations.',
 hero_sub:'Rooted in the Japanese philosophy of Kaizen — continuous improvement. I build lasting results through consistency, precision, and small daily improvements. Evidence-based coaching. No gimmicks.',
@@ -845,11 +913,12 @@ video_cap:'Jims Meiser, Brussels — coached session (Marcin & Tom). Streamed fr
 video_yt_link:'Open this Short on YouTube ↗',
 video_placeholder:'Replay coming soon — add your YouTube video ID in the script to go live.',
 srv_tag:'Services',srv_title:'What I Offer',
-srv_1_h:'Personal Training',srv_1_p:'One-on-one coaching in Brussels. Every movement monitored, every session programmed.',
-srv_2_h:'Nutrition Coaching',srv_2_p:'Sustainable nutrition guidance. Real food, lasting habits.',
-srv_3_h:'Body Transformations',srv_3_p:'Holistic approach for motivated and disciplined people.',
-srv_4_h:'Online Coaching',srv_4_p:'Premium remote coaching, full support from anywhere.',
-book_tag:'Book a Session',book_title:'Reserve Your <span style="color:var(--red)">Spot</span>',book_sub:'Pick a type, date, and time. First consultation always free.',
+srv_1_h:'PT 1-to-1 Membership',srv_1_p:'Fixed weekly schedule with full programming. Steady or Driven. Minimum 4-week commitment.',
+srv_2_h:'Flexible Sessions',srv_2_p:'No fixed schedule, no commitment. Single sessions or a 5-pack — for targeted work or trying out coaching.',
+srv_3_h:'Online Coaching',srv_3_p:'The full Kaizen system, delivered remotely. Weekly accountability and program evolution.',
+srv_4_h:'Nutrition Coaching',srv_4_p:'A complete nutrition setup — assessment, personalized meal plan, and the tools to manage it yourself.',
+srv_more_p:'Memberships, flexible sessions, online coaching & complementary services — full breakdown, transparent pricing.',srv_more_btn:'View Full Pricing & Memberships',
+book_tag:'Free Discovery Call',book_title:'Book a Free <span style="color:var(--red)">Call</span>',book_sub:'Answer a few quick questions and Thomas will reach out to schedule your free, no-pressure call.',
 tf_tag:'Client Results',tf_title:'Real <span style="color:var(--red)">Transformations</span>',
 testi_tag:'Client Stories',testi_title:'What They Say',
 res_tag:'Free Resources',res_title:'Training <span style="color:var(--red)">Resources</span>',
@@ -863,7 +932,7 @@ foot_desc:'Personal training in Brussels. Small daily improvements take you far.
 float_cta:'Book a Session'
 },
 fr:{
-nav_phil:'Méthode',nav_about:'À propos',nav_services:'Services',nav_book_link:'Réserver',nav_reviews:'Avis',nav_contact:'Contact',nav_book:'Réserver',
+nav_phil:'Méthode',nav_about:'À propos',nav_services:'Services',nav_pricing:'Tarifs',nav_book_link:'Réserver',nav_reviews:'Avis',nav_contact:'Contact',nav_book:'Réserver',
 hero_tag:'Coaching Premium — Bruxelles',
 hero_h1:'Petits pas.<br><span class="red">Grand</span><br>Transformations.',
 hero_sub:'Enraciné dans la philosophie japonaise du Kaizen — l\'amélioration continue. Je construis des résultats durables par la constance, la précision et de petites améliorations quotidiennes. Coaching basé sur les preuves. Pas de gadgets.',
@@ -885,11 +954,12 @@ video_cap:'Jims Meiser, Bruxelles — séance coachée (Marcin & Tom). Diffusé 
 video_yt_link:'Ouvrir ce Short sur YouTube ↗',
 video_placeholder:'Bande bientôt disponible — ajoutez l’identifiant vidéo YouTube dans le script pour l’activer.',
 srv_tag:'Services',srv_title:'Ce que je propose',
-srv_1_h:'Coaching Personnel',srv_1_p:'Coaching individuel à Bruxelles. Chaque mouvement surveillé.',
-srv_2_h:'Coaching Nutritionnel',srv_2_p:'Nutrition durable. Vraie nourriture, habitudes durables.',
-srv_3_h:'Transformations Corporelles',srv_3_p:'Approche holistique pour personnes motivées et disciplinées.',
-srv_4_h:'Coaching en Ligne',srv_4_p:'Coaching premium à distance, support complet.',
-book_tag:'Réserver une Séance',book_title:'Réservez Votre <span style="color:var(--red)">Place</span>',book_sub:'Choisissez un type, une date et une heure. Première consultation toujours gratuite.',
+srv_1_h:'Abonnement PT 1-to-1',srv_1_p:'Horaire hebdomadaire fixe avec programmation complète. Steady ou Driven. Engagement minimum 4 semaines.',
+srv_2_h:'Séances Flexibles',srv_2_p:'Sans horaire fixe ni engagement. Séances à l\'unité ou pack de 5 — pour un travail ciblé ou pour essayer.',
+srv_3_h:'Coaching en Ligne',srv_3_p:'Le système Kaizen complet, à distance. Suivi hebdomadaire et évolution du programme.',
+srv_4_h:'Coaching Nutritionnel',srv_4_p:'Une configuration nutrition complète — bilan, plan de repas personnalisé et les outils pour gérer seul.',
+srv_more_p:'Abonnements, séances flexibles, coaching en ligne & services complémentaires — détail complet et tarifs transparents.',srv_more_btn:'Voir tous les tarifs & abonnements',
+book_tag:'Appel Découverte Gratuit',book_title:'Réservez un <span style="color:var(--red)">Appel</span> Gratuit',book_sub:'Répondez à quelques questions rapides et Thomas vous recontactera pour planifier votre appel gratuit, sans engagement.',
 tf_tag:'Résultats Clients',tf_title:'Vraies <span style="color:var(--red)">Transformations</span>',
 testi_tag:'Témoignages',testi_title:'Ce qu\'ils disent',
 res_tag:'Ressources Gratuites',res_title:'Ressources <span style="color:var(--red)">Training</span>',
@@ -903,7 +973,7 @@ foot_desc:'Coaching personnel à Bruxelles. De petites améliorations quotidienn
 float_cta:'Réserver une Séance'
 },
 nl:{
-nav_phil:'Methode',nav_about:'Over mij',nav_services:'Diensten',nav_book_link:'Boek',nav_reviews:'Reviews',nav_contact:'Contact',nav_book:'Boek Nu',
+nav_phil:'Methode',nav_about:'Over mij',nav_services:'Diensten',nav_pricing:'Tarieven',nav_book_link:'Boek',nav_reviews:'Reviews',nav_contact:'Contact',nav_book:'Boek Nu',
 hero_tag:'Premium Coaching — Brussel',
 hero_h1:'Kleine stappen.<br><span class="red">Groot</span><br>Transformaties.',
 hero_sub:'Geworteld in de Japanse filosofie van Kaizen — continue verbetering. Ik bouw blijvende resultaten door consistentie, precisie en kleine dagelijkse verbeteringen. Evidence-based coaching. Geen gimmicks.',
@@ -925,11 +995,12 @@ video_cap:'Jims Meiser, Brussel — gecoachte sessie (Marcin & Tom). Gestreamd v
 video_yt_link:'Deze Short openen op YouTube ↗',
 video_placeholder:'Replay volgt — vul je YouTube-video-ID in het script in om te publiceren.',
 srv_tag:'Diensten',srv_title:'Wat Ik Aanbied',
-srv_1_h:'Personal Training',srv_1_p:'Één-op-één coaching in Brussel. Elke beweging gemonitord.',
-srv_2_h:'Voedingscoaching',srv_2_p:'Duurzame voedingsbegeleiding. Echt eten, blijvende gewoontes.',
-srv_3_h:'Body Transformaties',srv_3_p:'Holistische aanpak voor gemotiveerde en gedisciplineerde mensen.',
-srv_4_h:'Online Coaching',srv_4_p:'Premium coaching op afstand, volledige ondersteuning.',
-book_tag:'Boek een Sessie',book_title:'Reserveer Uw <span style="color:var(--red)">Plek</span>',book_sub:'Kies een type, datum en tijd. Eerste consultatie altijd gratis.',
+srv_1_h:'PT 1-op-1 Lidmaatschap',srv_1_p:'Vast wekelijks schema met volledige programmering. Steady of Driven. Minimum 4 weken engagement.',
+srv_2_h:'Flexibele Sessies',srv_2_p:'Geen vast schema, geen verplichting. Losse sessies of een 5-pack — voor gericht werk of om te proberen.',
+srv_3_h:'Online Coaching',srv_3_p:'Het volledige Kaizen-systeem, op afstand. Wekelijkse opvolging en programma-evolutie.',
+srv_4_h:'Voedingscoaching',srv_4_p:'Een complete voedingsaanpak — assessment, persoonlijk maaltijdplan en de tools om het zelf te beheren.',
+srv_more_p:'Lidmaatschappen, flexibele sessies, online coaching & aanvullende diensten — volledig overzicht en transparante tarieven.',srv_more_btn:'Bekijk alle tarieven & lidmaatschappen',
+book_tag:'Gratis Kennismakingsgesprek',book_title:'Boek een Gratis <span style="color:var(--red)">Gesprek</span>',book_sub:'Beantwoord een paar snelle vragen en Thomas neemt contact op om je gratis, vrijblijvend gesprek in te plannen.',
 tf_tag:'Klantresultaten',tf_title:'Echte <span style="color:var(--red)">Transformaties</span>',
 testi_tag:'Klantverhalen',testi_title:'Wat Ze Zeggen',
 res_tag:'Gratis Bronnen',res_title:'Training <span style="color:var(--red)">Bronnen</span>',
@@ -999,7 +1070,7 @@ document.addEventListener('click',e=>{if(!e.target.closest('.lang-toggle'))docum
 // ═══ INIT ═══
 function init(){
 try{
-renderCal();initCounters();initCarousel();
+initFunnel();initCounters();initCarousel();
 }catch(e){console.error(e)}
 }
 
@@ -1073,78 +1144,76 @@ document.addEventListener('touchmove',move,{passive:false});document.addEventLis
 // ═══ TOAST ═══
 function toast(t,s){document.getElementById('toastT').textContent=t;document.getElementById('toastS').textContent=s;const el=document.getElementById('toast');el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2200)}
 
-// ═══ BOOKING ═══
-let calDt=new Date(),selDate=null,selSlot=null,selBType=null;
-const mos=['January','February','March','April','May','June','July','August','September','October','November','December'];
-const dLbls=['Mo','Tu','We','Th','Fr','Sa','Su'];
-const slots=['07:00','08:00','09:00','10:00','11:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00'];
+// ═══ FREE CALL FUNNEL ═══
+const FN_TOTAL=5;
+let fnStep=1;
+const fnData={level:[],product:[],goal:[],availability:[]};
 
-function renderCal(){
-const y=calDt.getFullYear(),m=calDt.getMonth();
-document.getElementById('calM').textContent=mos[m]+' '+y;
-const f=new Date(y,m,1).getDay(),dim=new Date(y,m+1,0).getDate();
-const today=new Date();today.setHours(0,0,0,0);
-let off=f===0?6:f-1;
-let h=dLbls.map(d=>`<div class="cal-lbl">${d}</div>`).join('');
-for(let i=0;i<off;i++)h+='<div class="cal-d empty"></div>';
-for(let d=1;d<=dim;d++){
-const dt=new Date(y,m,d),past=dt<today,wknd=dt.getDay()===0,sel=selDate&&dt.toDateString()===selDate.toDateString();
-let c='cal-d';if(past||wknd)c+=' past';if(dt.getTime()===today.getTime())c+=' today';if(sel)c+=' sel';
-h+=`<div class="${c}" ${!past&&!wknd?`onclick="pickDate(${y},${m},${d})"`:''} >${d}</div>`;
+function fnChipClick(chip){
+const group=chip.closest('.chips');const field=group.dataset.field;const mode=group.dataset.mode;const val=chip.dataset.val;
+if(mode==='multi'){
+const i=fnData[field].indexOf(val);
+if(i>=0){fnData[field].splice(i,1);chip.classList.remove('sel')}
+else{fnData[field].push(val);chip.classList.add('sel')}
+}else{
+group.querySelectorAll('.chip').forEach(c=>c.classList.remove('sel'));
+chip.classList.add('sel');fnData[field]=val;
 }
-document.getElementById('calG').innerHTML=h;
+fnSync();
 }
-function chMo(d){calDt.setMonth(calDt.getMonth()+d);renderCal()}
-async function pickDate(y,m,d){
-selDate=new Date(y,m,d);selSlot=null;renderCal();
-document.getElementById('slotPanel').classList.add('show');
-const dateStr=selDate.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'});
-document.getElementById('selDateLbl').textContent=dateStr;
-document.getElementById('slotG').innerHTML='<div style="grid-column:1/-1;text-align:center;padding:.5rem;color:var(--gray);font-size:.75rem">Loading slots...</div>';
+function fnStepValid(){
+if(fnStep===1)return fnData.level.length>0;
+if(fnStep===2)return fnData.product.length>0;
+if(fnStep===3)return fnData.goal.length>0;
+if(fnStep===4)return fnData.availability.length>0;
+if(fnStep===5){const em=(document.getElementById('fnEmail').value||'').trim();return!!document.getElementById('fnName').value.trim()&&em.includes('@')}
+return false;
+}
+function fnSync(){
+const bar=document.getElementById('fnProgBar');if(bar)bar.style.width=(fnStep/FN_TOTAL*100)+'%';
+const lbl=document.getElementById('fnStepLabel');if(lbl)lbl.textContent='Step '+fnStep+' of '+FN_TOTAL;
+document.querySelectorAll('.fstep').forEach(s=>s.classList.toggle('active',+s.dataset.step===fnStep));
+document.getElementById('fnBack').classList.toggle('show',fnStep>1);
+const next=document.getElementById('fnNext');
+next.textContent=fnStep===FN_TOTAL?'Request my free call':'Next';
+next.classList.toggle('on',fnStepValid());
+}
+function fnPrev(){if(fnStep>1){fnStep--;fnSync()}}
+function fnNext(){
+if(!fnStepValid())return;
+if(fnStep<FN_TOTAL){fnStep++;fnSync();document.getElementById('funnelPanel').scrollIntoView({behavior:'smooth',block:'nearest'});return}
+fnSubmit();
+}
+async function fnSubmit(){
+const name=document.getElementById('fnName').value.trim();
+const email=document.getElementById('fnEmail').value.trim();
+const phone=document.getElementById('fnPhone').value.trim();
+const note=document.getElementById('fnNote').value.trim();
+const next=document.getElementById('fnNext');next.classList.remove('on');next.textContent='Sending...';
+const message=[
+'New free-call request from the website funnel:','',
+'• Training experience: '+(fnData.level.length?fnData.level.join(', '):'—'),
+'• Interested in: '+(fnData.product.length?fnData.product.join(', '):'—'),
+'• Main goal: '+(fnData.goal.length?fnData.goal.join(', '):'—'),
+'• Availability for call: '+(fnData.availability.length?fnData.availability.join(', '):'—'),
+'• Phone: '+(phone||'—'),
+note?('\nNotes: '+note):''
+].join('\n');
 try{
-const r=await fetch('/api/public/slots?date='+encodeURIComponent(selDate.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'})));
-const data=await r.json();
-if(data.slots){
-document.getElementById('slotG').innerHTML=data.slots.map(s=>{
-const off=!s.available;return`<div class="sl${off?' off':''}" ${off?'':`onclick="pickSlot(this,'${s.time}')"`}>${s.time}${off?'<span style="font-size:.5rem;display:block;opacity:.6">booked</span>':''}</div>`;
-}).join('');
-}else throw new Error();
-}catch(e){
-document.getElementById('slotG').innerHTML=slots.map(s=>`<div class="sl" onclick="pickSlot(this,'${s}')">${s}</div>`).join('');
-}
-updBookInfo();
-}
-function pickSlot(el,t){document.querySelectorAll('.sl').forEach(s=>s.classList.remove('sel'));el.classList.add('sel');selSlot=t;updBookInfo()}
-function selType(el,n,dur,pr){document.querySelectorAll('.bt').forEach(b=>b.classList.remove('sel'));el.classList.add('sel');selBType={n,dur,pr};updBookInfo()}
-function updBookInfo(){
-const info=document.getElementById('bookInfo'),btn=document.getElementById('bookBtn');
-let html='';if(selBType)html+=`<strong>${selBType.n}</strong> · ${selBType.dur} · ${selBType.pr}<br>`;
-if(selDate)html+=selDate.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
-if(selSlot)html+=` at <strong>${selSlot}</strong>`;
-if(html){info.innerHTML=html;info.classList.add('show')}
-btn.classList.toggle('on',!!(selBType&&selDate&&selSlot));
-}
-async function confirmBook(){
-if(!selBType||!selDate||!selSlot)return;
-const nm=document.getElementById('bName').value||'there';
-const em=document.getElementById('bEmail').value||'';
-const ph=document.getElementById('bPhone').value||'';
-if(!em||!em.includes('@')){toast('Email Required','Please enter a valid email address.');return}
-const btn=document.getElementById('bookBtn');
-const dateStr=selDate.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
-
-btn.disabled=true;btn.textContent='Processing...';
-try{
-const r=await fetch('/api/checkout/booking',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionType:selBType.n,duration:selBType.dur,price:selBType.pr,date:dateStr,time:selSlot,name:nm,email:em,phone:ph})});
+const r=await fetch('/api/public/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name,email,phone,subject:'Free call request — '+(fnData.product.join(', ')||'general'),message})});
 const d=await r.json();
-if(d.free){
-document.getElementById('bookFormPanel').style.display='none';
-document.getElementById('calPanel').style.display='none';
+if(r.ok){
+document.getElementById('funnelPanel').style.display='none';
 const ok=document.getElementById('bookOk');ok.classList.add('show');
-document.getElementById('bookOkText').innerHTML=`<strong>${selBType.n}</strong><br>${dateStr} at ${selSlot}<br><br>Free consultation confirmed! See you soon, ${nm}!<br><small style="color:var(--gray)">Confirmation sent to ${em}</small>`;
-}else if(d.url){btn.textContent='Redirecting to payment...';window.location.href=d.url}
-else{btn.textContent='Confirm Booking';btn.disabled=false;toast('Error',d.error||'Booking failed')}
-}catch(e){btn.textContent='Confirm Booking';btn.disabled=false;toast('Error','Could not connect to payment')}
+document.getElementById('bookOkText').innerHTML=`Thanks, ${name||'there'}! Your request is in.<br><br>Thomas will reach out by email or phone shortly to arrange your free call.<br><small style="color:var(--gray)">Confirmation context noted: ${(fnData.product.join(', ')||'general')} · ${(fnData.goal.join(', ')||'—')}</small>`;
+}else{next.classList.add('on');next.textContent='Request my free call';toast('Error',d.error||'Could not send. Please try again.')}
+}catch(e){next.classList.add('on');next.textContent='Request my free call';toast('Error','Network error. Please try again.')}
+}
+function initFunnel(){
+const panel=document.getElementById('funnelPanel');if(!panel)return;
+panel.addEventListener('click',e=>{const chip=e.target.closest('.chip');if(chip){fnChipClick(chip)}});
+['fnName','fnEmail'].forEach(id=>{const el=document.getElementById(id);if(el)el.addEventListener('input',fnSync)});
+fnSync();
 }
 
 // ═══ FAQ ═══
