@@ -57,7 +57,7 @@
         .site-nav {
             position: sticky; top: 0; z-index: 100;
             display: flex; align-items: center; justify-content: space-between;
-            padding: 1rem 2rem;
+            padding: 0.5rem 2rem;
             background: rgba(10,10,10,0.85);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
@@ -66,13 +66,15 @@
             display: flex; align-items: center;
             text-decoration: none; color: var(--white);
         }
-        .site-nav .brand img { height: 30px; width: auto; display: block; }
+        .site-nav .brand img { height: 60px; width: auto; display: block; }
         .site-nav .nav-actions { display: flex; align-items: center; gap: 1.25rem; }
         .site-nav .back-link {
             color: var(--gray-light); text-decoration: none;
             font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em;
             text-transform: uppercase; transition: color 0.2s ease;
+            white-space: nowrap;
         }
+        .site-nav .nav-book { white-space: nowrap; }
         .site-nav .back-link:hover { color: var(--white); }
         .site-nav .nav-book {
             background: var(--red); color: var(--white);
@@ -525,11 +527,12 @@
             .services-grid { grid-template-columns: 1fr !important; }
             .includes-list { grid-template-columns: 1fr 1fr; }
             .online-card-solo { max-width: 100%; }
+            .site-nav .back-link { display: none; }
+            .site-nav .brand img { height: clamp(30px, 7vw, 48px); }
         }
         @media (max-width: 480px) {
             .includes-list { grid-template-columns: 1fr; }
-            .site-nav { padding: 0.85rem 1.25rem; }
-            .site-nav .back-link { display: none; }
+            .site-nav { padding: 0.5rem 1.25rem; }
         }
     </style>
 </head>
