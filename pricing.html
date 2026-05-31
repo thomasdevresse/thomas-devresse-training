@@ -11,6 +11,10 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://devresse.fit/pricing.html">
 
+    <link rel="icon" type="image/png" href="/images/favicon-512.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-180.png">
+
     <meta property="og:type" content="website">
     <meta property="og:title" content="Pricing & Memberships — Thomas Devresse">
     <meta property="og:description" content="Structured coaching built on the Kaizen philosophy. See memberships, flexible sessions, online coaching, and complementary services.">
@@ -59,13 +63,10 @@
             border-bottom: 1px solid var(--border);
         }
         .site-nav .brand {
-            display: flex; align-items: center; gap: 0.5rem;
+            display: flex; align-items: center;
             text-decoration: none; color: var(--white);
-            font-weight: 800; letter-spacing: 0.05em; font-size: 0.95rem;
         }
-        .site-nav .brand .kai {
-            font-family: 'Noto Serif JP', serif; color: var(--red); font-size: 0.95rem;
-        }
+        .site-nav .brand img { height: 30px; width: auto; display: block; }
         .site-nav .nav-actions { display: flex; align-items: center; gap: 1.25rem; }
         .site-nav .back-link {
             color: var(--gray-light); text-decoration: none;
@@ -536,7 +537,7 @@
 
 <!-- ═══════════════════════════════ SITE NAV ═══════════════════════════════ -->
 <nav class="site-nav">
-    <a class="brand" href="/"><span>DEVRESSE</span><span class="kai">改</span></a>
+    <a class="brand" href="/" aria-label="DEVRESSE — Thomas Devresse Personal Training"><img src="/images/logo-header-dark.png" alt="DEVRESSE — Thomas Devresse Personal Training"></a>
     <div class="nav-actions">
         <a class="back-link" href="/">← Back to site</a>
         <a class="nav-book" href="/#booking">Book a Session</a>
@@ -855,6 +856,7 @@
 <!-- ═══════════════════════════════ CTA ═══════════════════════════════ -->
 <div class="cta-section">
     <div class="cta-inner">
+        <img src="/images/logo-circle.png" alt="DEVRESSE" style="display:block;width:80px;height:80px;border-radius:50%;margin:0 auto 1.4rem">
         <div class="tag" style="justify-content: center;">
             <span style="width:24px; height:2px; background:var(--red-light); display:inline-block;"></span>
             Start Here

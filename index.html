@@ -11,6 +11,10 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://devresse.fit/">
 
+<link rel="icon" type="image/png" href="/images/favicon-512.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-180.png">
+
 <meta property="og:type" content="website">
 <meta property="og:title" content="DEVRESSE 改 — Personal Training Coach Brussels">
 <meta property="og:description" content="Small steps. Big transformations. Kaizen-driven personal training in Brussels. Book your session with Thomas Devresse.">
@@ -76,6 +80,7 @@ background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='htt
 .preloader .bar::after{content:'';position:absolute;left:0;top:0;height:100%;width:0%;background:var(--red);animation:loadBar 1.8s ease forwards}
 @keyframes loadBar{to{width:100%}}
 .preloader .kai{font-family:'Noto Serif JP',serif;font-size:3rem;font-weight:900;color:var(--red);opacity:0;animation:fadeUp .8s .2s forwards}
+.preloader .pre-logo{width:104px;height:auto;border-radius:50%;opacity:0;transform:translateY(8px);animation:fadeUp .8s .2s forwards}
 .preloader .sub{font-size:.6rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gray);opacity:0;animation:fadeUp .6s .5s forwards}
 @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
 .preloader .kai,.preloader .sub{transform:translateY(8px)}
@@ -84,9 +89,9 @@ background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='htt
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:.8rem 2.5rem;display:flex;align-items:center;justify-content:space-between;background:rgba(8,8,8,.92);backdrop-filter:blur(24px) saturate(1.4);border-bottom:1px solid rgba(255,255,255,.03);transition:transform .35s cubic-bezier(.4,0,.2,1)}
 nav.hide{transform:translateY(-100%)}
-.nav-logo{display:flex;align-items:center;gap:.4rem;text-decoration:none;color:var(--white)}
-.nav-logo .mark{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:900;letter-spacing:-.02em}
-.nav-logo .kai{font-family:'Noto Serif JP',serif;font-size:.85rem;color:var(--red);font-weight:700}
+.nav-logo{display:flex;align-items:center;text-decoration:none}
+.nav-logo img{height:34px;width:auto;display:block}
+.nav-logo .logo-light{display:none}
 .nav-mid{display:flex;gap:1.6rem;list-style:none}
 .nav-mid a{color:var(--gray);text-decoration:none;font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:color .3s;position:relative}
 .nav-mid a:hover{color:var(--white)}
@@ -452,8 +457,9 @@ html.light .cnt-loc-card{background:var(--dark-2);border-color:rgba(0,0,0,.06)}
 /* ── FOOTER ── */
 footer{padding:3rem 2.5rem 1.5rem;background:var(--dark);border-top:1px solid rgba(255,255,255,.025)}
 .foot-top{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
-.foot-brand{display:flex;align-items:center;gap:.4rem;margin-bottom:.8rem}
-.foot-brand span:first-child{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:800}
+.foot-brand{display:flex;align-items:center;gap:.55rem;margin-bottom:.8rem}
+.foot-brand .foot-mark{width:32px;height:32px;border-radius:50%;flex-shrink:0}
+.foot-brand span{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:800;letter-spacing:.02em}
 .foot-brand .kai{font-family:'Noto Serif JP',serif;font-size:.8rem;color:var(--red)}
 .foot-desc{font-size:.68rem;color:var(--gray);line-height:1.6;max-width:260px}
 .foot-social{display:flex;gap:.5rem;margin-top:.8rem}
@@ -476,7 +482,8 @@ html.light{--black:#F5F0EB;--dark:#FFF;--dark-2:#F8F6F3;--dark-3:#EDE9E4;--dark-
 html.light body{background:var(--black);color:var(--white)}
 html.light body::after{opacity:.015}
 html.light nav{background:rgba(245,240,235,.95);border-bottom-color:rgba(0,0,0,.06)}
-html.light .nav-logo{color:var(--white)}
+html.light .nav-logo .logo-dark{display:none}
+html.light .nav-logo .logo-light{display:block}
 html.light .hamburger span{background:var(--white)}
 html.light .mob-menu{background:var(--black)}
 html.light .hero-right::after{background:linear-gradient(90deg,var(--black) 0%,rgba(245,240,235,.3) 30%,transparent 60%),linear-gradient(0deg,var(--black) 0%,transparent 25%)}
@@ -556,11 +563,11 @@ section{padding:4rem 1.2rem}.video-section{padding:0 1.2rem 3.5rem}
 <div class="scroll-progress" id="scrollProg"></div>
 
 <!-- Preloader -->
-<div class="preloader" id="preloader"><div class="kai">改善</div><div class="sub">Thomas Devresse</div><div class="bar"></div></div>
+<div class="preloader" id="preloader"><img class="pre-logo" src="/images/logo-circle.png" alt="DEVRESSE 改"><div class="sub">Thomas Devresse</div><div class="bar"></div></div>
 
 <!-- Nav -->
 <nav id="nav">
-<a href="#" class="nav-logo"><span class="mark">DEVRESSE</span><span class="kai">改</span></a>
+<a href="#" class="nav-logo" aria-label="DEVRESSE — Thomas Devresse Personal Training"><img class="logo-dark" src="/images/logo-header-dark.png" alt="DEVRESSE — Thomas Devresse Personal Training"><img class="logo-light" src="/images/logo-header-light.png" alt="DEVRESSE — Thomas Devresse Personal Training"></a>
 <ul class="nav-mid"><li><a href="#phil" data-i18n="nav_phil">Method</a></li><li><a href="#about" data-i18n="nav_about">About</a></li><li><a href="/pricing.html" data-i18n="nav_pricing">Pricing</a></li><li><a href="#booking" data-i18n="nav_book_link">Book</a></li><li><a href="#testi" data-i18n="nav_reviews">Reviews</a></li><li><a href="#faq">FAQ</a></li></ul>
 <div class="nav-right">
 <div class="lang-toggle" onclick="this.querySelector('.lang-dd').classList.toggle('open')"><span id="curLang">EN</span><svg viewBox="0 0 24 24" style="width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2.5"><path d="M6 9l6 6 6-6"/></svg><div class="lang-dd" id="langDd"><button class="active" onclick="setLang('en',event)">English</button><button onclick="setLang('fr',event)">Français</button><button onclick="setLang('nl',event)">Nederlands</button></div></div>
@@ -868,6 +875,7 @@ section{padding:4rem 1.2rem}.video-section{padding:0 1.2rem 3.5rem}
 
 <!-- CTA -->
 <section class="cta-sec"><div class="cta-inner r">
+<img src="/images/logo-circle.png" alt="DEVRESSE" style="display:block;width:80px;height:80px;border-radius:50%;margin:0 auto 1.4rem">
 <div class="cta-kai">改善</div>
 <h2 class="title" data-i18n-html="cta_title">1% Better. Every <span style="color:var(--red)">Day.</span></h2>
 <p class="subtitle" style="margin:0 auto 1.5rem;text-align:center;max-width:400px" data-i18n="cta_sub">Stop chasing quick fixes. Start building something that lasts.</p>
@@ -877,7 +885,7 @@ section{padding:4rem 1.2rem}.video-section{padding:0 1.2rem 3.5rem}
 <!-- Footer -->
 <footer>
 <div class="foot-top">
-<div><div class="foot-brand"><span>DEVRESSE</span><span class="kai">改</span></div><p class="foot-desc" data-i18n="foot_desc">Personal training in Brussels. Small daily improvements take you far.</p>
+<div><div class="foot-brand"><img class="foot-mark" src="/images/logo-circle.png" alt="DEVRESSE 改"><span>DEVRESSE</span></div><p class="foot-desc" data-i18n="foot_desc">Personal training in Brussels. Small daily improvements take you far.</p>
 <div class="foot-social"><a href="https://instagram.com/thomasdevresse" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a><a href="#"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a></div>
 </div>
 <div class="foot-col"><h5>Training</h5><a href="/pricing.html">PT 1-to-1 Membership</a><a href="/pricing.html">Flexible Sessions</a><a href="/pricing.html">Online Coaching</a><a href="/pricing.html">Nutrition Coaching</a></div>
