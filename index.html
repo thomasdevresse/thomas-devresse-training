@@ -35,7 +35,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"WebSite","@id":"https://devresse.fit/#website","url":"https://devresse.fit/","name":"DEVRESSE Training","description":"Kaizen-Driven Personal Training in Brussels by Thomas Devresse","inLanguage":["en","fr","nl"],"potentialAction":{"@type":"SearchAction","target":"https://devresse.fit/?s={search_term_string}","query-input":"required name=search_term_string"}},
-{"@type":"Person","@id":"https://devresse.fit/#person","name":"Thomas Devresse","jobTitle":"Personal Trainer & Nutrition Coach","url":"https://devresse.fit/","image":"https://devresse.fit/images/hero-thomas-branded.png","sameAs":["https://instagram.com/thomasdevresse"],"address":{"@type":"PostalAddress","addressLocality":"Brussels","addressCountry":"BE"},"knowsAbout":["Personal Training","Nutrition Coaching","Body Recomposition","Strength & Conditioning","Kaizen","Continuous Improvement","Evidence-Based Coaching"]},
+{"@type":"Person","@id":"https://devresse.fit/#person","name":"Thomas Devresse","jobTitle":"Personal Trainer & Nutrition Coach","url":"https://devresse.fit/","image":"https://devresse.fit/images/hero-thomas-branded.png","sameAs":["https://instagram.com/thomd.coach"],"address":{"@type":"PostalAddress","addressLocality":"Brussels","addressCountry":"BE"},"knowsAbout":["Personal Training","Nutrition Coaching","Body Recomposition","Strength & Conditioning","Kaizen","Continuous Improvement","Evidence-Based Coaching"]},
 {"@type":"LocalBusiness","@id":"https://devresse.fit/#business","name":"DEVRESSE Training","image":"https://devresse.fit/images/hero-thomas-branded.png","url":"https://devresse.fit/","telephone":"","email":"thomas@devresse.fit","telephone":"+32474126701","address":{"@type":"PostalAddress","streetAddress":"Chaussée de Wavre 1138","addressLocality":"Auderghem","postalCode":"1160","addressRegion":"Brussels-Capital","addressCountry":"BE"},"geo":{"@type":"GeoCoordinates","latitude":50.8503,"longitude":4.3517},"priceRange":"€60-€200","openingHours":"Mo-Sa 07:00-20:00","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"100","bestRating":"5"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Training Services","itemListElement":[
 {"@type":"Offer","itemOffered":{"@type":"Service","name":"Free Consultation","description":"30 min introductory session"},"price":"0","priceCurrency":"EUR"},
 {"@type":"Offer","itemOffered":{"@type":"Service","name":"Personal Training","description":"60 min one-on-one coaching"},"price":"60","priceCurrency":"EUR"},
@@ -528,15 +528,16 @@ section{padding:3.5rem 1.2rem}.video-section{padding:0 1.2rem 3.5rem}
 
 /* — Method: text + vertical video side by side, then full-width stacked steps — */
 .method-grid{display:block}
-.method-top{display:grid;grid-template-columns:1.05fr .95fr;gap:3.2rem;align-items:start;margin-bottom:3.2rem}
-.method-intro{max-width:none;margin-bottom:0}
+.method-top{display:grid;grid-template-columns:1.15fr .85fr;gap:3.2rem;align-items:stretch;margin-bottom:3.2rem}
+.method-intro{max-width:none;margin-bottom:0;display:flex;flex-direction:column}
 .method-intro .m-jp{max-width:none}
 .method-copy{display:block;margin-top:1.4rem}
 .method-copy .col{display:block}
 .method-copy p{margin:0 0 1rem;font-size:.95rem;line-height:1.75;color:var(--gray-light)}
 .method-copy .col:last-child p:last-child{margin-bottom:0}
-.method-video{position:relative;display:flex;justify-content:center}
-.method-video .video-shell{max-width:340px;width:100%;margin:0;border:1px solid var(--line);background:var(--dark-4)}
+.method-video{position:relative;display:flex;height:100%}
+.method-video .video-shell{width:100%;max-width:360px;height:100%;margin:0 auto;display:flex;flex-direction:column;border:1px solid var(--line);background:var(--dark-4)}
+.method-video .yt-iframe-wrap{flex:1;aspect-ratio:auto;height:auto;min-height:0}
 .method-video .video-caption{color:var(--gray)}
 .method-steps{display:block;border-top:1px solid var(--line-2)}
 .method-steps .mstep{display:grid;grid-template-columns:64px 240px 1fr;gap:1.6rem;border-bottom:1px solid var(--line-2);border-right:none;padding:1.7rem 0;align-items:baseline}
@@ -565,7 +566,7 @@ section{padding:3.5rem 1.2rem}.video-section{padding:0 1.2rem 3.5rem}
 .tf-grid{grid-template-columns:repeat(4,1fr);gap:1rem}
 .tf-ba{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line)}
 .tf-ph{aspect-ratio:3/4;position:relative;overflow:hidden;background:repeating-linear-gradient(45deg,var(--dark-3) 0 10px,var(--dark-4) 10px 20px)}
-.tf-ph img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(.18) contrast(1.04) brightness(.99)}
+.tf-ph img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:contrast(1.02)}
 .tf-date{position:absolute;bottom:8px;left:8px;font:600 .52rem var(--sans);letter-spacing:.1em;padding:.28rem .5rem;border-radius:2px}
 .tf-date.before{color:#57514A;background:#FBFAF8}
 .tf-date.after{color:#fff;background:var(--red)}
@@ -778,19 +779,19 @@ html.dark .cta-body .enso{mix-blend-mode:screen}
 <p class="subtitle r r-delay-1" data-i18n="tf_sub">Photos taken by the clients themselves, at the same markers. No studio, no retouching — the method, documented.</p>
 <div class="tf-grid">
 <div class="tf-card r">
-<div class="tf-ba"><div class="tf-ph"><span class="tf-date before">SEPT. 2025</span></div><div class="tf-ph"><span class="tf-date after">MARS 2026</span></div></div>
+<div class="tf-ba"><div class="tf-ph"><img src="images/tf/vicente-before.jpg" alt="Vicente — before" loading="lazy"><span class="tf-date before">OCT. 2025</span></div><div class="tf-ph"><img src="images/tf/vicente-after.jpg" alt="Vicente — after" loading="lazy"><span class="tf-date after">MARS 2026</span></div></div>
 <div class="tf-info"><div class="tf-top"><span class="tf-name">Vicente</span><span class="tf-stat">+2 kg</span></div><div class="tf-meta" data-i18n="tf_c1_meta">Muscle gain · 6 months</div><div class="tf-desc" data-i18n="tf_c1_desc">A clean bulk: muscle, not fat, built kilo by kilo.</div></div>
 </div>
 <div class="tf-card r r-delay-1">
-<div class="tf-ba"><div class="tf-ph"><span class="tf-date before">JUIN 2024</span></div><div class="tf-ph"><span class="tf-date after">JANV. 2025</span></div></div>
+<div class="tf-ba"><div class="tf-ph"><img src="images/tf/sebastien-before.jpg" alt="Sébastien — before" loading="lazy"><span class="tf-date before">JUIN 2024</span></div><div class="tf-ph"><img src="images/tf/sebastien-after.jpg" alt="Sébastien — after" loading="lazy"><span class="tf-date after">DÉC. 2024</span></div></div>
 <div class="tf-info"><div class="tf-top"><span class="tf-name">Sébastien</span><span class="tf-stat">−50 kg</span></div><div class="tf-meta" data-i18n="tf_c2_meta">Weight loss · 7 months</div><div class="tf-desc" data-i18n="tf_c2_desc">A complete overhaul, coached week after week — and kept off since.</div></div>
 </div>
 <div class="tf-card r r-delay-2">
-<div class="tf-ba"><div class="tf-ph"><span class="tf-date before">JANV. 2024</span></div><div class="tf-ph"><span class="tf-date after">JANV. 2025</span></div></div>
-<div class="tf-info"><div class="tf-top"><span class="tf-name">Elias</span><span class="tf-stat">−12 / +5 kg</span></div><div class="tf-meta" data-i18n="tf_c3_meta">Recomposition · 1 year</div><div class="tf-desc" data-i18n="tf_c3_desc">Less fat, more muscle: recomposition, measured month after month.</div></div>
+<div class="tf-ba"><div class="tf-ph"><img src="images/tf/elias-before.jpg" alt="Elias — before" loading="lazy"><span class="tf-date before">JANV. 2024</span></div><div class="tf-ph"><img src="images/tf/elias-after.jpg" alt="Elias — after" loading="lazy"><span class="tf-date after">JANV. 2025</span></div></div>
+<div class="tf-info"><div class="tf-top"><span class="tf-name">Elias</span><span class="tf-stat">−12 / +5 kg</span></div><div class="tf-meta" data-i18n="tf_c3_meta">Body recomposition · 1 year</div><div class="tf-desc" data-i18n="tf_c3_desc">Less fat, more muscle: recomposition, measured month after month.</div></div>
 </div>
 <div class="tf-card r r-delay-3">
-<div class="tf-ba"><div class="tf-ph"><span class="tf-date before">JUIL. 2024</span></div><div class="tf-ph"><span class="tf-date after">JUIN 2026</span></div></div>
+<div class="tf-ba"><div class="tf-ph"><img src="images/tf/bruno-before.jpg" alt="Bruno — before" loading="lazy"><span class="tf-date before">JUIL. 2024</span></div><div class="tf-ph"><img src="images/tf/bruno-after.jpg" alt="Bruno — after" loading="lazy"><span class="tf-date after">JUIN 2026</span></div></div>
 <div class="tf-info"><div class="tf-top"><span class="tf-name">Bruno</span><span class="tf-stat">−12 kg</span></div><div class="tf-meta" data-i18n="tf_c4_meta">Body recomposition · 2 years</div><div class="tf-desc" data-i18n="tf_c4_desc">Two years of small steps: proof that durability beats urgency.</div></div>
 </div>
 </div>
@@ -927,6 +928,14 @@ html.dark .cta-body .enso{mix-blend-mode:screen}
 </div>
 </div></div></section>
 
+<!-- Newsletter -->
+<div class="news"><div class="news-inner">
+<h3 data-i18n="news_h">Stay Updated</h3>
+<p data-i18n="news_p">Get training tips, insights, and updates directly to your inbox. No spam.</p>
+<div class="news-form" id="newsForm"><input placeholder="Your email" id="newsEmail"><button onclick="subNews()">Subscribe</button></div>
+<div class="news-ok" id="newsOk">Welcome! Check your email for confirmation.</div>
+</div></div>
+
 <!-- ═══ FAQ ═══ -->
 <section class="faq" id="faq"><div class="container">
 <div class="tag" style="justify-content:center;display:flex" data-i18n="faq_tag">FAQ</div>
@@ -940,14 +949,6 @@ html.dark .cta-body .enso{mix-blend-mode:screen}
 </div>
 </div></section>
 
-<!-- Newsletter -->
-<div class="news"><div class="news-inner">
-<h3 data-i18n="news_h">Stay Updated</h3>
-<p data-i18n="news_p">Get training tips, insights, and updates directly to your inbox. No spam.</p>
-<div class="news-form" id="newsForm"><input placeholder="Your email" id="newsEmail"><button onclick="subNews()">Subscribe</button></div>
-<div class="news-ok" id="newsOk">Welcome! Check your email for confirmation.</div>
-</div></div>
-
 <!-- ═══ FINAL PROFESSIONAL CTA (photo + contacts) ═══ -->
 <section class="cta-sec" id="contact">
 <div class="cta-shell">
@@ -960,7 +961,7 @@ html.dark .cta-body .enso{mix-blend-mode:screen}
 <div class="cta-contact">
 <a href="mailto:thomas@devresse.fit"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>thomas@devresse.fit</a>
 <a href="tel:+32474126701"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>+32 474 12 67 01</a>
-<a href="https://instagram.com/thomasdevresse" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@thomasdevresse</a>
+<a href="https://instagram.com/thomd.coach" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@thomd.coach</a>
 </div>
 </div>
 </div>
@@ -970,7 +971,7 @@ html.dark .cta-body .enso{mix-blend-mode:screen}
 <footer>
 <div class="foot-top">
 <div><div class="foot-brand"><img class="foot-mark" src="/images/logo-circle.png" alt="DEVRESSE 改"><span>DEVRESSE</span></div><p class="foot-desc" data-i18n="foot_desc">Personal training in Brussels. Small daily improvements take you far.</p>
-<div class="foot-social"><a href="https://instagram.com/thomasdevresse" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a><a href="mailto:thomas@devresse.fit"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="none" stroke="currentColor" stroke-width="2"/><polyline points="22,6 12,13 2,6" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
+<div class="foot-social"><a href="https://instagram.com/thomd.coach" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a><a href="mailto:thomas@devresse.fit"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="none" stroke="currentColor" stroke-width="2"/><polyline points="22,6 12,13 2,6" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></div>
 </div>
 <div class="foot-col"><h5 data-i18n="srv_tag">Training</h5><a href="/pricing.html" data-i18n="off_e_kick">Essential</a><a href="/pricing.html" data-i18n="off_s_kick">Signature</a><a href="/pricing.html" data-i18n="off_i_kick">Kaizen Integral</a><a href="/about.html" data-i18n="about_link">About</a></div>
 <div class="foot-col"><h5 data-i18n="cnt_tag">Locations</h5><a href="https://maps.app.goo.gl/mRrs1vD8poknFiJ29" target="_blank">Jims Auderghem</a><a href="#faq">Jims Meiser</a><a href="#booking">Book Now</a></div>
@@ -1014,7 +1015,7 @@ off_eyebrow:'Three ways to begin',off_title:'Choose your starting point.',off_le
 off_e_kick:'ESSENTIAL',off_e_name:'A framework and precision, at your pace.',off_e_price:'From €300 <small>/ 4 weeks</small>',off_e_result:'Measurable progress in the gym, month after month — without plateauing.',off_e_f1:'1 to 2 sessions per week, tailored program revised monthly',off_e_f2:'Nutrition tracking file + in-session guidance',off_e_f3:'Web app · WhatsApp on weekdays',off_e_for:'For the self-driven — you\'re missing a framework, not the will.',off_e_cta:'Get started',
 off_s_badge:'RECOMMENDED',off_s_kick:'SIGNATURE',off_s_name:'The Kaizen Transformation.',off_s_price:'€440 <small>/ 4 weeks</small>',off_s_total:'€2,640 total · ~6 months',off_s_sess:'33 sessions',off_s_result:'A visibly transformed body in 6 months — and the habits to keep it.',off_s_f1:'33 sessions across 3 phases: Foundations → Build → Autonomy',off_s_f2:'Full initial assessment: testing, measurements, photos',off_s_f3:'Coached nutrition: personalized plan + adjustments',off_s_f4:'Learning modules, exercise library, re-assessments',off_s_f5:'WhatsApp on weekdays',off_s_for:'For those who want a result — and to become autonomous fast.',off_s_cta:'Book a qualification call →',
 off_i_badge:'BY APPLICATION',off_i_kick:'KAIZEN INTEGRAL',off_i_name:'Zero compromise.',off_i_price:'€760 <small>/ 4 weeks</small>',off_i_total:'€4,560 total · ~6 months',off_i_sess:'48 sessions · 2–3 spots / quarter',off_i_places:'2–3 SPOTS / QUARTER',off_i_result:'Your most ambitious goal, treated as a project — piloted end to end.',off_i_f1:'Everything in Signature, with doubled foundations',off_i_f2:'Piloted nutrition: weekly meal plans + grocery flow',off_i_f3:'Structured lifestyle: sleep, stress, habits',off_i_f4:'Priority slots & WhatsApp 7/7 (reply < 24h)',off_i_for:'For a major goal, a deadline, zero compromise. Prior interview required.',off_i_cta:'Apply now',off_e_sess:'1–2 sessions / week',
-tf_sub:'Photos taken by the clients themselves, at the same markers. No studio, no retouching — the method, documented.',tf_c1_meta:'Muscle gain · 6 months',tf_c1_desc:'A clean bulk: muscle, not fat, built kilo by kilo.',tf_c2_meta:'Weight loss · 7 months',tf_c2_desc:'A complete overhaul, coached week after week — and kept off since.',tf_c3_meta:'Recomposition · 1 year',tf_c3_desc:'Less fat, more muscle: recomposition, measured month after month.',tf_c4_meta:'Body recomposition · 2 years',tf_c4_desc:'Two years of small steps: proof that durability beats urgency.',
+tf_sub:'Photos taken by the clients themselves, at the same markers. No studio, no retouching — the method, documented.',tf_c1_meta:'Muscle gain · 6 months',tf_c1_desc:'A clean bulk: muscle, not fat, built kilo by kilo.',tf_c2_meta:'Weight loss · 7 months',tf_c2_desc:'A complete overhaul, coached week after week — and kept off since.',tf_c3_meta:'Body recomposition · 1 year',tf_c3_desc:'Less fat, more muscle: recomposition, measured month after month.',tf_c4_meta:'Body recomposition · 2 years',tf_c4_desc:'Two years of small steps: proof that durability beats urgency.',
 quote_jp:'Fall seven times, stand up eight.',quote_jp_src:'— Japanese proverb',about_link:'Read my full story',bru_h:'In-gym at Jims · online everywhere',bru_p:'Sessions at two Jims clubs in Brussels — online coaching also available.',bru_maps:'Google Maps ↗',cta_phone:'+32 474 12 67 01',greview_cta:'Read our Google reviews →',
 book_tag:'Free Discovery Call',book_title:'Book a Free <span style="color:var(--red)">Call</span>',book_sub:'Answer a few quick questions and Thomas will reach out to schedule your free, no-pressure call.',
 tf_tag:'Client Results',tf_title:'Real <span style="color:var(--red)">Transformations</span>',
@@ -1061,7 +1062,7 @@ off_eyebrow:'Trois façons de commencer',off_title:'Choisissez votre point de d�
 off_e_kick:'ESSENTIEL',off_e_name:'Un cadre et de la précision, à votre rythme.',off_e_price:'À partir de 300€ <small>/ 4 sem.</small>',off_e_result:'Une progression mesurable en salle, mois après mois — sans plafonner.',off_e_f1:'1 à 2 séances par semaine, programme sur mesure révisé chaque mois',off_e_f2:'Fichier de suivi nutrition + conseils en séance',off_e_f3:'Web app · WhatsApp en semaine',off_e_for:'Pour l\'autonome — il vous manque un cadre, pas la volonté.',off_e_cta:'Commencer',
 off_s_badge:'RECOMMANDÉ',off_s_kick:'SIGNATURE',off_s_name:'La Kaizen Transformation.',off_s_price:'440€ <small>/ 4 sem.</small>',off_s_total:'2 640€ au total · ~6 mois',off_s_sess:'33 séances',off_s_result:'Un corps visiblement transformé en 6 mois — et les habitudes pour le garder.',off_s_f1:'33 séances en 3 phases : Fondations → Build → Autonomisation',off_s_f2:'Bilan initial complet : testing, mensurations, photos',off_s_f3:'Nutrition coachée : plan personnalisé + ajustements',off_s_f4:'Modules pédagogiques, bibliothèque d\'exercices, réévaluations',off_s_f5:'WhatsApp en semaine',off_s_for:'Pour qui veut un résultat — et devenir autonome vite.',off_s_cta:'Réserver un appel de qualification →',
 off_i_badge:'SUR CANDIDATURE',off_i_kick:'KAIZEN INTÉGRAL',off_i_name:'Zéro compromis.',off_i_price:'760€ <small>/ 4 sem.</small>',off_i_total:'4 560€ au total · ~6 mois',off_i_sess:'48 séances · 2–3 places / trim.',off_i_places:'2–3 PLACES / TRIMESTRE',off_i_result:'Votre objectif le plus ambitieux, traité comme un projet — piloté de bout en bout.',off_i_f1:'Tout Signature, avec des fondations doublées',off_i_f2:'Nutrition pilotée : meal plans hebdo + flux courses',off_i_f3:'Lifestyle structuré : sommeil, stress, habitudes',off_i_f4:'Créneaux prioritaires & WhatsApp 7j/7 (réponse < 24h)',off_i_for:'Un objectif majeur, une échéance, zéro compromis. Entretien préalable requis.',off_i_cta:'Déposer ma candidature',off_e_sess:'1–2 séances / sem',
-tf_sub:'Photos prises par les clients eux-mêmes, aux mêmes repères. Pas de studio, pas de retouche — la méthode, documentée.',tf_c1_meta:'Prise de muscle · 6 mois',tf_c1_desc:'Une prise de masse propre : du muscle, pas du gras, construite kilo par kilo.',tf_c2_meta:'Perte de poids · 7 mois',tf_c2_desc:'Une refonte complète, encadrée semaine après semaine — et maintenue depuis.',tf_c3_meta:'Recomposition · 1 an',tf_c3_desc:'Moins de gras, plus de muscle : la recomposition, mesurée mois après mois.',tf_c4_meta:'Recomposition corporelle · 2 ans',tf_c4_desc:'Deux ans de petits pas : la preuve que la durabilité bat l\'urgence.',
+tf_sub:'Photos prises par les clients eux-mêmes, aux mêmes repères. Pas de studio, pas de retouche — la méthode, documentée.',tf_c1_meta:'Prise de muscle · 6 mois',tf_c1_desc:'Une prise de masse propre : du muscle, pas du gras, construite kilo par kilo.',tf_c2_meta:'Perte de poids · 7 mois',tf_c2_desc:'Une refonte complète, encadrée semaine après semaine — et maintenue depuis.',tf_c3_meta:'Recomposition corporelle · 1 an',tf_c3_desc:'Moins de gras, plus de muscle : la recomposition, mesurée mois après mois.',tf_c4_meta:'Recomposition corporelle · 2 ans',tf_c4_desc:'Deux ans de petits pas : la preuve que la durabilité bat l\'urgence.',
 quote_jp:'Tomber sept fois, se relever huit.',quote_jp_src:'— Proverbe japonais',about_link:'Découvrir mon parcours',bru_h:'En salle chez Jims · en ligne partout',bru_p:'Séances dans deux clubs Jims à Bruxelles — coaching en ligne également disponible.',bru_maps:'Google Maps ↗',cta_phone:'+32 474 12 67 01',greview_cta:'Voir nos avis Google →',
 book_tag:'Appel Découverte Gratuit',book_title:'Réservez un <span style="color:var(--red)">Appel</span> Gratuit',book_sub:'Répondez à quelques questions rapides et Thomas vous recontactera pour planifier votre appel gratuit, sans engagement.',
 tf_tag:'Résultats Clients',tf_title:'Vraies <span style="color:var(--red)">Transformations</span>',
@@ -1108,7 +1109,7 @@ off_eyebrow:'Drie manieren om te beginnen',off_title:'Kies je startpunt.',off_le
 off_e_kick:'ESSENTIEEL',off_e_name:'Een kader en precisie, in jouw tempo.',off_e_price:'Vanaf €300 <small>/ 4 weken</small>',off_e_result:'Meetbare vooruitgang in de zaal, maand na maand — zonder te plateauen.',off_e_f1:'1 tot 2 sessies per week, programma op maat maandelijks herzien',off_e_f2:'Voedingsopvolgingsbestand + begeleiding tijdens de sessie',off_e_f3:'Web app · WhatsApp op weekdagen',off_e_for:'Voor wie zelfgestuurd is — je mist een kader, niet de wil.',off_e_cta:'Beginnen',
 off_s_badge:'AANBEVOLEN',off_s_kick:'SIGNATURE',off_s_name:'De Kaizen Transformatie.',off_s_price:'€440 <small>/ 4 weken</small>',off_s_total:'€2.640 totaal · ~6 maanden',off_s_sess:'33 sessies',off_s_result:'Een zichtbaar getransformeerd lichaam in 6 maanden — en de gewoontes om het te behouden.',off_s_f1:'33 sessies in 3 fasen: Fundamenten → Build → Autonomie',off_s_f2:'Volledige intake: testing, metingen, foto\'s',off_s_f3:'Gecoachte voeding: persoonlijk plan + aanpassingen',off_s_f4:'Leermodules, oefeningenbibliotheek, herbeoordelingen',off_s_f5:'WhatsApp op weekdagen',off_s_for:'Voor wie een resultaat wil — en snel autonoom wil worden.',off_s_cta:'Boek een kwalificatiegesprek →',
 off_i_badge:'OP AANVRAAG',off_i_kick:'KAIZEN INTEGRAAL',off_i_name:'Geen compromis.',off_i_price:'€760 <small>/ 4 weken</small>',off_i_total:'€4.560 totaal · ~6 maanden',off_i_sess:'48 sessies · 2–3 plaatsen / kwartaal',off_i_places:'2–3 PLAATSEN / KWARTAAL',off_i_result:'Je meest ambitieuze doel, aangepakt als een project — van begin tot eind begeleid.',off_i_f1:'Alles uit Signature, met verdubbelde fundamenten',off_i_f2:'Gestuurde voeding: wekelijkse maaltijdplannen + boodschappenflow',off_i_f3:'Gestructureerde levensstijl: slaap, stress, gewoontes',off_i_f4:'Prioritaire slots & WhatsApp 7/7 (antwoord < 24u)',off_i_for:'Voor een groot doel, een deadline, geen compromis. Voorafgaand gesprek vereist.',off_i_cta:'Solliciteren',off_e_sess:'1–2 sessies / week',
-tf_sub:'Foto\'s genomen door de klanten zelf, op dezelfde markers. Geen studio, geen retouche — de methode, gedocumenteerd.',tf_c1_meta:'Spieropbouw · 6 maanden',tf_c1_desc:'Een propere bulk: spier, geen vet, kilo per kilo opgebouwd.',tf_c2_meta:'Gewichtsverlies · 7 maanden',tf_c2_desc:'Een volledige heropbouw, week na week begeleid — en sindsdien behouden.',tf_c3_meta:'Recompositie · 1 jaar',tf_c3_desc:'Minder vet, meer spier: recompositie, maand na maand gemeten.',tf_c4_meta:'Lichaamsrecompositie · 2 jaar',tf_c4_desc:'Twee jaar kleine stappen: het bewijs dat duurzaamheid urgentie verslaat.',
+tf_sub:'Foto\'s genomen door de klanten zelf, op dezelfde markers. Geen studio, geen retouche — de methode, gedocumenteerd.',tf_c1_meta:'Spieropbouw · 6 maanden',tf_c1_desc:'Een propere bulk: spier, geen vet, kilo per kilo opgebouwd.',tf_c2_meta:'Gewichtsverlies · 7 maanden',tf_c2_desc:'Een volledige heropbouw, week na week begeleid — en sindsdien behouden.',tf_c3_meta:'Lichaamsrecompositie · 1 jaar',tf_c3_desc:'Minder vet, meer spier: recompositie, maand na maand gemeten.',tf_c4_meta:'Lichaamsrecompositie · 2 jaar',tf_c4_desc:'Twee jaar kleine stappen: het bewijs dat duurzaamheid urgentie verslaat.',
 quote_jp:'Zeven keer vallen, acht keer opstaan.',quote_jp_src:'— Japans spreekwoord',about_link:'Ontdek mijn verhaal',bru_h:'In de zaal bij Jims · online overal',bru_p:'Sessies in twee Jims-clubs in Brussel — online coaching ook beschikbaar.',bru_maps:'Google Maps ↗',cta_phone:'+32 474 12 67 01',greview_cta:'Lees onze Google-reviews →',
 book_tag:'Gratis Kennismakingsgesprek',book_title:'Boek een Gratis <span style="color:var(--red)">Gesprek</span>',book_sub:'Beantwoord een paar snelle vragen en Thomas neemt contact op om je gratis, vrijblijvend gesprek in te plannen.',
 tf_tag:'Klantresultaten',tf_title:'Echte <span style="color:var(--red)">Transformaties</span>',
