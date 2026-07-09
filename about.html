@@ -29,8 +29,6 @@ body{font-family:var(--sans);background:var(--black);color:var(--ink);-webkit-fo
 .eyebrow{display:inline-flex;align-items:center;gap:.75rem;font-size:.62rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--red)}
 .eyebrow::before{content:'';width:28px;height:1px;background:var(--red)}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.5rem}
-
-/* nav */
 nav{position:sticky;top:0;z-index:1000;padding:.55rem 3rem;display:flex;align-items:center;justify-content:space-between;background:color-mix(in srgb,var(--black) 88%,transparent);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
 .nav-logo img{height:56px;width:auto;display:block}
 .nav-logo .logo-dark{display:none}.nav-logo .logo-light{display:block}
@@ -38,14 +36,17 @@ html.dark .nav-logo .logo-dark{display:block}html.dark .nav-logo .logo-light{dis
 .nav-mid{display:flex;gap:1.7rem;list-style:none}
 .nav-mid a{color:var(--gray-lighter);text-decoration:none;font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;transition:color .3s}
 .nav-mid a:hover{color:var(--red)}
-.nav-right{display:flex;align-items:center;gap:.9rem}
+.nav-right{display:flex;align-items:center;gap:.8rem}
 .nav-book{padding:.7rem 1.25rem;background:var(--ink);color:var(--black);text-decoration:none;font-size:.6rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;border-radius:2px;transition:all .3s}
 .nav-book:hover{background:var(--red);color:#fff}
-.mode-toggle{cursor:pointer;padding:.3rem;color:var(--gray);display:flex}.mode-toggle:hover{color:var(--red)}
+.mode-toggle,.lang-toggle{cursor:pointer;padding:.3rem;color:var(--gray);display:flex;align-items:center}.mode-toggle:hover,.lang-toggle:hover{color:var(--red)}
 .mode-toggle svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8}
+.lang-toggle{position:relative;font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;gap:.2rem}
+.lang-dd{position:absolute;top:100%;right:0;margin-top:.5rem;background:var(--dark-2);border:1px solid var(--line-2);min-width:110px;display:none;flex-direction:column;border-radius:2px;overflow:hidden}
+.lang-dd.open{display:flex}
+.lang-dd button{background:none;border:none;color:var(--gray-light);font-family:var(--sans);font-size:.7rem;font-weight:500;padding:.6rem .85rem;text-align:left;cursor:pointer}
+.lang-dd button:hover{color:var(--red);background:var(--red-subtle)}.lang-dd button.active{color:var(--red)}
 @media(max-width:768px){.nav-mid{display:none}nav{padding:.5rem 1.2rem}.nav-logo img{height:44px}}
-
-/* hero */
 .a-hero{padding:4.5rem 1.5rem 1rem;background:var(--black)}
 .a-hero .wrap{display:grid;grid-template-columns:300px 1fr;gap:3rem;align-items:center}
 .a-portrait{aspect-ratio:4/5;border-radius:4px;overflow:hidden;outline:1px solid var(--line-2);outline-offset:-8px;background:var(--dark);position:relative}
@@ -55,31 +56,22 @@ html.dark .nav-logo .logo-dark{display:block}html.dark .nav-logo .logo-light{dis
 .a-hero h1 em{color:var(--red);font-style:italic}
 .a-hero .sub{font-size:1rem;color:var(--gray-light);line-height:1.7;max-width:460px}
 @media(max-width:720px){.a-hero .wrap{grid-template-columns:1fr;gap:1.8rem}.a-portrait{max-width:260px}}
-
-/* content sections */
-.sec{padding:3rem 1.5rem}
-.sec.alt{background:var(--dark)}
+.sec{padding:3rem 1.5rem}.sec.alt{background:var(--dark)}
 .sec h2{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2rem);font-weight:500;color:var(--ink);margin:1rem 0 1.2rem;line-height:1.2}
 .sec p{font-size:1rem;line-height:1.8;color:var(--gray-light);margin-bottom:1.1rem;max-width:680px}
 .sec p:last-child{margin-bottom:0}
 .placeholder{border:1px dashed var(--line-3);border-radius:4px;padding:1.4rem 1.6rem;background:var(--red-subtle);color:var(--gray);font-size:.9rem;line-height:1.65;font-style:italic;max-width:680px}
 .placeholder b{color:var(--red);font-style:normal;font-weight:600}
-
-/* certifications */
 .certs{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;max-width:680px;margin-top:.5rem}
 .cert{border:1px solid var(--line);background:var(--dark-2);border-radius:4px;padding:1.1rem 1.3rem}
 .cert .c-t{font-family:var(--serif);font-size:1.02rem;color:var(--ink);font-weight:500}
 .cert .c-s{font-size:.78rem;color:var(--gray);margin-top:.25rem}
 @media(max-width:560px){.certs{grid-template-columns:1fr}}
-
-/* values row */
 .vals{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;max-width:680px;margin-top:.5rem}
 .val{border:1px solid var(--line);border-radius:4px;padding:1rem 1.1rem;background:var(--dark-2)}
 .val h4{font-family:var(--serif);font-size:1rem;font-weight:500;color:var(--ink);margin-bottom:.3rem}
-.val p{font-size:.76rem;color:var(--gray);line-height:1.5;margin:0}
+.val p{font-size:.76rem;color:var(--gray);line-height:1.5;margin:0;max-width:none}
 @media(max-width:720px){.vals{grid-template-columns:1fr 1fr}}
-
-/* cta */
 .a-cta{padding:4rem 1.5rem;text-align:center;background:var(--ink)}
 .a-cta h2{font-family:var(--serif);font-size:clamp(1.7rem,3.5vw,2.3rem);font-weight:500;color:#FBFAF8;margin-bottom:1rem}
 .a-cta p{font-size:.95rem;color:#B9AF9D;max-width:440px;margin:0 auto 1.8rem;line-height:1.6}
@@ -87,7 +79,6 @@ html.dark .nav-logo .logo-dark{display:block}html.dark .nav-logo .logo-light{dis
 .a-cta .btn:hover{background:var(--red-light)}
 .a-cta .contacts{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem 2rem;margin-top:2rem}
 .a-cta .contacts a{color:#8C8577;text-decoration:none;font-size:.85rem}.a-cta .contacts a:hover{color:#fff}
-
 footer{padding:2.5rem 3rem;background:var(--ink);border-top:1px solid rgba(251,250,248,.08);text-align:center}
 footer .fl{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem}
 footer .fl a{color:#8C8577;text-decoration:none;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
@@ -99,88 +90,82 @@ footer .fc{font-size:.6rem;color:#6E675E}
 
 <nav>
 <a href="/" class="nav-logo" aria-label="DEVRESSE"><img class="logo-dark" src="/images/logo-header-dark.png" alt="DEVRESSE"><img class="logo-light" src="/images/logo-header-light.png" alt="DEVRESSE"></a>
-<ul class="nav-mid"><li><a href="/#method">Method</a></li><li><a href="/#transforms">Results</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/about.html">About</a></li></ul>
+<ul class="nav-mid"><li><a href="/#method" data-i18n="nav_method">Method</a></li><li><a href="/#transforms" data-i18n="nav_results">Results</a></li><li><a href="/pricing.html" data-i18n="nav_pricing">Pricing</a></li><li><a href="/about.html" data-i18n="nav_about">About</a></li></ul>
 <div class="nav-right">
+<div class="lang-toggle" onclick="this.querySelector('.lang-dd').classList.toggle('open')"><span id="curLang">EN</span><svg viewBox="0 0 24 24" style="width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2.5"><path d="M6 9l6 6 6-6"/></svg><div class="lang-dd"><button class="active" onclick="setLang('en',event)">English</button><button onclick="setLang('fr',event)">Français</button><button onclick="setLang('nl',event)">Nederlands</button></div></div>
 <div class="mode-toggle" onclick="toggleMode()" title="Light/dark"><svg viewBox="0 0 24 24" id="modeIco"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></div>
-<a href="/#booking" class="nav-book">Book a Call</a>
+<a href="/#booking" class="nav-book" data-i18n="nav_book">Book a Call</a>
 </div>
 </nav>
 
-<!-- HERO -->
 <div class="a-hero">
 <div class="wrap">
 <div class="a-portrait"><img src="/images/thomas-portrait.png" alt="Thomas Devresse"><span class="stamp">改</span></div>
 <div>
-<div class="eyebrow">About Me</div>
-<h1>Thomas Devresse.<br>A coach who <em>loves to teach.</em></h1>
-<p class="sub">Personal trainer in Brussels. What drives me is passing it on — turning what the science says into something you actually understand and can do on your own. I work 1-on-1 with adults who want lasting results, built on one simple conviction: consistency beats intensity.</p>
+<div class="eyebrow" data-i18n="hero_eyebrow">About Me</div>
+<h1 data-i18n-html="hero_h1">Thomas Devresse.<br>A coach who <em>loves to teach.</em></h1>
+<p class="sub" data-i18n="hero_sub">Personal trainer in Brussels. What drives me is passing it on — turning what the science says into something you actually understand and can do on your own. I work 1-on-1 with adults who want lasting results, built on one simple conviction: consistency beats intensity.</p>
 </div>
 </div>
 </div>
 
-<!-- MY STORY -->
 <section class="sec">
 <div class="wrap">
-<div class="eyebrow">My story</div>
-<h2>How I got here</h2>
-<div class="placeholder"><b>Section about my background — to complete.</b> Add here your path into coaching: what you did before, what drew you to training, key turning points, how many years you've been coaching, and what you've learned along the way. Thom will fill this in.</div>
+<div class="eyebrow" data-i18n="story_eyebrow">My story</div>
+<h2 data-i18n="story_h">How I got here</h2>
+<div class="placeholder" data-i18n-html="story_ph"><b>Section about my background — to complete.</b> Add here your path into coaching: what you did before, what drew you to training, key turning points, how many years you've been coaching, and what you've learned along the way. Thom will fill this in.</div>
 </div>
 </section>
 
-<!-- PHILOSOPHY -->
 <section class="sec alt">
 <div class="wrap">
-<div class="eyebrow">My philosophy</div>
-<h2>改善 — small steps, endlessly repeated</h2>
-<p>Kaizen is a Japanese philosophy rooted in one idea: it's not about perfection — it's about progress. The goal is never the destination; it's the process of constantly becoming better. Through continuous cycles of small, deliberate improvements, you assess where you are, act on what can be better, and repeat.</p>
-<p>This philosophy is the anchor of everything I do as a coach. Every decision — load, set, meal — is grounded in the scientific literature and in your real data, not in trends. Nothing is rushed. Nothing is skipped.</p>
+<div class="eyebrow" data-i18n="philo_eyebrow">My philosophy</div>
+<h2 data-i18n="philo_h">改善 — small steps, endlessly repeated</h2>
+<p data-i18n="philo_p1">Kaizen is a Japanese philosophy rooted in one idea: it's not about perfection — it's about progress. The goal is never the destination; it's the process of constantly becoming better. Through continuous cycles of small, deliberate improvements, you assess where you are, act on what can be better, and repeat.</p>
+<p data-i18n="philo_p2">This philosophy is the anchor of everything I do as a coach. Every decision — load, set, meal — is grounded in the scientific literature and in your real data, not in trends. Nothing is rushed. Nothing is skipped.</p>
 </div>
 </section>
 
-<!-- HOW I COACH / WAY OF BEING -->
 <section class="sec">
 <div class="wrap">
-<div class="eyebrow">How I coach</div>
-<h2>What you can expect from me</h2>
-<p>I lead by example. Following the Kaizen principles in my own life, I try to become a better person and a better trainer every day. I practice what I preach — I train with intensity and effort, and I eat smart. Progress never stops.</p>
+<div class="eyebrow" data-i18n="coach_eyebrow">How I coach</div>
+<h2 data-i18n="coach_h">What you can expect from me</h2>
+<p data-i18n="coach_p">I lead by example. Following the Kaizen principles in my own life, I try to become a better person and a better trainer every day. I practice what I preach — I train with intensity and effort, and I eat smart. Progress never stops.</p>
 <div class="vals">
-<div class="val"><h4>Mastery</h4><p>Years of practice refining technique, programming and continuous learning</p></div>
-<div class="val"><h4>Strategy</h4><p>Training, nutrition and lifestyle aligned toward a clear long-term plan</p></div>
-<div class="val"><h4>Accountability</h4><p>I hold you to your goals</p></div>
-<div class="val"><h4>Compassion</h4><p>Coaching that understands your challenges and supports your growth</p></div>
+<div class="val"><h4 data-i18n="val1_h">Mastery</h4><p data-i18n="val1_p">Years of practice refining technique, programming and continuous learning</p></div>
+<div class="val"><h4 data-i18n="val2_h">Strategy</h4><p data-i18n="val2_p">Training, nutrition and lifestyle aligned toward a clear long-term plan</p></div>
+<div class="val"><h4 data-i18n="val3_h">Accountability</h4><p data-i18n="val3_p">I hold you to your goals</p></div>
+<div class="val"><h4 data-i18n="val4_h">Compassion</h4><p data-i18n="val4_p">Coaching that understands your challenges and supports your growth</p></div>
 </div>
 </div>
 </section>
 
-<!-- MY OWN TRANSFORMATION -->
 <section class="sec alt">
 <div class="wrap">
-<div class="eyebrow">My own transformation</div>
-<h2>I don't ask what I haven't done</h2>
-<div class="placeholder"><b>Section about my own transformation — to complete.</b> Add your personal before/after and story here: where you started, what you changed, the numbers, and what it taught you about coaching others. Photos can be added later.</div>
+<div class="eyebrow" data-i18n="own_eyebrow">My own transformation</div>
+<h2 data-i18n="own_h">I don't ask what I haven't done</h2>
+<div class="placeholder" data-i18n-html="own_ph"><b>Section about my own transformation — to complete.</b> Add your personal before/after and story here: where you started, what you changed, the numbers, and what it taught you about coaching others. Photos can be added later.</div>
 </div>
 </section>
 
-<!-- CERTIFICATIONS -->
 <section class="sec">
 <div class="wrap">
-<div class="eyebrow">Credentials</div>
-<h2>Certifications</h2>
+<div class="eyebrow" data-i18n="cred_eyebrow">Credentials</div>
+<h2 data-i18n="cred_h">Certifications</h2>
 <div class="certs">
 <div class="cert"><div class="c-t">Certified Personal Trainer</div><div class="c-s">EREPS 4 (NASM)</div></div>
 <div class="cert"><div class="c-t">Sport Performance Specialist</div><div class="c-s">PCA</div></div>
 <div class="cert"><div class="c-t">Body Transformation Specialist</div><div class="c-s">PCA</div></div>
-<div class="cert"><div class="c-t">20+ courses &amp; certifications</div><div class="c-s">Continuous learning — ongoing</div></div>
+<div class="cert"><div class="c-t" data-i18n="cred_more_t">20+ courses &amp; certifications</div><div class="c-s" data-i18n="cred_more_s">Continuous learning — ongoing</div></div>
 </div>
-<p style="margin-top:1.4rem;font-size:.85rem;color:var(--gray);font-style:italic">Additional certifications and dates — to complete.</p>
+<p style="margin-top:1.4rem;font-size:.85rem;color:var(--gray);font-style:italic" data-i18n="cred_note">Additional certifications and dates — to complete.</p>
 </div>
 </section>
 
-<!-- CTA -->
 <div class="a-cta">
-<h2>Let's map your starting point.</h2>
-<p>A free, no-pressure call to see where you are and where you want to go.</p>
-<a href="/#booking" class="btn">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:12px;height:12px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<h2 data-i18n="cta_h">Let's map your starting point.</h2>
+<p data-i18n="cta_p">A free, no-pressure call to see where you are and where you want to go.</p>
+<a href="/#booking" class="btn" data-i18n="cta_btn">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:12px;height:12px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 <div class="contacts">
 <a href="mailto:thomas@devresse.fit">thomas@devresse.fit</a>
 <a href="tel:+32474126701">+32 474 12 67 01</a>
@@ -189,15 +174,45 @@ footer .fc{font-size:.6rem;color:#6E675E}
 </div>
 
 <footer>
-<div class="fl"><a href="/">Home</a><a href="/#method">Method</a><a href="/pricing.html">Pricing</a><a href="/#transforms">Results</a><a href="/#booking">Book</a></div>
+<div class="fl"><a href="/" data-i18n="foot_home">Home</a><a href="/#method" data-i18n="nav_method">Method</a><a href="/pricing.html" data-i18n="nav_pricing">Pricing</a><a href="/#transforms" data-i18n="nav_results">Results</a><a href="/#booking" data-i18n="foot_book">Book</a></div>
 <div class="fc">© 2026 Thomas Devresse — Personal Training, Brussels</div>
 </footer>
 
 <script>
+const i18n={
+en:{},
+fr:{nav_method:'Méthode',nav_results:'Résultats',nav_pricing:'Tarifs',nav_about:'À propos',nav_book:'Réserver',foot_home:'Accueil',foot_book:'Réserver',
+hero_eyebrow:'À propos de moi',hero_h1:'Thomas Devresse.<br>Un coach qui <em>adore enseigner.</em>',hero_sub:'Personal trainer à Bruxelles. Ce qui me anime, c\'est la transmission — transformer ce que dit la science en quelque chose que vous comprenez vraiment et pouvez appliquer seul. Je travaille en 1-on-1 avec des adultes qui veulent des résultats durables, sur une conviction simple : la constance bat l\'intensité.',
+story_eyebrow:'Mon parcours',story_h:'Comment j\'en suis arrivé là',story_ph:'<b>Section sur mon parcours — à compléter.</b> Ajoute ici ton chemin vers le coaching : ce que tu faisais avant, ce qui t\'a attiré vers l\'entraînement, les tournants clés, tes années de pratique et ce que tu as appris. Thom complétera.',
+philo_eyebrow:'Ma philosophie',philo_h:'改善 — de petits pas, répétés sans fin',philo_p1:'Le Kaizen est une philosophie japonaise fondée sur une idée : il ne s\'agit pas de perfection, mais de progression. La cible n\'est jamais la destination ; c\'est le processus qui consiste à devenir sans cesse meilleur. Par des cycles continus de petites améliorations réfléchies, vous prenez vos repères, agissez sur ce qui peut l\'être, puis recommencez.',philo_p2:'Cette philosophie est l\'ancrage de tout ce que je fais comme coach. Chaque décision — charge, série, assiette — repose sur la littérature scientifique et sur vos données réelles, pas sur des tendances. Rien n\'est précipité. On ne saute aucune étape.',
+coach_eyebrow:'Ma façon de coacher',coach_h:'Ce que vous pouvez attendre de moi',coach_p:'Je montre l\'exemple. En appliquant les principes Kaizen à ma propre vie, j\'essaie de devenir une meilleure personne et un meilleur coach chaque jour. Je pratique ce que je prêche — je m\'entraîne avec intensité et je mange intelligemment. La progression ne s\'arrête jamais.',
+val1_h:'Maîtrise',val1_p:'Des années à affiner technique, programmation et apprentissage continu',val2_h:'Stratégie',val2_p:'Entraînement, nutrition et style de vie alignés vers un plan à long terme',val3_h:'Responsabilité',val3_p:'Je vous tiens à vos objectifs',val4_h:'Compassion',val4_p:'Un coaching qui comprend vos défis et soutient votre progression',
+own_eyebrow:'Ma propre transformation',own_h:'Je ne demande rien que je n\'aie fait',own_ph:'<b>Section sur ma propre transformation — à compléter.</b> Ajoute ici ton avant/après et ton histoire : ton point de départ, ce que tu as changé, les chiffres, et ce que ça t\'a appris pour coacher les autres. Les photos pourront être ajoutées plus tard.',
+cred_eyebrow:'Diplômes',cred_h:'Certifications',cred_more_t:'20+ formations & certifications',cred_more_s:'Apprentissage continu — en cours',cred_note:'Certifications et dates supplémentaires — à compléter.',
+cta_h:'Définissons votre point de départ.',cta_p:'Un appel gratuit et sans pression pour voir où vous en êtes et où vous voulez aller.',cta_btn:'Réserver un appel gratuit'},
+nl:{nav_method:'Methode',nav_results:'Resultaten',nav_pricing:'Tarieven',nav_about:'Over mij',nav_book:'Boeken',foot_home:'Home',foot_book:'Boeken',
+hero_eyebrow:'Over mij',hero_h1:'Thomas Devresse.<br>Een coach die <em>graag lesgeeft.</em>',hero_sub:'Personal trainer in Brussel. Wat mij drijft is overdracht — vertalen wat de wetenschap zegt naar iets dat je écht begrijpt en zelf kunt toepassen. Ik werk 1-op-1 met volwassenen die blijvende resultaten willen, vanuit één simpele overtuiging: consistentie verslaat intensiteit.',
+story_eyebrow:'Mijn verhaal',story_h:'Hoe ik hier kwam',story_ph:'<b>Sectie over mijn achtergrond — aan te vullen.</b> Voeg hier je weg naar coaching toe: wat je eerder deed, wat je naar training trok, kantelpunten, je jaren ervaring en wat je onderweg leerde. Thom vult dit in.',
+philo_eyebrow:'Mijn filosofie',philo_h:'改善 — kleine stappen, eindeloos herhaald',philo_p1:'Kaizen is een Japanse filosofie met één kernidee: het gaat niet om perfectie, maar om vooruitgang. Het doel is nooit de bestemming; het is het proces van steeds beter worden. Via voortdurende cycli van kleine, bewuste verbeteringen bekijk je waar je staat, pas je toe wat beter kan, en begin je opnieuw.',philo_p2:'Deze filosofie is het fundament van alles wat ik als coach doe. Elke beslissing — belasting, set, maaltijd — is gebaseerd op de wetenschappelijke literatuur en op jouw echte data, niet op trends. Niets wordt gehaast. Niets wordt overgeslagen.',
+coach_eyebrow:'Hoe ik coach',coach_h:'Wat je van mij mag verwachten',coach_p:'Ik geef het goede voorbeeld. Door de Kaizen-principes in mijn eigen leven toe te passen, probeer ik elke dag een beter mens en een betere coach te worden. Ik doe wat ik zeg — ik train met intensiteit en eet slim. Vooruitgang stopt nooit.',
+val1_h:'Meesterschap',val1_p:'Jaren oefening in techniek, programmering en continu leren',val2_h:'Strategie',val2_p:'Training, voeding en levensstijl afgestemd op een langetermijnplan',val3_h:'Verantwoordelijkheid',val3_p:'Ik houd je aan je doelen',val4_h:'Compassie',val4_p:'Coaching die je uitdagingen begrijpt en je groei ondersteunt',
+own_eyebrow:'Mijn eigen transformatie',own_h:'Ik vraag niets wat ik zelf niet deed',own_ph:'<b>Sectie over mijn eigen transformatie — aan te vullen.</b> Voeg hier je persoonlijke voor/na en verhaal toe: je startpunt, wat je veranderde, de cijfers, en wat het je leerde over het coachen van anderen. Foto\'s kunnen later worden toegevoegd.',
+cred_eyebrow:'Diploma\'s',cred_h:'Certificeringen',cred_more_t:'20+ cursussen & certificeringen',cred_more_s:'Continu leren — doorlopend',cred_note:'Bijkomende certificeringen en data — aan te vullen.',
+cta_h:'Laten we je startpunt bepalen.',cta_p:'Een gratis, vrijblijvend gesprek om te zien waar je staat en waar je heen wilt.',cta_btn:'Boek een gratis gesprek'}
+};
+function setLang(l,e){if(e)e.stopPropagation();document.documentElement.lang=l;document.getElementById('curLang').textContent=l.toUpperCase();
+document.querySelectorAll('.lang-dd button').forEach(b=>b.classList.remove('active'));
+if(e&&e.target)e.target.classList.add('active');
+const t=i18n[l]||{};
+document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(l==='en'){if(el.dataset.en!==undefined)el.textContent=el.dataset.en;}else if(t[k]!==undefined){if(el.dataset.en===undefined)el.dataset.en=el.textContent;el.textContent=t[k];}});
+document.querySelectorAll('[data-i18n-html]').forEach(el=>{const k=el.dataset.i18nHtml;if(l==='en'){if(el.dataset.enh!==undefined)el.innerHTML=el.dataset.enh;}else if(t[k]!==undefined){if(el.dataset.enh===undefined)el.dataset.enh=el.innerHTML;el.innerHTML=t[k];}});
+document.querySelector('.lang-dd')?.classList.remove('open');localStorage.setItem('td_lang',l);}
+document.addEventListener('click',e=>{if(!e.target.closest('.lang-toggle'))document.querySelector('.lang-dd')?.classList.remove('open')});
 const SUN='<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>';
 const MOON='<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>';
 function toggleMode(){const d=document.documentElement.classList.toggle('dark');localStorage.setItem('td_mode',d?'dark':'light');const i=document.getElementById('modeIco');i.innerHTML=d?SUN:MOON;document.querySelector('meta[name="theme-color"]').content=d?'#17140F':'#FBFAF8';}
-(function(){if(localStorage.getItem('td_mode')==='dark'){document.documentElement.classList.add('dark');const i=document.getElementById('modeIco');if(i)i.innerHTML=SUN;document.querySelector('meta[name="theme-color"]').content='#17140F';}})();
+(function(){if(localStorage.getItem('td_mode')==='dark'){document.documentElement.classList.add('dark');const i=document.getElementById('modeIco');if(i)i.innerHTML=SUN;document.querySelector('meta[name="theme-color"]').content='#17140F';}
+const sl=localStorage.getItem('td_lang');if(sl&&sl!=='en')setLang(sl);})();
 </script>
 </body>
 </html>

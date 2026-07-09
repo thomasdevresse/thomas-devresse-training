@@ -30,8 +30,6 @@ body{font-family:var(--sans);background:var(--black);color:var(--ink);-webkit-fo
 .eyebrow::before{content:'';width:28px;height:1px;background:var(--red)}
 .container{max-width:var(--maxw);margin:0 auto}
 section{padding:5rem 3rem}
-
-/* nav */
 nav{position:sticky;top:0;z-index:1000;padding:.55rem 3rem;display:flex;align-items:center;justify-content:space-between;background:color-mix(in srgb,var(--black) 88%,transparent);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
 .nav-logo img{height:56px;width:auto;display:block}
 .nav-logo .logo-dark{display:none}.nav-logo .logo-light{display:block}
@@ -39,21 +37,22 @@ html.dark .nav-logo .logo-dark{display:block}html.dark .nav-logo .logo-light{dis
 .nav-mid{display:flex;gap:1.7rem;list-style:none}
 .nav-mid a{color:var(--gray-lighter);text-decoration:none;font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;transition:color .3s}
 .nav-mid a:hover{color:var(--red)}
-.nav-right{display:flex;align-items:center;gap:.9rem}
+.nav-right{display:flex;align-items:center;gap:.8rem}
 .nav-book{padding:.7rem 1.25rem;background:var(--ink);color:var(--black);text-decoration:none;font-size:.6rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;border-radius:2px;transition:all .3s}
 .nav-book:hover{background:var(--red);color:#fff}
-.mode-toggle{cursor:pointer;padding:.3rem;color:var(--gray);display:flex}.mode-toggle:hover{color:var(--red)}
+.mode-toggle,.lang-toggle{cursor:pointer;padding:.3rem;color:var(--gray);display:flex;align-items:center}.mode-toggle:hover,.lang-toggle:hover{color:var(--red)}
 .mode-toggle svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8}
+.lang-toggle{position:relative;font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;gap:.2rem}
+.lang-dd{position:absolute;top:100%;right:0;margin-top:.5rem;background:var(--dark-2);border:1px solid var(--line-2);min-width:110px;display:none;flex-direction:column;border-radius:2px;overflow:hidden}
+.lang-dd.open{display:flex}
+.lang-dd button{background:none;border:none;color:var(--gray-light);font-family:var(--sans);font-size:.7rem;font-weight:500;padding:.6rem .85rem;text-align:left;cursor:pointer}
+.lang-dd button:hover{color:var(--red);background:var(--red-subtle)}.lang-dd button.active{color:var(--red)}
 @media(max-width:768px){.nav-mid{display:none}nav{padding:.5rem 1.2rem}.nav-logo img{height:44px}section{padding:3.5rem 1.2rem}}
-
-/* hero */
 .p-hero{padding:4.5rem 3rem 2.5rem;text-align:center;background:var(--black)}
 .p-hero .eyebrow{justify-content:center}
 .p-hero h1{font-family:var(--serif);font-size:clamp(2.4rem,5vw,3.6rem);font-weight:500;line-height:1.1;letter-spacing:-.015em;margin:1.2rem 0 1rem}
 .p-hero h1 em{color:var(--red);font-style:italic}
 .p-hero p{font-size:1.02rem;color:var(--gray-light);line-height:1.7;max-width:640px;margin:0 auto}
-
-/* offers grid */
 .offers{padding:2rem 3rem 4rem;background:var(--black)}
 .offers-grid{display:grid;grid-template-columns:1fr 1.12fr 1fr;gap:1.4rem;align-items:stretch;max-width:var(--maxw);margin:0 auto}
 .offer{background:var(--dark-2);border:1px solid var(--line);border-radius:5px;padding:2.4rem 2rem;display:flex;flex-direction:column;margin-top:18px;position:relative}
@@ -82,11 +81,10 @@ html.dark .nav-logo .logo-dark{display:block}html.dark .nav-logo .logo-light{dis
 .o-cta a{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.9rem 1.5rem;border-radius:2px;text-decoration:none;border:1px solid var(--line-3);color:var(--ink);transition:all .3s}
 .o-cta a:hover{border-color:var(--red);color:var(--red)}
 .o-badge{position:absolute;top:-11px;left:2rem;font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:.35rem .8rem;border-radius:2px}
-/* featured */
 .offer.feat{background:var(--ink);border-color:var(--ink);margin-top:0;box-shadow:0 30px 56px -24px rgba(23,20,15,.5)}
 .offer.feat .o-kicker{color:color-mix(in srgb,var(--black) 62%,var(--ink))}
 .offer.feat .o-name,.offer.feat .o-price{color:var(--black)}
-.offer.feat .o-price small,.offer.feat .o-total,.offer.feat .o-for{color:color-mix(in srgb,var(--black) 58%,var(--ink))}
+.offer.feat .o-price small,.offer.feat .o-total{color:color-mix(in srgb,var(--black) 58%,var(--ink))}
 .offer.feat .o-rule{background:color-mix(in srgb,var(--black) 16%,transparent)}
 .offer.feat .o-result{background:color-mix(in srgb,var(--black) 8%,transparent);color:color-mix(in srgb,var(--black) 88%,var(--ink))}
 .offer.feat .o-feats,.offer.feat .o-phase{color:color-mix(in srgb,var(--black) 86%,var(--ink))}
@@ -99,8 +97,6 @@ html.dark .nav-logo .logo-dark{display:block}html.dark .nav-logo .logo-light{dis
 .offer.select .o-badge{color:var(--ink);background:var(--black);border:1px solid var(--ink)}
 .offer.select .o-cta a{background:var(--ink);border-color:var(--ink);color:var(--black)}.offer.select .o-cta a:hover{background:var(--red);border-color:var(--red);color:#fff}
 @media(max-width:960px){.offers-grid{grid-template-columns:1fr;max-width:480px}.offer,.offer.feat{margin-top:0}}
-
-/* nutrition table */
 .nut{background:var(--dark)}
 .nut .head,.after .head,.p-faq .head{text-align:center;margin-bottom:2.5rem}
 .nut h2,.after h2,.p-faq h2{font-family:var(--serif);font-size:clamp(1.7rem,3.2vw,2.3rem);font-weight:500;line-height:1.15;color:var(--ink)}
@@ -114,16 +110,12 @@ html.dark .nav-logo .logo-dark{display:block}html.dark .nav-logo .logo-light{dis
 .nut-row .desc{font-size:.85rem;line-height:1.55;color:var(--gray-light)}
 .nut-note{max-width:900px;margin:1.4rem auto 0;font-size:.78rem;color:var(--gray);line-height:1.6;border-left:2px solid var(--red);padding:.6rem 1rem;background:var(--red-subtle);border-radius:0 3px 3px 0}
 @media(max-width:640px){.nut-row{grid-template-columns:1fr;gap:.4rem}.nut-row.h{display:none}}
-
-/* after */
 .after{background:var(--black)}
 .after-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;max-width:860px;margin:0 auto}
 .after-card{background:var(--dark-2);border:1px solid var(--line);border-radius:5px;padding:1.8rem}
 .after-card h3{font-family:var(--serif);font-size:1.2rem;font-weight:500;color:var(--ink);margin-bottom:.6rem}
 .after-card p{font-size:.86rem;line-height:1.6;color:var(--gray-light)}
 @media(max-width:640px){.after-grid{grid-template-columns:1fr}}
-
-/* faq */
 .p-faq{background:var(--dark)}
 .faq-list{max-width:760px;margin:0 auto}
 .faq-i{border-bottom:1px solid var(--line)}
@@ -135,8 +127,6 @@ html.dark .nav-logo .logo-dark{display:block}html.dark .nav-logo .logo-light{dis
 .faq-a{max-height:0;overflow:hidden;transition:max-height .4s,padding .4s}
 .faq-i.open .faq-a{max-height:400px;padding-bottom:1.2rem}
 .faq-a p{font-size:.86rem;color:var(--gray-light);line-height:1.7}
-
-/* cta */
 .p-cta{padding:4.5rem 3rem;text-align:center;background:var(--ink)}
 .p-cta h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:500;color:#FBFAF8;margin-bottom:1rem}
 .p-cta p{font-size:.95rem;color:#B9AF9D;max-width:460px;margin:0 auto 1.8rem;line-height:1.6}
@@ -144,8 +134,6 @@ html.dark .nav-logo .logo-dark{display:block}html.dark .nav-logo .logo-light{dis
 .p-cta .btn:hover{background:var(--red-light)}
 .p-cta .contacts{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem 2rem;margin-top:2.2rem}
 .p-cta .contacts a{color:#8C8577;text-decoration:none;font-size:.85rem;transition:color .3s}.p-cta .contacts a:hover{color:#fff}
-
-/* footer */
 footer{padding:2.5rem 3rem;background:var(--ink);border-top:1px solid rgba(251,250,248,.08);text-align:center}
 footer .fb{display:flex;align-items:center;justify-content:center;gap:.55rem;margin-bottom:.8rem}
 footer .fb img{width:30px;height:30px;border-radius:50%}
@@ -160,130 +148,122 @@ footer .fc{font-size:.6rem;color:#6E675E}
 
 <nav>
 <a href="/" class="nav-logo" aria-label="DEVRESSE"><img class="logo-dark" src="/images/logo-header-dark.png" alt="DEVRESSE"><img class="logo-light" src="/images/logo-header-light.png" alt="DEVRESSE"></a>
-<ul class="nav-mid"><li><a href="/#method">Method</a></li><li><a href="/#transforms">Results</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/#about">About</a></li></ul>
+<ul class="nav-mid"><li><a href="/#method" data-i18n="nav_method">Method</a></li><li><a href="/#transforms" data-i18n="nav_results">Results</a></li><li><a href="/pricing.html" data-i18n="nav_pricing">Pricing</a></li><li><a href="/#about" data-i18n="nav_about">About</a></li></ul>
 <div class="nav-right">
+<div class="lang-toggle" onclick="this.querySelector('.lang-dd').classList.toggle('open')"><span id="curLang">EN</span><svg viewBox="0 0 24 24" style="width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2.5"><path d="M6 9l6 6 6-6"/></svg><div class="lang-dd"><button class="active" onclick="setLang('en',event)">English</button><button onclick="setLang('fr',event)">Français</button><button onclick="setLang('nl',event)">Nederlands</button></div></div>
 <div class="mode-toggle" onclick="toggleMode()" title="Light/dark"><svg viewBox="0 0 24 24" id="modeIco"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></div>
-<a href="/#booking" class="nav-book">Book a Call</a>
+<a href="/#booking" class="nav-book" data-i18n="nav_book">Book a Call</a>
 </div>
 </nav>
 
-<!-- HERO -->
 <div class="p-hero">
-<div class="eyebrow">Three ways to begin</div>
-<h1>One method.<br><em>Three levels</em> of support.</h1>
-<p>Every formula follows the same Kaizen method — small, deliberate improvements that compound. What changes is the intensity of the accompaniment, and how much you delegate. The destination is always the same: your autonomy.</p>
+<div class="eyebrow" data-i18n="hero_eyebrow">Three ways to begin</div>
+<h1 data-i18n-html="hero_h1">One method.<br><em>Three levels</em> of support.</h1>
+<p data-i18n="hero_p">Every formula follows the same Kaizen method — small, deliberate improvements that compound. What changes is the intensity of the accompaniment, and how much you delegate. The destination is always the same: your autonomy.</p>
 </div>
 
-<!-- OFFERS -->
 <section class="offers">
 <div class="offers-grid">
 
-<!-- Essential -->
 <div class="offer">
 <div class="o-kicker">ESSENTIAL</div>
-<div class="o-name">A framework and precision, at your pace.</div>
-<div class="o-price">From €300 <small>/ 4 weeks</small></div>
-<div class="o-total">€75 / session (1×/week) · €65 / session (2×/week+)</div>
-<div class="o-sessions">1–2 sessions / week</div>
+<div class="o-name" data-i18n="e_name">A framework and precision, at your pace.</div>
+<div class="o-price" data-i18n-html="e_price">From €300 <small>/ 4 weeks</small></div>
+<div class="o-total" data-i18n="e_total">€75 / session (1×/week) · €65 / session (2×/week+)</div>
+<div class="o-sessions" data-i18n="e_sess">1–2 sessions / week</div>
 <div class="o-rule"></div>
-<div class="o-result"><b>THE RESULT</b>Measurable progress in the gym, month after month — without plateauing.</div>
-<div class="o-block"><h4>What's included</h4><div class="o-feats"><div>Tailored program, revised every month</div><div>1-on-1 coaching, 1 to 2 sessions per week</div><div>Nutrition tracking file + in-session guidance</div><div>Web app for programming &amp; tracking</div><div>WhatsApp contact on weekdays</div></div></div>
-<div class="o-for"><b>For whom</b>The self-driven — you have the will, you're missing a framework. A door into the method, and a way back after a transformation.</div>
-<div class="o-cta"><a href="/#booking">Get started</a></div>
+<div class="o-result"><b data-i18n="result_lbl">THE RESULT</b><span data-i18n="e_result">Measurable progress in the gym, month after month — without plateauing.</span></div>
+<div class="o-block"><h4 data-i18n="e_inc_h">What's included</h4><div class="o-feats"><div data-i18n="e_f1">Tailored program, revised every month</div><div data-i18n="e_f2">1-on-1 coaching, 1 to 2 sessions per week</div><div data-i18n="e_f3">Nutrition tracking file + in-session guidance</div><div data-i18n="e_f4">Web app for programming &amp; tracking</div><div data-i18n="e_f5">WhatsApp contact on weekdays</div></div></div>
+<div class="o-for"><b data-i18n="for_lbl">For whom</b><span data-i18n="e_for">The self-driven — you have the will, you're missing a framework. A door into the method, and a way back after a transformation.</span></div>
+<div class="o-cta"><a href="/#booking" data-i18n="e_cta">Get started</a></div>
 </div>
 
-<!-- Signature -->
 <div class="offer feat">
-<div class="o-badge">RECOMMENDED</div>
+<div class="o-badge" data-i18n="s_badge">RECOMMENDED</div>
 <div class="o-jp">改</div>
-<div class="o-kicker">SIGNATURE · THE KAIZEN TRANSFORMATION</div>
-<div class="o-name">A body visibly transformed in 6 months.</div>
-<div class="o-price">€440 <small>/ 4 weeks</small></div>
-<div class="o-total">€2,640 total · ~6 months · 33 sessions</div>
-<div class="o-sessions">Qualification call required</div>
+<div class="o-kicker" data-i18n="s_kicker">SIGNATURE · THE KAIZEN TRANSFORMATION</div>
+<div class="o-name" data-i18n="s_name">A body visibly transformed in 6 months.</div>
+<div class="o-price" data-i18n-html="s_price">€440 <small>/ 4 weeks</small></div>
+<div class="o-total" data-i18n="s_total">€2,640 total · ~6 months · 33 sessions</div>
+<div class="o-sessions" data-i18n="s_sess">Qualification call required</div>
 <div class="o-rule"></div>
-<div class="o-result"><b>THE RESULT</b>A visibly transformed body in 6 months — and the habits to keep it for good.</div>
-<div class="o-block"><h4>~6 months · a preparation phase + 33 sessions</h4><div class="o-phases">
-<div class="o-phase"><span class="ph-n">00</span><span><b>Preparation</b> — 2 weeks. Before the first rep: we set up your habits, meal prep, groceries and tracking, so day one is a running start.</span></div>
-<div class="o-phase"><span class="ph-n">01</span><span><b>Foundations</b> — weeks 1–3, 3×/week (9 sessions). Assessment, movement, weak links.</span></div>
-<div class="o-phase"><span class="ph-n">02</span><span><b>Build</b> — weeks 4–13, 2×/week (18 sessions). Progressive overload, the real work.</span></div>
-<div class="o-phase"><span class="ph-n">03</span><span><b>Autonomy</b> — weeks 14–26, every 2 weeks (6 sessions). You take the wheel.</span></div>
+<div class="o-result"><b data-i18n="result_lbl">THE RESULT</b><span data-i18n="s_result">A visibly transformed body in 6 months — and the habits to keep it for good.</span></div>
+<div class="o-block"><h4 data-i18n="s_ph_h">~6 months · a preparation phase + 33 sessions</h4><div class="o-phases">
+<div class="o-phase"><span class="ph-n">00</span><span data-i18n-html="s_ph0"><b>Preparation</b> — 2 weeks. Before the first rep: we set up your habits, meal prep, groceries and tracking, so day one is a running start.</span></div>
+<div class="o-phase"><span class="ph-n">01</span><span data-i18n-html="s_ph1"><b>Foundations</b> — weeks 1–3, 3×/week (9 sessions). Assessment, movement, weak links.</span></div>
+<div class="o-phase"><span class="ph-n">02</span><span data-i18n-html="s_ph2"><b>Build</b> — weeks 4–13, 2×/week (18 sessions). Progressive overload, the real work.</span></div>
+<div class="o-phase"><span class="ph-n">03</span><span data-i18n-html="s_ph3"><b>Autonomy</b> — weeks 14–26, every 2 weeks (6 sessions). You take the wheel.</span></div>
 </div></div>
-<div class="o-block"><h4>Also included</h4><div class="o-feats"><div>Full initial assessment: testing, intake, measurements, photos</div><div>Coached nutrition: personalized plan + adjustments at each phase</div><div>Learning modules &amp; exercise library</div><div>Formal re-assessments · web app · WhatsApp on weekdays</div></div></div>
-<div class="o-for"><b>For whom</b>Those who want a real result — and to become autonomous, fast. Pedagogy is part of the deal.</div>
-<div class="o-cta"><a href="/#booking">Book a qualification call →</a></div>
+<div class="o-block"><h4 data-i18n="s_inc_h">Also included</h4><div class="o-feats"><div data-i18n="s_f1">Full initial assessment: testing, intake, measurements, photos</div><div data-i18n="s_f2">Coached nutrition: personalized plan + adjustments at each phase</div><div data-i18n="s_f3">Learning modules &amp; exercise library</div><div data-i18n="s_f4">Formal re-assessments · web app · WhatsApp on weekdays</div></div></div>
+<div class="o-for"><b data-i18n="for_lbl">For whom</b><span data-i18n="s_for">Those who want a real result — and to become autonomous, fast. Pedagogy is part of the deal.</span></div>
+<div class="o-cta"><a href="/#booking" data-i18n="s_cta">Book a qualification call →</a></div>
 </div>
 
-<!-- Integral -->
 <div class="offer select">
-<div class="o-badge">BY APPLICATION</div>
+<div class="o-badge" data-i18n="i_badge">BY APPLICATION</div>
 <div class="o-kicker">KAIZEN INTEGRAL</div>
-<div class="o-name">Zero compromise, piloted end to end.</div>
-<div class="o-price">€760 <small>/ 4 weeks</small></div>
-<div class="o-total">€4,560 total · ~6 months · 48 sessions</div>
-<div class="o-sessions">2–3 spots / quarter · prior interview</div>
+<div class="o-name" data-i18n="i_name">Zero compromise, piloted end to end.</div>
+<div class="o-price" data-i18n-html="i_price">€760 <small>/ 4 weeks</small></div>
+<div class="o-total" data-i18n="i_total">€4,560 total · ~6 months · 48 sessions</div>
+<div class="o-sessions" data-i18n="i_sess">2–3 spots / quarter · prior interview</div>
 <div class="o-rule"></div>
-<div class="o-result"><b>THE RESULT</b>Your most ambitious goal, treated as a project — with maximum commitment of means.</div>
-<div class="o-block"><h4>~6 months · a preparation phase + 48 sessions</h4><div class="o-phases">
-<div class="o-phase"><span class="ph-n">00</span><span><b>Preparation</b> — 2 weeks. Habits, meal prep, groceries and lifestyle set up before we start — the professional groundwork that makes everything after it stick.</span></div>
-<div class="o-phase"><span class="ph-n">01</span><span><b>Extended Foundations</b> — weeks 1–6, 3×/week (18). Full movement analysis, weak links first.</span></div>
-<div class="o-phase"><span class="ph-n">02</span><span><b>Build</b> — weeks 7–18, 2×/week (24).</span></div>
-<div class="o-phase"><span class="ph-n">03</span><span><b>Autonomy</b> — weeks 19–24, 1×/week (6).</span></div>
-<div class="o-phase"><span class="ph-n">04</span><span><b>Supervised solo</b> — weeks 25–26, app-tracked. The method, proven.</span></div>
+<div class="o-result"><b data-i18n="result_lbl">THE RESULT</b><span data-i18n="i_result">Your most ambitious goal, treated as a project — with maximum commitment of means.</span></div>
+<div class="o-block"><h4 data-i18n="i_ph_h">~6 months · a preparation phase + 48 sessions</h4><div class="o-phases">
+<div class="o-phase"><span class="ph-n">00</span><span data-i18n-html="i_ph0"><b>Preparation</b> — 2 weeks. Habits, meal prep, groceries and lifestyle set up before we start — the professional groundwork that makes everything after it stick.</span></div>
+<div class="o-phase"><span class="ph-n">01</span><span data-i18n-html="i_ph1"><b>Extended Foundations</b> — weeks 1–6, 3×/week (18). Full movement analysis, weak links first.</span></div>
+<div class="o-phase"><span class="ph-n">02</span><span data-i18n-html="i_ph2"><b>Build</b> — weeks 7–18, 2×/week (24).</span></div>
+<div class="o-phase"><span class="ph-n">03</span><span data-i18n-html="i_ph3"><b>Autonomy</b> — weeks 19–24, 1×/week (6).</span></div>
+<div class="o-phase"><span class="ph-n">04</span><span data-i18n-html="i_ph4"><b>Supervised solo</b> — weeks 25–26, app-tracked. The method, proven.</span></div>
 </div></div>
-<div class="o-block"><h4>Everything in Signature, plus</h4><div class="o-feats"><div>Doubled foundations phase</div><div>Piloted nutrition: weekly meal plans + grocery flow</div><div>Structured lifestyle: sleep, stress, habits — tracked</div><div>Higher data cadence: weekly review, monthly &amp; deep quarterly re-assessment</div><div>Priority slots &amp; WhatsApp 7/7 (guaranteed reply &lt; 24h)</div></div></div>
-<div class="o-for"><b>For whom</b>A major goal, a deadline, zero compromise — when you'd rather delegate the load entirely. Prior interview required.</div>
-<div class="o-cta"><a href="/#booking">Apply now</a></div>
+<div class="o-block"><h4 data-i18n="i_inc_h">Everything in Signature, plus</h4><div class="o-feats"><div data-i18n="i_f1">Doubled foundations phase</div><div data-i18n="i_f2">Piloted nutrition: weekly meal plans + grocery flow</div><div data-i18n="i_f3">Structured lifestyle: sleep, stress, habits — tracked</div><div data-i18n="i_f4">Higher data cadence: weekly review, monthly &amp; deep quarterly re-assessment</div><div data-i18n="i_f5">Priority slots &amp; WhatsApp 7/7 (guaranteed reply &lt; 24h)</div></div></div>
+<div class="o-for"><b data-i18n="for_lbl">For whom</b><span data-i18n="i_for">A major goal, a deadline, zero compromise — when you'd rather delegate the load entirely. Prior interview required.</span></div>
+<div class="o-cta"><a href="/#booking" data-i18n="i_cta">Apply now</a></div>
 </div>
 
 </div>
 </section>
 
-<!-- NUTRITION LEVELS -->
 <section class="nut">
 <div class="head">
-<div class="eyebrow" style="justify-content:center">Nutrition</div>
-<h2 style="margin-top:1rem">Three verbs: advised, coached, piloted</h2>
-<p>The plans are personalized on both Signature and Integral — the difference is who carries the execution.</p>
+<div class="eyebrow" style="justify-content:center" data-i18n="nut_eyebrow">Nutrition</div>
+<h2 style="margin-top:1rem" data-i18n="nut_h">Three verbs: advised, coached, piloted</h2>
+<p data-i18n="nut_p">The plans are personalized on both Signature and Integral — the difference is who carries the execution.</p>
 </div>
 <div class="nut-table">
-<div class="nut-row h"><span>Tier</span><span>Level</span><span>What it means</span></div>
-<div class="nut-row"><span class="tier">Essential</span><span class="lvl">Advised</span><span class="desc">A tracking file, principles, and in-session pointers. You manage it yourself.</span></div>
-<div class="nut-row"><span class="tier">Signature</span><span class="lvl">Coached</span><span class="desc">Personalized plan at the initial assessment, followed in the app, adjusted at each phase and when your data calls for it. You execute — shopping, prep, adaptation.</span></div>
-<div class="nut-row"><span class="tier">Integral</span><span class="lvl">Piloted</span><span class="desc">Plan co-built with you, updated every week, grocery flow included. The organizational load is carried for you.</span></div>
+<div class="nut-row h"><span data-i18n="nut_c1">Tier</span><span data-i18n="nut_c2">Level</span><span data-i18n="nut_c3">What it means</span></div>
+<div class="nut-row"><span class="tier">Essential</span><span class="lvl" data-i18n="nut_l1">Advised</span><span class="desc" data-i18n="nut_d1">A tracking file, principles, and in-session pointers. You manage it yourself.</span></div>
+<div class="nut-row"><span class="tier">Signature</span><span class="lvl" data-i18n="nut_l2">Coached</span><span class="desc" data-i18n="nut_d2">Personalized plan at the initial assessment, followed in the app, adjusted at each phase and when your data calls for it. You execute — shopping, prep, adaptation.</span></div>
+<div class="nut-row"><span class="tier">Integral</span><span class="lvl" data-i18n="nut_l3">Piloted</span><span class="desc" data-i18n="nut_d3">Plan co-built with you, updated every week, grocery flow included. The organizational load is carried for you.</span></div>
 </div>
-<p class="nut-note">All nutrition work is nutrition education and habit coaching — not acts reserved to registered dietitians (Belgium).</p>
+<p class="nut-note" data-i18n="nut_note">All nutrition work is nutrition education and habit coaching — not acts reserved to registered dietitians (Belgium).</p>
 </section>
 
-<!-- AND AFTER -->
 <section class="after">
 <div class="head">
-<div class="eyebrow" style="justify-content:center">And after?</div>
-<h2 style="margin-top:1rem">The exit is part of the plan</h2>
-<p>A transformation isn't a cliff. Once you've completed one, two ways to keep the momentum — nobody is left on their own.</p>
+<div class="eyebrow" style="justify-content:center" data-i18n="after_eyebrow">And after?</div>
+<h2 style="margin-top:1rem" data-i18n="after_h">The exit is part of the plan</h2>
+<p data-i18n="after_p">A transformation isn't a cliff. Once you've completed one, two ways to keep the momentum — nobody is left on their own.</p>
 </div>
 <div class="after-grid">
-<div class="after-card"><h3>Consolidation</h3><p>Keep training 1-on-1 at your chosen pace (1 to 2×/week) — same coaching, same rates as Essential. The natural continuation once your transformation is done.</p></div>
-<div class="after-card"><h3>Online follow-up — €200 / month</h3><p>Reserved for clients who have completed a transformation. Remote programming and accountability, so your results hold long-term.</p></div>
+<div class="after-card"><h3 data-i18n="after1_h">Consolidation</h3><p data-i18n="after1_p">Keep training 1-on-1 at your chosen pace (1 to 2×/week) — same coaching, same rates as Essential. The natural continuation once your transformation is done.</p></div>
+<div class="after-card"><h3 data-i18n="after2_h">Online follow-up — €200 / month</h3><p data-i18n="after2_p">Reserved for clients who have completed a transformation. Remote programming and accountability, so your results hold long-term.</p></div>
 </div>
 </section>
 
-<!-- FAQ -->
 <section class="p-faq">
-<div class="head"><div class="eyebrow" style="justify-content:center">Questions</div><h2 style="margin-top:1rem">Good to know</h2></div>
+<div class="head"><div class="eyebrow" style="justify-content:center" data-i18n="faq_eyebrow">Questions</div><h2 style="margin-top:1rem" data-i18n="faq_h">Good to know</h2></div>
 <div class="faq-list">
-<div class="faq-i"><div class="faq-q" onclick="tf(this)"><h4>Why is the price shown per 4 weeks?</h4><span class="ic">+</span></div><div class="faq-a"><p>Training rhythm runs in 4-week blocks, not calendar months. Pricing per 4 weeks keeps it honest — you pay for the sessions you actually get. Essential is billed in 4-week blocks; Signature and Integral show the per-4-weeks figure and the full program total.</p></div></div>
-<div class="faq-i"><div class="faq-q" onclick="tf(this)"><h4>What are the cancellation &amp; rescheduling rules?</h4><span class="ic">+</span></div><div class="faq-a"><p>The same rule applies across every formula: a session can be rescheduled if you let me know <strong>at least 24 hours in advance</strong>. Cancelled or moved with less than 24 hours' notice, the session is counted. This keeps the schedule fair for everyone — and it's exactly the kind of consistency the method is built on.</p></div></div>
-<div class="faq-i"><div class="faq-q" onclick="tf(this)"><h4>Why is Kaizen Integral by application?</h4><span class="ic">+</span></div><div class="faq-a"><p>It's a high-touch, piloted program with only 2–3 spots per quarter, so I can carry the load properly for each client. A short interview makes sure the fit and the goal are right before we commit.</p></div></div>
-<div class="faq-i"><div class="faq-q" onclick="tf(this)"><h4>Where do sessions take place?</h4><span class="ic">+</span></div><div class="faq-a"><p>Jims Auderghem (Chaussée de Wavre 1138, 1160 Auderghem) and Jims Meiser (Chaussée de Louvain 650, 1030 Schaerbeek). Online coaching is available for those outside Brussels.</p></div></div>
+<div class="faq-i"><div class="faq-q" onclick="tf(this)"><h4 data-i18n="faq1_q">Why is the price shown per 4 weeks?</h4><span class="ic">+</span></div><div class="faq-a"><p data-i18n="faq1_a">Training rhythm runs in 4-week blocks, not calendar months. Pricing per 4 weeks keeps it honest — you pay for the sessions you actually get. Essential is billed in 4-week blocks; Signature and Integral show the per-4-weeks figure and the full program total.</p></div></div>
+<div class="faq-i"><div class="faq-q" onclick="tf(this)"><h4 data-i18n="faq2_q">What are the cancellation &amp; rescheduling rules?</h4><span class="ic">+</span></div><div class="faq-a"><p data-i18n-html="faq2_a">The same rule applies across every formula: a session can be rescheduled if you let me know <strong>at least 24 hours in advance</strong>. Cancelled or moved with less than 24 hours' notice, the session is counted. This keeps the schedule fair for everyone — and it's exactly the kind of consistency the method is built on.</p></div></div>
+<div class="faq-i"><div class="faq-q" onclick="tf(this)"><h4 data-i18n="faq3_q">Why is Kaizen Integral by application?</h4><span class="ic">+</span></div><div class="faq-a"><p data-i18n="faq3_a">It's a high-touch, piloted program with only 2–3 spots per quarter, so I can carry the load properly for each client. A short interview makes sure the fit and the goal are right before we commit.</p></div></div>
+<div class="faq-i"><div class="faq-q" onclick="tf(this)"><h4 data-i18n="faq4_q">Where do sessions take place?</h4><span class="ic">+</span></div><div class="faq-a"><p data-i18n="faq4_a">Jims Auderghem (Chaussée de Wavre 1138, 1160 Auderghem) and Jims Meiser (Chaussée de Louvain 650, 1030 Schaerbeek). Online coaching is available for those outside Brussels.</p></div></div>
 </div>
 </section>
 
-<!-- CTA -->
 <div class="p-cta">
-<h2>Not sure which fits?</h2>
-<p>Book a free, no-pressure call. We'll map your starting point together and pick the right level.</p>
-<a href="/#booking" class="btn">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:12px;height:12px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<h2 data-i18n="cta_h">Not sure which fits?</h2>
+<p data-i18n="cta_p">Book a free, no-pressure call. We'll map your starting point together and pick the right level.</p>
+<a href="/#booking" class="btn" data-i18n="cta_btn">Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:12px;height:12px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 <div class="contacts">
 <a href="mailto:thomas@devresse.fit">thomas@devresse.fit</a>
 <a href="tel:+32474126701">+32 474 12 67 01</a>
@@ -293,16 +273,46 @@ footer .fc{font-size:.6rem;color:#6E675E}
 
 <footer>
 <div class="fb"><img src="/images/logo-circle.png" alt="DEVRESSE 改"><span>DEVRESSE</span></div>
-<div class="fl"><a href="/">Home</a><a href="/#method">Method</a><a href="/#transforms">Results</a><a href="/#about">About</a><a href="/#booking">Book</a></div>
+<div class="fl"><a href="/" data-i18n="foot_home">Home</a><a href="/#method" data-i18n="nav_method">Method</a><a href="/#transforms" data-i18n="nav_results">Results</a><a href="/#about" data-i18n="nav_about">About</a><a href="/#booking" data-i18n="foot_book">Book</a></div>
 <div class="fc">© 2026 Thomas Devresse — Personal Training, Brussels</div>
 </footer>
 
 <script>
 function tf(el){el.parentElement.classList.toggle('open')}
+const i18n={en:{},
+fr:{nav_method:'Méthode',nav_results:'Résultats',nav_pricing:'Tarifs',nav_about:'À propos',nav_book:'Réserver',foot_home:'Accueil',foot_book:'Réserver',
+hero_eyebrow:'Trois façons de commencer',hero_h1:'Une méthode.<br><em>Trois niveaux</em> d\'accompagnement.',hero_p:'Chaque formule suit la même méthode Kaizen — de petites améliorations réfléchies qui se cumulent. Ce qui change, c\'est l\'intensité de l\'accompagnement et ce que vous déléguez. La destination reste la même : votre autonomie.',
+result_lbl:'LE RÉSULTAT',for_lbl:'Pour qui',
+e_name:'Un cadre et de la précision, à votre rythme.',e_price:'À partir de 300€ <small>/ 4 sem.</small>',e_total:'75€ / séance (1×/sem) · 65€ / séance (2×/sem+)',e_sess:'1–2 séances / semaine',e_result:'Une progression mesurable en salle, mois après mois — sans plafonner.',e_inc_h:'Ce qui est inclus',e_f1:'Programme sur mesure, révisé chaque mois',e_f2:'Coaching 1-on-1, 1 à 2 séances par semaine',e_f3:'Fichier de suivi nutrition + conseils en séance',e_f4:'Web app pour la programmation et le suivi',e_f5:'WhatsApp en semaine',e_for:'L\'autonome — vous avez la volonté, il vous manque un cadre. Une porte d\'entrée vers la méthode, et un retour possible après une transformation.',e_cta:'Commencer',
+s_badge:'RECOMMANDÉ',s_kicker:'SIGNATURE · LA KAIZEN TRANSFORMATION',s_name:'Un corps visiblement transformé en 6 mois.',s_price:'440€ <small>/ 4 sem.</small>',s_total:'2 640€ au total · ~6 mois · 33 séances',s_sess:'Appel de qualification requis',s_result:'Un corps visiblement transformé en 6 mois — et les habitudes pour le garder durablement.',s_ph_h:'~6 mois · une phase de préparation + 33 séances',s_ph0:'<b>Préparation</b> — 2 semaines. Avant la première répétition : on met en place vos habitudes, la prépa des repas, les courses et le suivi, pour démarrer lancé.',s_ph1:'<b>Fondations</b> — semaines 1–3, 3×/sem (9 séances). Bilan, mouvement, points faibles.',s_ph2:'<b>Build</b> — semaines 4–13, 2×/sem (18 séances). Surcharge progressive, le vrai travail.',s_ph3:'<b>Autonomisation</b> — semaines 14–26, toutes les 2 semaines (6 séances). Vous prenez les commandes.',s_inc_h:'Également inclus',s_f1:'Bilan initial complet : testing, intake, mensurations, photos',s_f2:'Nutrition coachée : plan personnalisé + ajustements à chaque phase',s_f3:'Modules pédagogiques & bibliothèque d\'exercices',s_f4:'Réévaluations formelles · web app · WhatsApp en semaine',s_for:'Qui veut un vrai résultat — et devenir autonome, vite. La pédagogie fait partie du deal.',s_cta:'Réserver un appel de qualification →',
+i_badge:'SUR CANDIDATURE',i_name:'Zéro compromis, piloté de bout en bout.',i_price:'760€ <small>/ 4 sem.</small>',i_total:'4 560€ au total · ~6 mois · 48 séances',i_sess:'2–3 places / trimestre · entretien préalable',i_result:'Votre objectif le plus ambitieux, traité comme un projet — avec une obligation de moyens maximale.',i_ph_h:'~6 mois · une phase de préparation + 48 séances',i_ph0:'<b>Préparation</b> — 2 semaines. Habitudes, prépa des repas, courses et lifestyle mis en place avant de commencer — le travail de fond professionnel qui fait tenir tout le reste.',i_ph1:'<b>Fondations étendues</b> — semaines 1–6, 3×/sem (18). Analyse complète du mouvement, points faibles d\'abord.',i_ph2:'<b>Build</b> — semaines 7–18, 2×/sem (24).',i_ph3:'<b>Autonomisation</b> — semaines 19–24, 1×/sem (6).',i_ph4:'<b>Solo supervisé</b> — semaines 25–26, suivi via l\'app. La méthode, prouvée.',i_inc_h:'Tout Signature, plus',i_f1:'Phase de fondations doublée',i_f2:'Nutrition pilotée : meal plans hebdo + flux courses',i_f3:'Lifestyle structuré : sommeil, stress, habitudes — trackés',i_f4:'Cadence de données supérieure : revue hebdo, réévaluation mensuelle & bilan trimestriel approfondi',i_f5:'Créneaux prioritaires & WhatsApp 7j/7 (réponse garantie < 24h)',i_for:'Un objectif majeur, une échéance, zéro compromis — quand vous préférez déléguer entièrement la charge. Entretien préalable requis.',i_cta:'Déposer ma candidature',
+nut_eyebrow:'Nutrition',nut_h:'Trois verbes : conseillé, coaché, piloté',nut_p:'Les plans sont personnalisés en Signature comme en Intégral — la différence, c\'est qui porte l\'exécution.',nut_c1:'Palier',nut_c2:'Niveau',nut_c3:'Ce que ça veut dire',nut_l1:'Conseillé',nut_d1:'Un fichier de suivi, des principes et des conseils en séance. Vous gérez vous-même.',nut_l2:'Coaché',nut_d2:'Plan personnalisé au bilan initial, suivi dans l\'app, ajusté à chaque phase et quand vos données le demandent. Vous exécutez — courses, prépa, adaptation.',nut_l3:'Piloté',nut_d3:'Plan co-construit avec vous, mis à jour chaque semaine, flux courses inclus. La charge d\'organisation est portée pour vous.',nut_note:'Tout le travail nutrition relève de l\'éducation nutritionnelle et du coaching d\'habitudes — pas d\'actes réservés aux diététiciens agréés (Belgique).',
+after_eyebrow:'Et après ?',after_h:'La sortie fait partie du plan',after_p:'Une transformation n\'est pas une falaise. Une fois terminée, deux façons de garder l\'élan — personne n\'est lâché.',after1_h:'Consolidation',after1_p:'Continuez en 1-on-1 au rythme choisi (1 à 2×/sem) — même coaching, mêmes tarifs qu\'Essentiel. La suite naturelle une fois la transformation faite.',after2_h:'Suivi en ligne — 200€ / mois',after2_p:'Réservé aux clients ayant complété une transformation. Programmation et suivi à distance, pour que vos résultats tiennent sur le long terme.',
+faq_eyebrow:'Questions',faq_h:'Bon à savoir',faq1_q:'Pourquoi le prix est-il affiché par 4 semaines ?',faq1_a:'Le rythme d\'entraînement fonctionne par blocs de 4 semaines, pas par mois calendaire. Un prix par 4 semaines reste honnête — vous payez les séances que vous avez réellement. Essentiel est facturé par blocs de 4 semaines ; Signature et Intégral affichent le montant par 4 semaines et le total du programme.',faq2_q:'Quelles sont les règles d\'annulation et de report ?',faq2_a:'La même règle s\'applique à toutes les formules : une séance peut être reportée si vous prévenez <strong>au moins 24h à l\'avance</strong>. Annulée ou déplacée à moins de 24h, la séance est comptabilisée. Cela garde le planning équitable pour tout le monde — et c\'est exactement le type de constance sur lequel la méthode est bâtie.',faq3_q:'Pourquoi Kaizen Intégral est-il sur candidature ?',faq3_a:'C\'est un programme piloté et très encadré avec seulement 2–3 places par trimestre, pour que je puisse porter la charge correctement pour chaque client. Un court entretien s\'assure que le fit et l\'objectif sont bons avant de s\'engager.',faq4_q:'Où se déroulent les séances ?',faq4_a:'Jims Auderghem (Chaussée de Wavre 1138, 1160 Auderghem) et Jims Meiser (Chaussée de Louvain 650, 1030 Schaerbeek). Le coaching en ligne est disponible pour ceux hors de Bruxelles.',
+cta_h:'Vous hésitez sur la formule ?',cta_p:'Réservez un appel gratuit, sans pression. On définit ensemble votre point de départ et le bon niveau.',cta_btn:'Réserver un appel gratuit'},
+nl:{nav_method:'Methode',nav_results:'Resultaten',nav_pricing:'Tarieven',nav_about:'Over mij',nav_book:'Boeken',foot_home:'Home',foot_book:'Boeken',
+hero_eyebrow:'Drie manieren om te beginnen',hero_h1:'Eén methode.<br><em>Drie niveaus</em> van begeleiding.',hero_p:'Elke formule volgt dezelfde Kaizen-methode — kleine, bewuste verbeteringen die zich opstapelen. Wat verandert, is de intensiteit van de begeleiding en hoeveel je delegeert. De bestemming blijft dezelfde: jouw autonomie.',
+result_lbl:'HET RESULTAAT',for_lbl:'Voor wie',
+e_name:'Een kader en precisie, in jouw tempo.',e_price:'Vanaf €300 <small>/ 4 weken</small>',e_total:'€75 / sessie (1×/week) · €65 / sessie (2×/week+)',e_sess:'1–2 sessies / week',e_result:'Meetbare vooruitgang in de zaal, maand na maand — zonder te plateauen.',e_inc_h:'Wat is inbegrepen',e_f1:'Programma op maat, elke maand herzien',e_f2:'1-op-1 coaching, 1 tot 2 sessies per week',e_f3:'Voedingsopvolgingsbestand + begeleiding tijdens de sessie',e_f4:'Web app voor programmering en opvolging',e_f5:'WhatsApp op weekdagen',e_for:'De zelfgestuurde — je hebt de wil, je mist een kader. Een toegangspoort tot de methode, en een terugweg na een transformatie.',e_cta:'Beginnen',
+s_badge:'AANBEVOLEN',s_kicker:'SIGNATURE · DE KAIZEN TRANSFORMATIE',s_name:'Een zichtbaar getransformeerd lichaam in 6 maanden.',s_price:'€440 <small>/ 4 weken</small>',s_total:'€2.640 totaal · ~6 maanden · 33 sessies',s_sess:'Kwalificatiegesprek vereist',s_result:'Een zichtbaar getransformeerd lichaam in 6 maanden — en de gewoontes om het blijvend te behouden.',s_ph_h:'~6 maanden · een voorbereidingsfase + 33 sessies',s_ph0:'<b>Voorbereiding</b> — 2 weken. Vóór de eerste herhaling: we zetten je gewoontes, maaltijdprep, boodschappen en opvolging op, zodat dag één een vliegende start is.',s_ph1:'<b>Fundamenten</b> — weken 1–3, 3×/week (9 sessies). Intake, beweging, zwakke punten.',s_ph2:'<b>Build</b> — weken 4–13, 2×/week (18 sessies). Progressieve overbelasting, het echte werk.',s_ph3:'<b>Autonomie</b> — weken 14–26, om de 2 weken (6 sessies). Jij neemt het stuur.',s_inc_h:'Ook inbegrepen',s_f1:'Volledige intake: testing, intake, metingen, foto\'s',s_f2:'Gecoachte voeding: persoonlijk plan + aanpassingen per fase',s_f3:'Leermodules & oefeningenbibliotheek',s_f4:'Formele herbeoordelingen · web app · WhatsApp op weekdagen',s_for:'Wie een echt resultaat wil — en snel autonoom wil worden. Pedagogie hoort erbij.',s_cta:'Boek een kwalificatiegesprek →',
+i_badge:'OP AANVRAAG',i_name:'Geen compromis, van begin tot eind begeleid.',i_price:'€760 <small>/ 4 weken</small>',i_total:'€4.560 totaal · ~6 maanden · 48 sessies',i_sess:'2–3 plaatsen / kwartaal · voorafgaand gesprek',i_result:'Je meest ambitieuze doel, aangepakt als een project — met een maximale inspanningsverbintenis.',i_ph_h:'~6 maanden · een voorbereidingsfase + 48 sessies',i_ph0:'<b>Voorbereiding</b> — 2 weken. Gewoontes, maaltijdprep, boodschappen en levensstijl opgezet vóór we starten — het professionele grondwerk dat alles daarna doet beklijven.',i_ph1:'<b>Uitgebreide fundamenten</b> — weken 1–6, 3×/week (18). Volledige bewegingsanalyse, zwakke punten eerst.',i_ph2:'<b>Build</b> — weken 7–18, 2×/week (24).',i_ph3:'<b>Autonomie</b> — weken 19–24, 1×/week (6).',i_ph4:'<b>Begeleid solo</b> — weken 25–26, via de app. De methode, bewezen.',i_inc_h:'Alles uit Signature, plus',i_f1:'Verdubbelde fundamentenfase',i_f2:'Gestuurde voeding: wekelijkse maaltijdplannen + boodschappenflow',i_f3:'Gestructureerde levensstijl: slaap, stress, gewoontes — bijgehouden',i_f4:'Hogere datacadans: wekelijkse review, maandelijkse & diepe kwartaalherbeoordeling',i_f5:'Prioritaire slots & WhatsApp 7/7 (gegarandeerd antwoord < 24u)',i_for:'Een groot doel, een deadline, geen compromis — wanneer je de last liever volledig delegeert. Voorafgaand gesprek vereist.',i_cta:'Solliciteren',
+nut_eyebrow:'Voeding',nut_h:'Drie werkwoorden: geadviseerd, gecoacht, gestuurd',nut_p:'De plannen zijn gepersonaliseerd in zowel Signature als Integraal — het verschil is wie de uitvoering draagt.',nut_c1:'Niveau',nut_c2:'Type',nut_c3:'Wat het betekent',nut_l1:'Geadviseerd',nut_d1:'Een opvolgingsbestand, principes en tips tijdens de sessie. Je beheert het zelf.',nut_l2:'Gecoacht',nut_d2:'Persoonlijk plan bij de intake, opgevolgd in de app, aangepast per fase en wanneer je data erom vraagt. Jij voert uit — boodschappen, prep, aanpassing.',nut_l3:'Gestuurd',nut_d3:'Plan samen met jou opgebouwd, elke week bijgewerkt, boodschappenflow inbegrepen. De organisatorische last wordt voor je gedragen.',nut_note:'Alle voedingswerk is voedingseducatie en gewoontecoaching — geen handelingen voorbehouden aan erkende diëtisten (België).',
+after_eyebrow:'En daarna?',after_h:'De uitgang hoort bij het plan',after_p:'Een transformatie is geen klif. Eenmaal voltooid, twee manieren om het momentum te behouden — niemand blijft alleen achter.',after1_h:'Consolidatie',after1_p:'Blijf 1-op-1 trainen in je gekozen tempo (1 tot 2×/week) — dezelfde coaching, dezelfde tarieven als Essentieel. Het natuurlijke vervolg zodra je transformatie klaar is.',after2_h:'Online opvolging — €200 / maand',after2_p:'Voorbehouden voor klanten die een transformatie hebben voltooid. Programmering en opvolging op afstand, zodat je resultaten op lange termijn standhouden.',
+faq_eyebrow:'Vragen',faq_h:'Goed om te weten',faq1_q:'Waarom staat de prijs per 4 weken?',faq1_a:'Het trainingsritme loopt in blokken van 4 weken, niet in kalendermaanden. Een prijs per 4 weken houdt het eerlijk — je betaalt voor de sessies die je echt krijgt. Essentieel wordt per blok van 4 weken gefactureerd; Signature en Integraal tonen het bedrag per 4 weken en het volledige programmatotaal.',faq2_q:'Wat zijn de annulerings- en verplaatsingsregels?',faq2_a:'Dezelfde regel geldt voor elke formule: een sessie kan verplaatst worden als je me <strong>minstens 24 uur op voorhand</strong> verwittigt. Geannuleerd of verplaatst met minder dan 24 uur, dan telt de sessie mee. Zo blijft de planning eerlijk voor iedereen — en het is precies het soort consistentie waarop de methode is gebouwd.',faq3_q:'Waarom is Kaizen Integraal op aanvraag?',faq3_a:'Het is een intensief, gestuurd programma met slechts 2–3 plaatsen per kwartaal, zodat ik de last voor elke klant goed kan dragen. Een kort gesprek zorgt dat de match en het doel kloppen voordat we ons engageren.',faq4_q:'Waar vinden de sessies plaats?',faq4_a:'Jims Auderghem (Chaussée de Wavre 1138, 1160 Auderghem) en Jims Meiser (Chaussée de Louvain 650, 1030 Schaerbeek). Online coaching is beschikbaar voor wie buiten Brussel woont.',
+cta_h:'Niet zeker welke past?',cta_p:'Boek een gratis, vrijblijvend gesprek. We bepalen samen je startpunt en het juiste niveau.',cta_btn:'Boek een gratis gesprek'}
+};
+function setLang(l,e){if(e)e.stopPropagation();document.documentElement.lang=l;document.getElementById('curLang').textContent=l.toUpperCase();
+document.querySelectorAll('.lang-dd button').forEach(b=>b.classList.remove('active'));if(e&&e.target)e.target.classList.add('active');
+const t=i18n[l]||{};
+document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(l==='en'){if(el.dataset.en!==undefined)el.textContent=el.dataset.en;}else if(t[k]!==undefined){if(el.dataset.en===undefined)el.dataset.en=el.textContent;el.textContent=t[k];}});
+document.querySelectorAll('[data-i18n-html]').forEach(el=>{const k=el.dataset.i18nHtml;if(l==='en'){if(el.dataset.enh!==undefined)el.innerHTML=el.dataset.enh;}else if(t[k]!==undefined){if(el.dataset.enh===undefined)el.dataset.enh=el.innerHTML;el.innerHTML=t[k];}});
+document.querySelector('.lang-dd')?.classList.remove('open');localStorage.setItem('td_lang',l);}
+document.addEventListener('click',e=>{if(!e.target.closest('.lang-toggle'))document.querySelector('.lang-dd')?.classList.remove('open')});
 const SUN='<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>';
 const MOON='<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>';
 function toggleMode(){const d=document.documentElement.classList.toggle('dark');localStorage.setItem('td_mode',d?'dark':'light');const i=document.getElementById('modeIco');i.innerHTML=d?SUN:MOON;document.querySelector('meta[name="theme-color"]').content=d?'#17140F':'#FBFAF8';}
-(function(){if(localStorage.getItem('td_mode')==='dark'){document.documentElement.classList.add('dark');const i=document.getElementById('modeIco');if(i)i.innerHTML=SUN;document.querySelector('meta[name="theme-color"]').content='#17140F';}})();
+(function(){if(localStorage.getItem('td_mode')==='dark'){document.documentElement.classList.add('dark');const i=document.getElementById('modeIco');if(i)i.innerHTML=SUN;document.querySelector('meta[name="theme-color"]').content='#17140F';}
+const sl=localStorage.getItem('td_lang');if(sl&&sl!=='en')setLang(sl);})();
 </script>
 </body>
 </html>
