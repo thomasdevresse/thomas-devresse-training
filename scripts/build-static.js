@@ -7,7 +7,7 @@ const out = path.join(root, 'public');
 
 if (!fs.existsSync(out)) fs.mkdirSync(out, { recursive: true });
 
-['index.html', 'pricing.html', 'admin.html', 'robots.txt', 'sitemap.xml'].forEach((f) => {
+['index.html', 'pricing.html', 'about.html', 'admin.html', 'robots.txt', 'sitemap.xml'].forEach((f) => {
   const src = path.join(root, f);
   if (fs.existsSync(src)) fs.copyFileSync(src, path.join(out, f));
 });
