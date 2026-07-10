@@ -612,6 +612,28 @@ section{padding:3.5rem 1.2rem}.video-section{padding:0 1.2rem 3.5rem}
 /* — Google reviews bar: more space from photos above, link to Google — */
 .greview{margin-top:3.6rem}
 
+/* — Testimonials: compact masonry wall (more reviews visible at once) — */
+.testi-gh{display:flex;align-items:center;justify-content:center;gap:1rem;margin:.4rem 0 2rem;flex-wrap:wrap}
+.testi-gh .g-logo{font-weight:600;font-size:1.15rem;letter-spacing:-.01em}
+.testi-gh .g-logo b:nth-child(1){color:#4285F4}.testi-gh .g-logo b:nth-child(2){color:#EA4335}.testi-gh .g-logo b:nth-child(3){color:#FBBC05}.testi-gh .g-logo b:nth-child(4){color:#4285F4}.testi-gh .g-logo b:nth-child(5){color:#34A853}.testi-gh .g-logo b:nth-child(6){color:#EA4335}
+.testi-gh .g-score{display:flex;align-items:center;gap:.5rem}
+.testi-gh .g-score .n{font-weight:700;font-size:1.05rem;color:var(--ink)}
+.testi-gh .g-stars{color:#E8B12E;letter-spacing:2px;font-size:.85rem}
+.testi-gh .g-sep{width:1px;height:22px;background:var(--line-2)}
+.testi-gh a{font-size:.78rem;font-weight:500;color:var(--gray-light);text-decoration:none;border-bottom:1px solid var(--red);padding-bottom:2px}
+.testi-grid{columns:3;column-gap:1.2rem;margin-top:0}
+.testi-grid .tc{break-inside:avoid;display:inline-block;width:100%;margin:0 0 1.2rem;padding:1.35rem 1.4rem}
+.testi-grid .tc-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem}
+.testi-grid .tc-g{font-family:var(--sans);font-weight:700;font-size:1rem}
+.testi-grid .tc-g b{color:#4285F4}
+.testi-grid .tc-stars{margin:0;font-size:.72rem;letter-spacing:1.5px}
+.testi-grid .tc-text{font-size:.8rem;line-height:1.55;margin-bottom:.9rem}
+.testi-grid .tc-auth{gap:.6rem}
+.testi-grid .tc-av{width:30px;height:30px;font-size:.68rem}
+.testi-grid .tc-name{font-size:.78rem}.testi-grid .tc-role{font-size:.6rem}
+@media(max-width:900px){.testi-grid{columns:2}}
+@media(max-width:600px){.testi-grid{columns:1}}
+
 /* — "For who" a touch more prominent (not dominant) — */
 .o-for{border-left:2px solid var(--line-2);padding-left:.85rem}
 .offer.feat .o-for{border-left-color:color-mix(in srgb,var(--black) 30%,transparent)}
@@ -816,16 +838,16 @@ html.dark .cta-body .enso{mix-blend-mode:screen}
 
 <!-- ═══ TESTIMONIALS (real Google reviews — shuffled) ═══ -->
 <section class="testi" id="testi"><div class="container">
-<div class="tag" data-i18n="testi_tag">Client Stories</div>
-<h2 class="title r" data-i18n="testi_title">What They Say</h2>
-<div class="testi-track r r-delay-1"><div class="testi-slides" id="testiSlides">
-<div class="testi-slide"><div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">Thomas est le professionnel qu'il me fallait... Rigoureux, attentif et extrêmement strict au moindre mouvement effectué, toujours là à t'expliquer le pourquoi des choses... Tout cela évidemment dans une ambiance très bon enfant, où les vannes et les piques n'arrêtent pas de voler... En outre, Thomas est continuellement en formation, afin de te prodiguer les meilleurs conseils et te donner toutes les chances de progresser vers tes objectifs! You are the Best!</p><div class="tc-auth"><div class="tc-av">P</div><div><div class="tc-name">Pierre</div><div class="tc-role">28/01/2024</div></div></div></div></div>
-<div class="testi-slide"><div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">I work with Thomas for 2 years and I am super happy with the progress I made with him! He is very kind, patient but makes sure he forces me over my capacity! Greatly recommend him!</p><div class="tc-auth"><div class="tc-av">P</div><div><div class="tc-name">Petrica</div><div class="tc-role">04/2024</div></div></div></div></div>
-<div class="testi-slide"><div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">De mon côté, notre collaboration est toute récente mais de notre premier entretien téléphonique, j'avais compris que j'avais affaire avec un coach sérieux et rigoureux... Aujourd'hui je me réconcilie avec mon corps et je me rends compte qu'il me pousse constamment à me dépenser... Son application assure un suivi rigoureux de mes performances. Il a une écoute active, il est empathique, souriant et il connaît son sujet. Professionnel, empathique et rigoureux sont à mes yeux ses plus grandes qualités.</p><div class="tc-auth"><div class="tc-av">L</div><div><div class="tc-name">Leila</div><div class="tc-role">04/2024</div></div></div></div></div>
-<div class="testi-slide"><div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">Un coach au top. Grace à son professionnalisme, j'ai deja perdu plus de 7kg, malgré une prise conséquente de muscles, et ceci en à peine 3 mois! Je conseille vivement si vous cherchez un coach motivé, professionnel et à l'écoute de vos besoins!</p><div class="tc-auth"><div class="tc-av">E</div><div><div class="tc-name">Elias</div><div class="tc-role">22/05/2024</div></div></div></div></div>
-<div class="testi-slide"><div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">Merci infiniment à mon coach ma vie a tellement changé depuis que je le connais il est toujours présent pendant nos coaching et hyper attentif au moindre mouvement... j'ai pris énormément confiance en moi grâce à lui et je me sens vraiment bien dans mon corps</p><div class="tc-auth"><div class="tc-av">S</div><div><div class="tc-name">Sébastien</div><div class="tc-role">31/12/2024</div></div></div></div></div>
-</div></div>
-<div class="testi-nav" id="testiNav"></div>
+<div class="tag" style="justify-content:center;display:flex" data-i18n="testi_tag">Client Stories</div>
+<h2 class="title r" style="text-align:center" data-i18n="testi_title">What They Say</h2>
+<div class="testi-gh r r-delay-1"><span class="g-logo"><b>G</b><b>o</b><b>o</b><b>g</b><b>l</b><b>e</b></span><span class="g-score"><span class="n">5.0</span><span class="g-stars">★★★★★</span></span><span class="g-sep"></span><a href="https://maps.app.goo.gl/mRrs1vD8poknFiJ29" target="_blank" rel="noopener noreferrer" data-i18n="greview_cta">Read our Google reviews →</a></div>
+<div class="testi-grid r r-delay-1" id="testiSlides">
+<div class="tc"><div class="tc-head"><span class="tc-g" aria-hidden="true"><b>G</b></span><div class="tc-stars">★★★★★</div></div><p class="tc-text">Thomas est le professionnel qu'il me fallait... Rigoureux, attentif et extrêmement strict au moindre mouvement effectué, toujours là à t'expliquer le pourquoi des choses... Tout cela évidemment dans une ambiance très bon enfant, où les vannes et les piques n'arrêtent pas de voler... En outre, Thomas est continuellement en formation, afin de te prodiguer les meilleurs conseils et te donner toutes les chances de progresser vers tes objectifs! You are the Best!</p><div class="tc-auth"><div class="tc-av">P</div><div><div class="tc-name">Pierre</div><div class="tc-role">28/01/2024</div></div></div></div>
+<div class="tc"><div class="tc-head"><span class="tc-g" aria-hidden="true"><b>G</b></span><div class="tc-stars">★★★★★</div></div><p class="tc-text">I work with Thomas for 2 years and I am super happy with the progress I made with him! He is very kind, patient but makes sure he forces me over my capacity! Greatly recommend him!</p><div class="tc-auth"><div class="tc-av">P</div><div><div class="tc-name">Petrica</div><div class="tc-role">04/2024</div></div></div></div>
+<div class="tc"><div class="tc-head"><span class="tc-g" aria-hidden="true"><b>G</b></span><div class="tc-stars">★★★★★</div></div><p class="tc-text">De mon côté, notre collaboration est toute récente mais de notre premier entretien téléphonique, j'avais compris que j'avais affaire avec un coach sérieux et rigoureux... Aujourd'hui je me réconcilie avec mon corps et je me rends compte qu'il me pousse constamment à me dépenser... Son application assure un suivi rigoureux de mes performances. Il a une écoute active, il est empathique, souriant et il connaît son sujet. Professionnel, empathique et rigoureux sont à mes yeux ses plus grandes qualités.</p><div class="tc-auth"><div class="tc-av">L</div><div><div class="tc-name">Leila</div><div class="tc-role">04/2024</div></div></div></div>
+<div class="tc"><div class="tc-head"><span class="tc-g" aria-hidden="true"><b>G</b></span><div class="tc-stars">★★★★★</div></div><p class="tc-text">Un coach au top. Grace à son professionnalisme, j'ai deja perdu plus de 7kg, malgré une prise conséquente de muscles, et ceci en à peine 3 mois! Je conseille vivement si vous cherchez un coach motivé, professionnel et à l'écoute de vos besoins!</p><div class="tc-auth"><div class="tc-av">E</div><div><div class="tc-name">Elias</div><div class="tc-role">22/05/2024</div></div></div></div>
+<div class="tc"><div class="tc-head"><span class="tc-g" aria-hidden="true"><b>G</b></span><div class="tc-stars">★★★★★</div></div><p class="tc-text">Merci infiniment à mon coach ma vie a tellement changé depuis que je le connais il est toujours présent pendant nos coaching et hyper attentif au moindre mouvement... j'ai pris énormément confiance en moi grâce à lui et je me sens vraiment bien dans mon corps</p><div class="tc-auth"><div class="tc-av">S</div><div><div class="tc-name">Sébastien</div><div class="tc-role">31/12/2024</div></div></div></div>
+</div>
 </div></section>
 
 <!-- ═══ BOOKING ═══ -->
@@ -1233,6 +1255,7 @@ let current=0;const inc=Math.ceil(target/40);const timer=setInterval(()=>{curren
 let testiIdx=0;
 function initCarousel(){
 const slides=document.querySelectorAll('.testi-slide');
+if(!slides.length)return; // testimonials now render as a static masonry wall
 const nav=document.getElementById('testiNav');
 const total=window.innerWidth<=1024?slides.length:Math.ceil(slides.length/2);
 for(let i=0;i<total;i++){const d=document.createElement('div');d.className='testi-dot'+(i===0?' active':'');d.onclick=()=>goTesti(i);nav.appendChild(d)}
