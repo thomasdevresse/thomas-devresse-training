@@ -5,7 +5,6 @@ node_modules
 videos
 backups
 admin.html
-pricing.html
 api/admin/
 api/auth/
 api/checkout/

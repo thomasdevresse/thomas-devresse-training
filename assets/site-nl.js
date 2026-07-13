@@ -22,7 +22,7 @@
       document.body.classList.toggle('menu-open', willOpen);
       if (willOpen) requestAnimationFrame(() => menu.querySelector('a')?.focus());
     });
-    menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+    menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => closeMenu(false)));
     document.addEventListener('keydown', (event) => {
       const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
       if (event.key === 'Escape' && isOpen) closeMenu(true);

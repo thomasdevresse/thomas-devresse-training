@@ -8,7 +8,7 @@ const out = path.join(root, 'public');
 fs.rmSync(out, { recursive: true, force: true });
 fs.mkdirSync(out, { recursive: true });
 
-for (const file of ['index.html', 'about.html', 'privacy.html', 'robots.txt', 'sitemap.xml']) {
+for (const file of ['index.html', 'about.html', 'pricing.html', 'privacy.html', 'robots.txt', 'sitemap.xml']) {
   const source = path.join(root, file);
   if (fs.existsSync(source)) fs.copyFileSync(source, path.join(out, file));
 }
@@ -30,6 +30,8 @@ fs.mkdirSync(imageOut, { recursive: true });
 for (const file of [
   'logo-circle.png',
   'logo-circle-transp.png',
+  'logo-header-dark.png',
+  'logo-header-light.png',
   'hero-thomas.png',
   'result-1.jpg',
   'result-2.jpg',
@@ -41,6 +43,8 @@ for (const file of [
 ]) {
   fs.copyFileSync(path.join(root, 'images', file), path.join(imageOut, file));
 }
+copyDirectory(path.join(root, 'images', 'tf'), path.join(imageOut, 'tf'));
+copyDirectory(path.join(root, 'images', 'about'), path.join(imageOut, 'about'));
 for (const locale of ['fr', 'nl']) copyDirectory(path.join(root, locale), path.join(out, locale));
 
 console.log('V2 static site built in public/');

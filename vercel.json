@@ -1,9 +1,6 @@
 {
   "version": 2,
   "outputDirectory": "public",
-  "redirects": [
-    { "source": "/pricing.html", "destination": "/#transformation", "permanent": false }
-  ],
   "headers": [
     {
       "source": "/(.*)",
