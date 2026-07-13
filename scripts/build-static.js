@@ -34,7 +34,10 @@ for (const file of [
   'result-1.jpg',
   'result-2.jpg',
   'result-3.jpg',
-  'thomas-portrait.png'
+  'thomas-portrait.png',
+  'thomas-4923.jpg',
+  'thomas-5013.jpg',
+  'thomas-coaching-method.jpg'
 ]) {
   fs.copyFileSync(path.join(root, 'images', file), path.join(imageOut, file));
 }
