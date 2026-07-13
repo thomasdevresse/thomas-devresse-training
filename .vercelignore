@@ -1,6 +1,16 @@
-api
 node_modules
 .git
 .env*
 .vercel
 videos
+backups
+admin.html
+pricing.html
+api/admin/
+api/auth/
+api/checkout/
+api/public/content.js
+api/public/slots.js
+api/public/subscribe.js
+api/lib/auth.js
+api/lib/store.js
