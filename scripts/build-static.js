@@ -33,6 +33,7 @@ for (const file of [
   'logo-header-dark.png',
   'logo-header-light.png',
   'hero-thomas.png',
+  'hero-thomas-branded.jpg',
   'result-1.jpg',
   'result-2.jpg',
   'result-3.jpg',

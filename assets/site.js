@@ -66,6 +66,38 @@
   const year = document.querySelector('#year');
   if (year) year.textContent = String(new Date().getFullYear());
 
+  document.querySelectorAll('.stars').forEach((stars) => {
+    stars.setAttribute('role', 'img');
+    stars.setAttribute('aria-label', '5 out of 5 stars');
+  });
+
+  const reviewCards = document.querySelectorAll('.tc');
+  if (reviewCards.length) document.body.classList.add('reviews-enhanced');
+  reviewCards.forEach((card, index) => {
+    const review = card.querySelector(':scope > p');
+    if (!review) return;
+
+    requestAnimationFrame(() => {
+      if (review.scrollHeight <= review.clientHeight + 1) return;
+      review.id ||= `review-${index + 1}`;
+      const toggle = document.createElement('button');
+      toggle.className = 'review-toggle';
+      toggle.type = 'button';
+      toggle.setAttribute('aria-controls', review.id);
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Expand this review card');
+      toggle.textContent = 'Read full review';
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        card.classList.toggle('is-expanded', !expanded);
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        toggle.setAttribute('aria-label', expanded ? 'Expand this review card' : 'Collapse this review card');
+        toggle.textContent = expanded ? 'Read full review' : 'Show less';
+      });
+      review.insertAdjacentElement('afterend', toggle);
+    });
+  });
+
   const form = document.querySelector('#diagnostic-form');
   if (!form) return;
 
