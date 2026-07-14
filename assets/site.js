@@ -73,11 +73,12 @@
 
   const reviewCards = document.querySelectorAll('.tc');
   if (reviewCards.length) document.body.classList.add('reviews-enhanced');
-  reviewCards.forEach((card, index) => {
+  const enhanceReviewCards = () => reviewCards.forEach((card, index) => {
     const review = card.querySelector(':scope > p');
-    if (!review) return;
+    if (!review || card.querySelector('.review-toggle')) return;
 
     requestAnimationFrame(() => {
+      if (card.querySelector('.review-toggle')) return;
       if (review.scrollHeight <= review.clientHeight + 1) return;
       review.id ||= `review-${index + 1}`;
       const toggle = document.createElement('button');
@@ -97,6 +98,15 @@
       review.insertAdjacentElement('afterend', toggle);
     });
   });
+  enhanceReviewCards();
+  // The first pass can run before the webfonts apply (the font stylesheet is
+  // swapped in late via preload), when the fallback font does not overflow the
+  // clamp — re-check whenever fonts finish loading and on window load.
+  if (document.fonts) {
+    document.fonts.ready.then(enhanceReviewCards);
+    document.fonts.addEventListener('loadingdone', enhanceReviewCards);
+  }
+  window.addEventListener('load', enhanceReviewCards);
 
   const form = document.querySelector('#diagnostic-form');
   if (!form) return;
