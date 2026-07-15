@@ -86,13 +86,11 @@
       toggle.type = 'button';
       toggle.setAttribute('aria-controls', review.id);
       toggle.setAttribute('aria-expanded', 'false');
-      toggle.setAttribute('aria-label', 'Expand this review card');
       toggle.textContent = 'Read full review';
       toggle.addEventListener('click', () => {
         const expanded = toggle.getAttribute('aria-expanded') === 'true';
         card.classList.toggle('is-expanded', !expanded);
         toggle.setAttribute('aria-expanded', String(!expanded));
-        toggle.setAttribute('aria-label', expanded ? 'Expand this review card' : 'Collapse this review card');
         toggle.textContent = expanded ? 'Read full review' : 'Show less';
       });
       review.insertAdjacentElement('afterend', toggle);
@@ -153,10 +151,16 @@
       if (field.type === 'radio') {
         if (!field.required) return;
         const group = fields.filter((candidate) => candidate.type === 'radio' && candidate.name === field.name);
-        if (!group.some((candidate) => candidate.checked) && !firstInvalid) firstInvalid = field;
+        if (!group.some((candidate) => candidate.checked)) {
+          group.forEach((candidate) => candidate.setAttribute('aria-invalid', 'true'));
+          if (!firstInvalid) firstInvalid = field;
+        }
         return;
       }
-      if (!field.checkValidity() && !firstInvalid) firstInvalid = field;
+      if (!field.checkValidity()) {
+        field.setAttribute('aria-invalid', 'true');
+        if (!firstInvalid) firstInvalid = field;
+      }
     });
 
     if (firstInvalid) {
