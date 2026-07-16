@@ -569,9 +569,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .ongoing-grid article { padding:clamp(1.5rem,4vw,3rem); background:var(--ink-soft); }
 .ongoing-grid h3 { margin:.4rem 0 1rem; font-family:var(--display); font-size:2.6rem; font-weight:500; }
 .ongoing-grid p,.ongoing-grid li { color:#cfc4b7; }
-.essential-prices { display:grid; gap:.35rem; margin-bottom:1.5rem; }
-.essential-prices strong { font-size:1.1rem; }
-.essential-prices span { color:var(--oxide-tint); font-size:.8rem; }
+.offer-prices { display:grid; gap:.35rem; margin-bottom:1.5rem; }
+.offer-prices strong { font-size:1.1rem; }
+.offer-prices span { color:var(--oxide-tint); font-size:.8rem; }
 .availability-note { margin-top:1.5rem; padding-top:1rem; border-top:1px solid var(--line-dark); font-size:.8rem; }
 .ongoing-grid .plus-label { margin:1.25rem 0 .25rem; font-weight:700; }
 .choice-grid { display:grid; grid-template-columns:.85fr 1.15fr; gap:clamp(2rem,7vw,7rem); }
@@ -745,4 +745,18 @@ button, a { -webkit-tap-highlight-color: transparent; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
+}
+
+.system-grid { display:grid; grid-template-columns:repeat(3,1fr); margin-top:2.5rem; border-top:1px solid var(--line-dark); border-bottom:1px solid var(--line-dark); }
+.system-item { padding:1.75rem clamp(1rem,2.5vw,2rem); }
+.system-item + .system-item { border-left:1px solid var(--line-dark); }
+.system-item h3 { margin:0 0 .6rem; font-family:var(--display); font-size:1.5rem; font-weight:500; }
+.system-item p { margin:0; max-width:30rem; color:#cfc4b7; font-size:.92rem; line-height:1.6; }
+.pricing-tiers-two { grid-template-columns:repeat(2,1fr); max-width:56rem; }
+.pricing-start { margin-top:2.5rem; }
+.pricing-start h3 { margin:0 0 1.25rem; font-family:var(--display); font-size:1.7rem; font-weight:500; }
+@media (max-width: 45rem) {
+  .system-grid { grid-template-columns:1fr; }
+  .system-item + .system-item { border-left:0; border-top:1px solid var(--line-dark); }
+  .pricing-tiers-two { grid-template-columns:1fr; }
 }

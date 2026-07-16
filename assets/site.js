@@ -201,7 +201,7 @@
       `Previous barriers: ${value('history') || 'Not provided'}`,
       `Location: ${value('location')}`,
       `Availability: ${value('availability')}`,
-      `Six-month commitment: ${value('commitment')}`,
+      `12-week commitment: ${value('commitment')}`,
       `Budget: ${value('budget')}`
     ].join('\n\n');
 
