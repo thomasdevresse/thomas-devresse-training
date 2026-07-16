@@ -760,3 +760,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .system-item + .system-item { border-left:0; border-top:1px solid var(--line-dark); }
   .pricing-tiers-two { grid-template-columns:1fr; }
 }
+
+.lang-switch { display:inline-flex; gap:.65rem; align-items:center; }
+.lang-switch a { font-size:.72rem; font-weight:700; letter-spacing:.1em; opacity:.6; }
+.lang-switch a:hover, .lang-switch a:focus-visible { opacity:1; }

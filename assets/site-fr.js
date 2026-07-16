@@ -66,6 +66,46 @@
   const year = document.querySelector('#year');
   if (year) year.textContent = String(new Date().getFullYear());
 
+  document.querySelectorAll('.stars').forEach((stars) => {
+    stars.setAttribute('role', 'img');
+    stars.setAttribute('aria-label', '5 étoiles sur 5');
+  });
+
+  const reviewCards = document.querySelectorAll('.tc');
+  if (reviewCards.length) document.body.classList.add('reviews-enhanced');
+  const enhanceReviewCards = () => reviewCards.forEach((card, index) => {
+    const review = card.querySelector(':scope > p');
+    if (!review || card.querySelector('.review-toggle')) return;
+
+    requestAnimationFrame(() => {
+      if (card.querySelector('.review-toggle')) return;
+      if (review.scrollHeight <= review.clientHeight + 1) return;
+      review.id ||= `review-${index + 1}`;
+      const toggle = document.createElement('button');
+      toggle.className = 'review-toggle';
+      toggle.type = 'button';
+      toggle.setAttribute('aria-controls', review.id);
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = 'Lire l’avis complet';
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        card.classList.toggle('is-expanded', !expanded);
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        toggle.textContent = expanded ? 'Lire l’avis complet' : 'Réduire';
+      });
+      review.insertAdjacentElement('afterend', toggle);
+    });
+  });
+  enhanceReviewCards();
+  // The first pass can run before the webfonts apply (the font stylesheet is
+  // swapped in late via preload), when the fallback font does not overflow the
+  // clamp — re-check whenever fonts finish loading and on window load.
+  if (document.fonts) {
+    document.fonts.ready.then(enhanceReviewCards);
+    document.fonts.addEventListener('loadingdone', enhanceReviewCards);
+  }
+  window.addEventListener('load', enhanceReviewCards);
+
   const form = document.querySelector('#diagnostic-form');
   if (!form) return;
 
@@ -111,16 +151,22 @@
       if (field.type === 'radio') {
         if (!field.required) return;
         const group = fields.filter((candidate) => candidate.type === 'radio' && candidate.name === field.name);
-        if (!group.some((candidate) => candidate.checked) && !firstInvalid) firstInvalid = field;
+        if (!group.some((candidate) => candidate.checked)) {
+          group.forEach((candidate) => candidate.setAttribute('aria-invalid', 'true'));
+          if (!firstInvalid) firstInvalid = field;
+        }
         return;
       }
-      if (!field.checkValidity() && !firstInvalid) firstInvalid = field;
+      if (!field.checkValidity()) {
+        field.setAttribute('aria-invalid', 'true');
+        if (!firstInvalid) firstInvalid = field;
+      }
     });
 
     if (firstInvalid) {
       firstInvalid.setAttribute('aria-invalid', 'true');
       firstInvalid.setAttribute('aria-describedby', 'form-error');
-      errorBox.textContent = 'Veuillez remplir les champs obligatoires avant de continuer.';
+      errorBox.textContent = 'Veuillez compléter les champs obligatoires avant de continuer.';
       firstInvalid.focus();
       return false;
     }
@@ -149,13 +195,13 @@
 
     const message = [
       `Objectif : ${value('goal')}`,
-      `Progrès attendus : ${value('goalDetail')}`,
+      `Progrès significatif : ${value('goalDetail')}`,
       `Expérience : ${value('experience')}`,
       `Fréquence actuelle : ${value('frequency')}`,
-      `Freins précédents : ${value('history') || 'Non renseigné'}`,
+      `Obstacles précédents : ${value('history') || 'Non renseigné'}`,
       `Lieu : ${value('location')}`,
       `Disponibilités : ${value('availability')}`,
-      `Engagement de six mois : ${value('commitment')}`,
+      `Engagement de 12 semaines : ${value('commitment')}`,
       `Budget : ${value('budget')}`
     ].join('\n\n');
 
@@ -170,7 +216,7 @@
     };
 
     submitButton.disabled = true;
-    submitButton.textContent = 'Envoi en cours…';
+    submitButton.textContent = 'Envoi…';
     statusBox.textContent = '';
     errorBox.textContent = '';
 
@@ -185,14 +231,14 @@
 
       form.reset();
       form.querySelectorAll('.form-step, .form-actions, .form-progress').forEach((element) => { element.hidden = true; });
-      statusBox.textContent = 'Votre candidature a bien été envoyée. Thomas l’examinera personnellement et vous répondra par e-mail.';
+      statusBox.textContent = 'Votre candidature a bien été envoyée. Thomas la lira personnellement et vous répondra par e-mail.';
       statusBox.tabIndex = -1;
       statusBox.focus();
     } catch (error) {
       const fallback = document.createElement('a');
       const emailBody = `${message}\n\nNom : ${payload.name}\nE-mail : ${payload.email}\nTéléphone : ${payload.phone || 'Non renseigné'}`;
       fallback.href = `mailto:thomas@devresse.fit?subject=${encodeURIComponent(payload.subject)}&body=${encodeURIComponent(emailBody)}`;
-      fallback.textContent = 'Ouvrir votre messagerie avec ces réponses';
+      fallback.textContent = 'Ouvrir votre application e-mail avec ces réponses';
       errorBox.replaceChildren(document.createTextNode(`${error.message} `), fallback, document.createTextNode('.'));
     } finally {
       submitButton.disabled = false;

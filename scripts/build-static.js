@@ -46,8 +46,7 @@ for (const file of [
 }
 copyDirectory(path.join(root, 'images', 'tf'), path.join(imageOut, 'tf'));
 copyDirectory(path.join(root, 'images', 'about'), path.join(imageOut, 'about'));
-// fr/ and nl/ still describe the retired Transformation offer — excluded from the
-// build until they are retranslated for the simplified offer.
+for (const locale of ['fr', 'nl']) copyDirectory(path.join(root, locale), path.join(out, locale));
 
 
 console.log('V2 static site built in public/');

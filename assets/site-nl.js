@@ -66,6 +66,46 @@
   const year = document.querySelector('#year');
   if (year) year.textContent = String(new Date().getFullYear());
 
+  document.querySelectorAll('.stars').forEach((stars) => {
+    stars.setAttribute('role', 'img');
+    stars.setAttribute('aria-label', '5 op 5 sterren');
+  });
+
+  const reviewCards = document.querySelectorAll('.tc');
+  if (reviewCards.length) document.body.classList.add('reviews-enhanced');
+  const enhanceReviewCards = () => reviewCards.forEach((card, index) => {
+    const review = card.querySelector(':scope > p');
+    if (!review || card.querySelector('.review-toggle')) return;
+
+    requestAnimationFrame(() => {
+      if (card.querySelector('.review-toggle')) return;
+      if (review.scrollHeight <= review.clientHeight + 1) return;
+      review.id ||= `review-${index + 1}`;
+      const toggle = document.createElement('button');
+      toggle.className = 'review-toggle';
+      toggle.type = 'button';
+      toggle.setAttribute('aria-controls', review.id);
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = 'Lees de volledige review';
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        card.classList.toggle('is-expanded', !expanded);
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        toggle.textContent = expanded ? 'Lees de volledige review' : 'Toon minder';
+      });
+      review.insertAdjacentElement('afterend', toggle);
+    });
+  });
+  enhanceReviewCards();
+  // The first pass can run before the webfonts apply (the font stylesheet is
+  // swapped in late via preload), when the fallback font does not overflow the
+  // clamp — re-check whenever fonts finish loading and on window load.
+  if (document.fonts) {
+    document.fonts.ready.then(enhanceReviewCards);
+    document.fonts.addEventListener('loadingdone', enhanceReviewCards);
+  }
+  window.addEventListener('load', enhanceReviewCards);
+
   const form = document.querySelector('#diagnostic-form');
   if (!form) return;
 
@@ -111,16 +151,22 @@
       if (field.type === 'radio') {
         if (!field.required) return;
         const group = fields.filter((candidate) => candidate.type === 'radio' && candidate.name === field.name);
-        if (!group.some((candidate) => candidate.checked) && !firstInvalid) firstInvalid = field;
+        if (!group.some((candidate) => candidate.checked)) {
+          group.forEach((candidate) => candidate.setAttribute('aria-invalid', 'true'));
+          if (!firstInvalid) firstInvalid = field;
+        }
         return;
       }
-      if (!field.checkValidity() && !firstInvalid) firstInvalid = field;
+      if (!field.checkValidity()) {
+        field.setAttribute('aria-invalid', 'true');
+        if (!firstInvalid) firstInvalid = field;
+      }
     });
 
     if (firstInvalid) {
       firstInvalid.setAttribute('aria-invalid', 'true');
       firstInvalid.setAttribute('aria-describedby', 'form-error');
-      errorBox.textContent = 'Vul de verplichte velden in voordat je verdergaat.';
+      errorBox.textContent = 'Vul de verplichte velden in voor je verdergaat.';
       firstInvalid.focus();
       return false;
     }
@@ -152,10 +198,10 @@
       `Betekenisvolle vooruitgang: ${value('goalDetail')}`,
       `Ervaring: ${value('experience')}`,
       `Huidige frequentie: ${value('frequency')}`,
-      `Eerdere obstakels: ${value('history') || 'Niet ingevuld'}`,
+      `Eerdere obstakels: ${value('history') || 'Niet opgegeven'}`,
       `Locatie: ${value('location')}`,
       `Beschikbaarheid: ${value('availability')}`,
-      `Engagement van zes maanden: ${value('commitment')}`,
+      `Engagement van 12 weken: ${value('commitment')}`,
       `Budget: ${value('budget')}`
     ].join('\n\n');
 
@@ -170,7 +216,7 @@
     };
 
     submitButton.disabled = true;
-    submitButton.textContent = 'Bezig met versturen…';
+    submitButton.textContent = 'Versturen…';
     statusBox.textContent = '';
     errorBox.textContent = '';
 
@@ -181,22 +227,22 @@
         body: JSON.stringify(payload)
       });
       const result = await response.json().catch(() => ({}));
-      if (!response.ok) throw new Error(result.error || 'De aanvraag kon niet worden verstuurd.');
+      if (!response.ok) throw new Error(result.error || 'De aanvraag kon niet verstuurd worden.');
 
       form.reset();
       form.querySelectorAll('.form-step, .form-actions, .form-progress').forEach((element) => { element.hidden = true; });
-      statusBox.textContent = 'Je coachingaanvraag is verstuurd. Thomas bekijkt ze persoonlijk en antwoordt per e-mail.';
+      statusBox.textContent = 'Je aanmelding is verstuurd. Thomas bekijkt ze persoonlijk en antwoordt per e-mail.';
       statusBox.tabIndex = -1;
       statusBox.focus();
     } catch (error) {
       const fallback = document.createElement('a');
-      const emailBody = `${message}\n\nNaam: ${payload.name}\nE-mail: ${payload.email}\nTelefoon: ${payload.phone || 'Niet ingevuld'}`;
+      const emailBody = `${message}\n\nNaam: ${payload.name}\nE-mail: ${payload.email}\nTelefoon: ${payload.phone || 'Niet opgegeven'}`;
       fallback.href = `mailto:thomas@devresse.fit?subject=${encodeURIComponent(payload.subject)}&body=${encodeURIComponent(emailBody)}`;
       fallback.textContent = 'Open je e-mailapp met deze antwoorden';
       errorBox.replaceChildren(document.createTextNode(`${error.message} `), fallback, document.createTextNode('.'));
     } finally {
       submitButton.disabled = false;
-      submitButton.textContent = 'Verstuur mijn aanvraag';
+      submitButton.textContent = 'Verstuur mijn aanmelding';
     }
   });
 
