@@ -43,7 +43,7 @@ async function notifyContact(msg) {
     subject: escapeHtml(msg.subject),
     message: escapeHtml(msg.message),
   };
-  const subject = `Coaching application: ${msg.subject || 'Website contact'} — from ${msg.name}`;
+  const subject = `Coaching application: from ${msg.name}`;
   const html = `
     <div style="font-family:system-ui,sans-serif;max-width:600px;margin:0 auto">
       <div style="background:#a54432;color:#fff;padding:20px 24px"><h2 style="margin:0;font-size:18px">New coaching application</h2></div>
@@ -52,7 +52,6 @@ async function notifyContact(msg) {
           <tr><td style="padding:8px 0;color:#aaa;width:120px">From</td><td style="padding:8px 0;font-weight:700">${safe.name}</td></tr>
           <tr><td style="padding:8px 0;color:#aaa">Email</td><td style="padding:8px 0"><a href="mailto:${safe.email}" style="color:#df806b">${safe.email}</a></td></tr>
           ${safe.phone ? `<tr><td style="padding:8px 0;color:#aaa">Phone</td><td style="padding:8px 0">${safe.phone}</td></tr>` : ''}
-          <tr><td style="padding:8px 0;color:#aaa">Subject</td><td style="padding:8px 0">${safe.subject}</td></tr>
         </table>
         <div style="margin-top:16px;padding:16px;background:#0c0c0b;border-left:3px solid #a54432;line-height:1.6">${safe.message.replace(/\n/g, '<br>')}</div>
         <div style="margin-top:20px;padding-top:16px;border-top:1px solid #333"><a href="mailto:${safe.email}" style="color:#df806b;text-decoration:none;font-weight:700">Reply to ${safe.name}</a></div>
