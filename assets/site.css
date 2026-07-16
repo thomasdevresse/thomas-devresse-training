@@ -752,7 +752,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .system-item + .system-item { border-left:1px solid var(--line-dark); }
 .system-item h3 { margin:0 0 .6rem; font-family:var(--display); font-size:1.5rem; font-weight:500; }
 .system-item p { margin:0; max-width:30rem; color:#cfc4b7; font-size:.92rem; line-height:1.6; }
-.pricing-tiers-two { grid-template-columns:repeat(2,1fr); max-width:56rem; }
+.pricing-tiers-two { grid-template-columns:repeat(2,1fr); }
 .pricing-start { margin-top:2.5rem; }
 .pricing-start h3 { margin:0 0 1.25rem; font-family:var(--display); font-size:1.7rem; font-weight:500; }
 @media (max-width: 45rem) {
