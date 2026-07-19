@@ -668,6 +668,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .testi-scroll { display:flex; gap:1rem; padding:.25rem .1rem 1rem; overflow-x:auto; scroll-snap-type:x proximity; scrollbar-color:var(--oxide) transparent; }
 .tc { display:flex; flex:0 0 20.5rem; flex-direction:column; min-height:18.5rem; padding:1.25rem; border:1px solid var(--line-dark); background:var(--ink-soft); scroll-snap-align:start; }
 .tc-head { display:flex; justify-content:space-between; color:var(--oxide-tint); font-size:.7rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+.tc-head a { color:inherit; text-underline-offset:.2rem; }
 .tc > p { flex:1; margin:1rem 0; color:#d4cabf; font-size:.78rem; line-height:1.55; }
 .reviews-enhanced .tc { height:18.5rem; }
 .reviews-enhanced .tc > p { display:-webkit-box; overflow:hidden; -webkit-box-orient:vertical; -webkit-line-clamp:7; }
