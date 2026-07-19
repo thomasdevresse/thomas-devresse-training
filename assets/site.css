@@ -152,8 +152,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   position: absolute;
   z-index: 1;
   inset: 0;
-  opacity: .16;
-  background-image: radial-gradient(rgba(255,255,255,.25) .45px, transparent .45px);
+  opacity: .12;
+  background-image: radial-gradient(rgba(255,255,255,.25) .45px, transparent 1.3px);
   background-size: 5px 5px;
   pointer-events: none;
   content: "";
@@ -348,7 +348,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 /* About — editorial biography */
 .about-hero { position: relative; overflow: hidden; background: var(--ink); color: var(--paper); }
-.about-hero::after { position: absolute; inset: 0; opacity: .1; background-image: radial-gradient(rgba(255,255,255,.28) .45px, transparent .45px); background-size: 5px 5px; pointer-events: none; content: ""; }
+.about-hero::after { position: absolute; inset: 0; opacity: .08; background-image: radial-gradient(rgba(255,255,255,.28) .45px, transparent 1.3px); background-size: 5px 5px; pointer-events: none; content: ""; }
 .about-hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: .92fr 1.08fr; min-height: min(47rem, calc(100svh - 5.25rem)); align-items: stretch; }
 .about-hero-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(5rem, 10vw, 8rem) clamp(1rem, 5vw, 5rem) clamp(5rem, 8vw, 7rem) 0; }
 .about-hero-copy .display { max-width: 8.7ch; font-size: clamp(3.1rem, 6.4vw, 6rem); }
