@@ -67,13 +67,25 @@ for (const field of ['goal', 'goalDetail', 'experience', 'frequency', 'location'
   }
 }
 
-for (const field of ['name', 'email', 'phone']) {
+for (const field of ['name', 'email']) {
   test(`rejects a whitespace-only ${field} before delivery`, async () => {
     const body = validApplication();
     body[field] = ' \t\n ';
     const { res, sent } = await submit(body);
     assert.equal(res.statusCode, 400);
     assert.equal(sent.length, 0);
+  });
+}
+
+for (const value of [undefined, '', ' \t\r\n\u00a0 ']) {
+  test(`accepts optional phone=${JSON.stringify(value)} without adding an empty phone row`, async () => {
+    const body = validApplication();
+    body.phone = value;
+    const { res, sent } = await submit(body);
+    assert.equal(res.statusCode, 200);
+    assert.equal(sent.length, 1);
+    assert.ok(!sent[0].html.includes('>Phone</td>'));
+    assert.equal(sent[0].replyTo, body.email);
   });
 }
 

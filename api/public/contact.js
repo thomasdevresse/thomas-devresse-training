@@ -187,7 +187,7 @@ module.exports = async function handler(req, res) {
   };
 
   // Check the actual answers, not a preformatted message whose labels alone can pass validation.
-  if (!message.name || !EMAIL_RE.test(message.email) || !message.phone ||
+  if (!message.name || !EMAIL_RE.test(message.email) ||
       REQUIRED_ANSWERS.some((key) => !answers[key]) || body.consent !== true) {
     return res.status(400).json({ error: copy.error });
   }
