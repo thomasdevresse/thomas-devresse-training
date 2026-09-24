@@ -157,16 +157,18 @@
         }
         return;
       }
-      if (!field.checkValidity()) {
+      const blankRequired = field.required && !field.value.trim();
+      if (blankRequired || !field.checkValidity()) {
         field.setAttribute('aria-invalid', 'true');
         if (!firstInvalid) firstInvalid = field;
       }
     });
 
     if (firstInvalid) {
+      if (currentStep !== index) showStep(index, false);
       firstInvalid.setAttribute('aria-invalid', 'true');
       firstInvalid.setAttribute('aria-describedby', 'form-error');
-      errorBox.textContent = 'Please complete the required fields before continuing.';
+      errorBox.textContent = 'Please complete the required fields. Written answers cannot be blank or contain only spaces.';
       firstInvalid.focus();
       return false;
     }
@@ -185,7 +187,11 @@
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    if (!validateStep(currentStep)) return;
+    if (currentStep < steps.length - 1) {
+      if (validateStep(currentStep)) showStep(currentStep + 1);
+      return;
+    }
+    if (!steps.every((step, index) => validateStep(index))) return;
 
     if (value('website')) {
       form.reset();
@@ -193,16 +199,18 @@
       return;
     }
 
+    const answers = Object.fromEntries(
+      ['goal', 'goalDetail', 'experience', 'frequency', 'trainingHelp', 'location', 'availability']
+        .map((name) => [name, value(name)])
+    );
     const message = [
-      `Goal: ${value('goal')}`,
-      `Meaningful progress: ${value('goalDetail')}`,
-      `Experience: ${value('experience')}`,
-      `Current frequency: ${value('frequency')}`,
-      `Previous barriers: ${value('history') || 'Not provided'}`,
-      `Location: ${value('location')}`,
-      `Availability: ${value('availability')}`,
-      `12-week commitment: ${value('commitment')}`,
-      `Budget: ${value('budget')}`
+      `Goal: ${answers.goal}`,
+      `Meaningful progress: ${answers.goalDetail}`,
+      `Experience: ${answers.experience}`,
+      `Current frequency: ${answers.frequency}`,
+      `Training help wanted: ${answers.trainingHelp || 'Not provided'}`,
+      `Location: ${answers.location}`,
+      `Availability: ${answers.availability}`
     ].join('\n\n');
 
     const payload = {
@@ -210,8 +218,9 @@
       email: value('email'),
       phone: value('phone'),
       subject: `Coaching application — ${value('goal')}`,
-      message,
-      website: '',
+      answers,
+      language: 'en',
+      website: value('website'),
       consent: value('consent') === 'on'
     };
 

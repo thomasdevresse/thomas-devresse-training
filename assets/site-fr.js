@@ -157,16 +157,18 @@
         }
         return;
       }
-      if (!field.checkValidity()) {
+      const blankRequired = field.required && !field.value.trim();
+      if (blankRequired || !field.checkValidity()) {
         field.setAttribute('aria-invalid', 'true');
         if (!firstInvalid) firstInvalid = field;
       }
     });
 
     if (firstInvalid) {
+      if (currentStep !== index) showStep(index, false);
       firstInvalid.setAttribute('aria-invalid', 'true');
       firstInvalid.setAttribute('aria-describedby', 'form-error');
-      errorBox.textContent = 'Veuillez compléter les champs obligatoires avant de continuer.';
+      errorBox.textContent = 'Veuillez compléter les champs obligatoires. Les réponses écrites ne peuvent pas être vides ou contenir uniquement des espaces.';
       firstInvalid.focus();
       return false;
     }
@@ -185,7 +187,11 @@
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    if (!validateStep(currentStep)) return;
+    if (currentStep < steps.length - 1) {
+      if (validateStep(currentStep)) showStep(currentStep + 1);
+      return;
+    }
+    if (!steps.every((step, index) => validateStep(index))) return;
 
     if (value('website')) {
       form.reset();
@@ -193,16 +199,18 @@
       return;
     }
 
+    const answers = Object.fromEntries(
+      ['goal', 'goalDetail', 'experience', 'frequency', 'trainingHelp', 'location', 'availability']
+        .map((name) => [name, value(name)])
+    );
     const message = [
-      `Objectif : ${value('goal')}`,
-      `Progrès significatif : ${value('goalDetail')}`,
-      `Expérience : ${value('experience')}`,
-      `Fréquence actuelle : ${value('frequency')}`,
-      `Obstacles précédents : ${value('history') || 'Non renseigné'}`,
-      `Lieu : ${value('location')}`,
-      `Disponibilités : ${value('availability')}`,
-      `Engagement de 12 semaines : ${value('commitment')}`,
-      `Budget : ${value('budget')}`
+      `Objectif : ${answers.goal}`,
+      `Progrès significatif : ${answers.goalDetail}`,
+      `Expérience : ${answers.experience}`,
+      `Fréquence actuelle : ${answers.frequency}`,
+      `Aide souhaitée pour l’entraînement : ${answers.trainingHelp || 'Non renseigné'}`,
+      `Lieu : ${answers.location}`,
+      `Disponibilités : ${answers.availability}`
     ].join('\n\n');
 
     const payload = {
@@ -210,8 +218,9 @@
       email: value('email'),
       phone: value('phone'),
       subject: `Candidature coaching — ${value('goal')}`,
-      message,
-      website: '',
+      answers,
+      language: 'fr',
+      website: value('website'),
       consent: value('consent') === 'on'
     };
 

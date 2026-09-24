@@ -19,7 +19,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/images/logo-circle.png">
   <link rel="stylesheet" href="/assets/fonts.css?v=20260722-1">
-  <link rel="stylesheet" href="/assets/site.css?v=20260722-1">
+  <link rel="stylesheet" href="/assets/site.css?v=20260924-1">
 </head>
 <body>
   <a class="skip-link" href="#main">Aller au contenu principal</a>
@@ -251,22 +251,17 @@
             <h3>Quelle est votre situation actuelle ?</h3>
             <div class="field"><label for="experience">Expérience d'entraînement</label><select id="experience" name="experience" required><option value="">Choisissez</option><option>Nouveau dans l'entraînement structuré</option><option>Un peu d'expérience, irrégulier</option><option>Régulier depuis 1 à 3 ans</option><option>Expérimenté, 3 ans et plus</option></select></div>
             <div class="field"><label for="frequency">Fréquence d'entraînement actuelle</label><select id="frequency" name="frequency" required><option value="">Choisissez</option><option>Pas d'entraînement actuellement</option><option>1–2 fois par semaine</option><option>3–4 fois par semaine</option><option>5+ fois par semaine</option></select></div>
-            <div class="field"><label for="history">Qu'est-ce qui a empêché vos tentatives précédentes de durer ?</label><textarea id="history" name="history" maxlength="1000"></textarea></div>
+            <div class="field"><label for="training-help">Sur quel aspect de votre entraînement aimeriez-vous le plus être accompagné en ce moment ?</label><textarea id="training-help" name="trainingHelp" maxlength="1000"></textarea></div>
           </section>
 
           <section class="form-step" data-step="3" hidden>
-            <h3>Quel accompagnement pouvez-vous envisager ?</h3>
+            <h3>Où et quand souhaitez-vous vous entraîner ?</h3>
             <fieldset class="fieldset"><legend>Lieu préféré</legend><div class="choices">
               <label class="choice"><input type="radio" name="location" value="Auderghem" required><span>Auderghem</span></label>
               <label class="choice"><input type="radio" name="location" value="Meiser"><span>Meiser</span></label>
               <label class="choice"><input type="radio" name="location" value="En ligne"><span>100 % en ligne</span></label>
             </div></fieldset>
             <div class="field"><label for="availability">Disponibilités hebdomadaires réalistes</label><input id="availability" name="availability" type="text" required maxlength="200" placeholder="ex. matins en semaine — ou votre fuseau horaire si en ligne"></div>
-            <fieldset class="fieldset"><legend>Le coaching commence par un engagement initial de 12 semaines. Cela vous convient-il ?</legend><div class="choices">
-              <label class="choice"><input type="radio" name="commitment" value="Oui" required><span>Oui</span></label>
-              <label class="choice"><input type="radio" name="commitment" value="À discuter"><span>Je veux d'abord bien comprendre</span></label>
-            </div></fieldset>
-            <div class="field"><label for="budget">Budget coaching par 4 semaines</label><select id="budget" name="budget" required><option value="">Choisissez</option><option>200–280 €</option><option>280–480 €</option><option>480 € et plus</option><option>J'ai besoin de conseils</option></select></div>
           </section>
 
           <section class="form-step" data-step="4" hidden>
@@ -318,6 +313,6 @@
       <div class="footer-bottom"><span>© <span id="year"></span> Thomas Devresse</span><span>Personal training à Bruxelles · Auderghem · Meiser</span></div>
     </div>
   </footer>
-  <script src="/assets/site-fr.js?v=20260722-1" defer></script>
+  <script src="/assets/site-fr.js?v=20260924-1" defer></script>
 </body>
 </html>

@@ -279,7 +279,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .form-progress { margin-bottom: 2rem; color: var(--muted); font-size: .78rem; }
 .form-progress-bar { height: 3px; margin-top: .6rem; background: #d8cec1; }
 .form-progress-bar span { display: block; width: 25%; height: 100%; background: var(--oxide); transition: width .2s ease; }
-.form-step[hidden] { display: none; }
+.form [hidden] { display: none; }
 .form-step h3 { margin: 0 0 1.4rem; font-family: var(--display); font-size: 2rem; font-weight: 500; }
 .field { margin-bottom: 1rem; }
 .field label, .fieldset legend { display: block; margin-bottom: .45rem; font-size: .84rem; font-weight: 700; }

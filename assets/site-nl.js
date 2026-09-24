@@ -157,16 +157,18 @@
         }
         return;
       }
-      if (!field.checkValidity()) {
+      const blankRequired = field.required && !field.value.trim();
+      if (blankRequired || !field.checkValidity()) {
         field.setAttribute('aria-invalid', 'true');
         if (!firstInvalid) firstInvalid = field;
       }
     });
 
     if (firstInvalid) {
+      if (currentStep !== index) showStep(index, false);
       firstInvalid.setAttribute('aria-invalid', 'true');
       firstInvalid.setAttribute('aria-describedby', 'form-error');
-      errorBox.textContent = 'Vul de verplichte velden in voor je verdergaat.';
+      errorBox.textContent = 'Vul de verplichte velden in. Geschreven antwoorden mogen niet leeg zijn of alleen spaties bevatten.';
       firstInvalid.focus();
       return false;
     }
@@ -185,7 +187,11 @@
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    if (!validateStep(currentStep)) return;
+    if (currentStep < steps.length - 1) {
+      if (validateStep(currentStep)) showStep(currentStep + 1);
+      return;
+    }
+    if (!steps.every((step, index) => validateStep(index))) return;
 
     if (value('website')) {
       form.reset();
@@ -193,16 +199,18 @@
       return;
     }
 
+    const answers = Object.fromEntries(
+      ['goal', 'goalDetail', 'experience', 'frequency', 'trainingHelp', 'location', 'availability']
+        .map((name) => [name, value(name)])
+    );
     const message = [
-      `Doel: ${value('goal')}`,
-      `Betekenisvolle vooruitgang: ${value('goalDetail')}`,
-      `Ervaring: ${value('experience')}`,
-      `Huidige frequentie: ${value('frequency')}`,
-      `Eerdere obstakels: ${value('history') || 'Niet opgegeven'}`,
-      `Locatie: ${value('location')}`,
-      `Beschikbaarheid: ${value('availability')}`,
-      `Engagement van 12 weken: ${value('commitment')}`,
-      `Budget: ${value('budget')}`
+      `Doel: ${answers.goal}`,
+      `Betekenisvolle vooruitgang: ${answers.goalDetail}`,
+      `Ervaring: ${answers.experience}`,
+      `Huidige frequentie: ${answers.frequency}`,
+      `Gewenste hulp bij training: ${answers.trainingHelp || 'Niet opgegeven'}`,
+      `Locatie: ${answers.location}`,
+      `Beschikbaarheid: ${answers.availability}`
     ].join('\n\n');
 
     const payload = {
@@ -210,8 +218,9 @@
       email: value('email'),
       phone: value('phone'),
       subject: `Coachingaanvraag — ${value('goal')}`,
-      message,
-      website: '',
+      answers,
+      language: 'nl',
+      website: value('website'),
       consent: value('consent') === 'on'
     };
 

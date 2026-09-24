@@ -91,12 +91,40 @@ const RATE_LIMIT = 8;
 const recentRequests = new Map();
 
 function clean(value, max) {
-  return String(value || '').replace(/\u0000/g, '').trim().slice(0, max);
+  return typeof value === 'string' ? value.replace(/\u0000/g, '').trim().slice(0, max) : '';
 }
 
 function cleanHeader(value, max) {
   return clean(value, max).replace(/[\r\n]+/g, ' ');
 }
+
+const ANSWER_LIMITS = {
+  goal: 200,
+  goalDetail: 1000,
+  experience: 200,
+  frequency: 200,
+  trainingHelp: 1000,
+  location: 200,
+  availability: 200,
+};
+const REQUIRED_ANSWERS = ['goal', 'goalDetail', 'experience', 'frequency', 'location', 'availability'];
+const DIAGNOSTIC_COPY = {
+  en: {
+    labels: ['Goal', 'Meaningful progress', 'Experience', 'Current frequency', 'Training help wanted', 'Location', 'Availability'],
+    empty: 'Not provided',
+    error: 'Please complete the required fields. Written answers cannot be blank or contain only spaces.',
+  },
+  fr: {
+    labels: ['Objectif', 'Progrès significatif', 'Expérience', 'Fréquence actuelle', 'Aide souhaitée pour l’entraînement', 'Lieu', 'Disponibilités'],
+    empty: 'Non renseigné',
+    error: 'Veuillez compléter les champs obligatoires. Les réponses écrites ne peuvent pas être vides ou contenir uniquement des espaces.',
+  },
+  nl: {
+    labels: ['Doel', 'Betekenisvolle vooruitgang', 'Ervaring', 'Huidige frequentie', 'Gewenste hulp bij training', 'Locatie', 'Beschikbaarheid'],
+    empty: 'Niet opgegeven',
+    error: 'Vul de verplichte velden in. Geschreven antwoorden mogen niet leeg zijn of alleen spaties bevatten.',
+  },
+};
 
 function isRateLimited(ip) {
   const now = Date.now();
@@ -137,18 +165,31 @@ module.exports = async function handler(req, res) {
   }
 
   const body = req.body || {};
-  if (clean(body.website, 200)) return res.status(200).json({ ok: true });
+  if (body.website && (typeof body.website !== 'string' || clean(body.website, 200))) {
+    return res.status(200).json({ ok: true });
+  }
+
+  const language = ['en', 'fr', 'nl'].includes(body.language) ? body.language : 'en';
+  const copy = DIAGNOSTIC_COPY[language];
+  const rawAnswers = body.answers && typeof body.answers === 'object' && !Array.isArray(body.answers)
+    ? body.answers : {};
+  const answers = Object.fromEntries(Object.entries(ANSWER_LIMITS)
+    .map(([key, max]) => [key, clean(rawAnswers[key], max)]));
 
   const message = {
     name: cleanHeader(body.name, 100),
     email: clean(body.email, 160).toLowerCase(),
     phone: clean(body.phone, 40),
     subject: cleanHeader(body.subject, 160) || 'Coaching application',
-    message: clean(body.message, 6000)
+    message: Object.keys(ANSWER_LIMITS)
+      .map((key, index) => `${copy.labels[index]}: ${answers[key] || copy.empty}`)
+      .join('\n\n'),
   };
 
-  if (!message.name || !EMAIL_RE.test(message.email) || message.message.length < 20 || body.consent !== true) {
-    return res.status(400).json({ error: 'Please provide a valid name, email and diagnostic.' });
+  // Check the actual answers, not a preformatted message whose labels alone can pass validation.
+  if (!message.name || !EMAIL_RE.test(message.email) || !message.phone ||
+      REQUIRED_ANSWERS.some((key) => !answers[key]) || body.consent !== true) {
+    return res.status(400).json({ error: copy.error });
   }
 
   try {
